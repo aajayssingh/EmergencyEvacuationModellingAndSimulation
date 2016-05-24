@@ -2,6 +2,18 @@ The Project is a prototype for Emergency evacuation and simulations in Indian co
 Major focus of this project is nuclear plant, chemical gas leak sort of hazards.
 This projects dynamically generates the evacuation routes during emergency situtations .
 
+
+
+1. install expat by downloading expat source code.
+run ./configure
+make install 
+apt-cache search libname
+
+2. Download boost and place it in /osm4routing-MyParser/  .
+	place these two files : Makefile.graphevacualtion, routing.cpp(inside /EmergencyEvacuationModellingAndSimulation/osm4routing-MyParser/boostFiles) in "boost_directory"/libs/graph/example.
+
+3.Run Makefile
+
 CREDITS :
 osm4routing-Parser - customized it to build a graph from the osm map.
 BOOST library  - used graph library to genrates evacuation routes.
