@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="../MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: add-web-map Command</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="../default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="add-web-map Command">
+	add-web-map Command
+</h1>
+<p> Adds a standard web map source to the current map.</p>
+<h2 id="Usage">
+	Usage
+</h2>
+<pre>
+add-web-map [parameters]
+</pre><p>All parameters are optional:</p><ul>
+	<li><strong>provider</strong>: specifies the standard web map provider to use. Currently the following standard web map providers are available: <i>mapnik</i>, <i>osmarender</i>, <i>osmcyclemap</i>, <i>mapquest.osm</i>, <i>mapquest.aerial</i>, <i>openseamap</i>, <i>hikebike</i>, <i>hikebike.hillshading</i> and <i>lonvia.hiking</i>. The default provider is Mapnik.</li>
+	<li><strong>intensity</strong>: a value from 0 to 1 specifying the intensity (opacity) of the rendering of the web map. A web map with intensity of 1 will be fully visible, while a value of 0 will fully hide the web map. The default value is 1.</li>
+	<li><strong>background</strong>: specifies whether to render the web map's bitmaps in the background (the default setting). This allows custom OSM rendering to be visible above the web map.</li>
+
+</ul><p>After executing the command, the current map source index will be set to this newly loaded source.</p><p><div class="note">
+    <strong>NOTE:</strong> MapQuest Open Aerial global coverage is provided at zoom levels 0-11. Zoom Levels 12+ are provided only in the United States (lower 48).
+</div></p>
+<h2 id="Examples">
+	Examples
+</h2>
+<pre>
+add-web-map
+</pre><p>Adds the Mapnik web map source.</p><pre>
+add-web-map osmcyclemap
+</pre><p>Adds the CycleMap web map source.</p><pre>
+
+add-web-map provider=osmarender intensity=0.5
+</pre><p>Adds the Osmarender web map source which will be rendered half-transparently.	</p><p>  </p>
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: Label Placement</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="Label Placement">
+	Label Placement
+</h1>
+<p></p>
+<h2 id="Line Feature Label Placement">
+	Line Feature Label Placement
+</h2>
+<p>This is a quick description of how Maperitive places labels on line features (streets, rivers etc.).  The system is likely to change in the future.</p><p>Currently Maperitive tries to fit the text into the width of the street, but there are several rendering  properties (see the Default rules as an example) which control this:</p><p><div class="image">
+	<img src="images/LabelPlacementExplained.png" />
+</div></p><ol>
+	<li>Maperitive ignores any potential text placements which are too winding (= not straight enough). <strong>lflp.max-allowed-corner-angle property</strong> specifies the maximum angle (in degrees) that is allowed of any corner for such a label.</li>
+	<li>By specifying <strong>lflp.min-buffer-space</strong> you set the minimum buffer (in pixels) between the street's end points and the text label.</li>
+	<li>If this minimum cannot be reached, Maperitive tries to condense the font horizontally (but only up to <strong>lflp.max-compression</strong> value (1 means no compression, 0.5 means the text can be compressed up to 50%).</li>
+
+</ol><p>If none of this works, the label will not be displayed. You cannot directly force a particular label to  display itself, but you can lower the quality criteria and thus make more labels visible.</p><p>Important thing to note is that you can set these settings both "globally" for the whole stylesheet  and you can also override them in each target rule. So you can have different labeling quality settings for different features.</p><p>Currently Maperitive does not have a label <strong>collision detection</strong> (meaning it will not detect two or more overlapping  labels). It also does not eliminate <strong>label duplicates</strong> (which means two or more labels with the same text could end up being displayed next to each other). These and other improvements (text abbreviations, more quality settings) are planned in the near future.</p><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="Symbols/text.html">text</a>
+                </li>
+    </ul>
+</div></p><p> </p>
+        </div>
+        
+    </body>
+</html>

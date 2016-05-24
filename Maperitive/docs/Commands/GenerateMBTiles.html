@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="../MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: generate-mbtiles Command</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="../default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="generate-mbtiles Command">
+	generate-mbtiles Command
+</h1>
+<table class="toc" id="toc">
+	<tbody>
+		<tr>
+			<td><div id="toctitle">
+				<h2>
+					Contents
+				</h2>
+			</div><ul>
+				<li class="toclevel-2"><a href="#Usage">Usage</a></li><li class="toclevel-2"><a href="#Performance%20And%20Storage%20Considerations">Performance And Storage Considerations</a></li><li class="toclevel-2"><a href="#Web%20Maps">Web Maps</a></li><li class="toclevel-2"><a href="#Tiles%20Transparency">Tiles Transparency</a></li><li class="toclevel-2"><a href="#Examples">Examples</a></li>
+			</ul></td>
+		</tr>
+	</tbody>
+</table><p> Generates map tiles which can be used by a web map server. The tiles are generated in the <a href="http://mapbox.com/developers/mbtiles/">MBTiles format</a> which was created and popularized by <a href="http://mapbox.com">MapBox</a>.</p><p>The main benefit of MBTiles format is that all of the tiles are stored in a single SQLite file which makes it much easier to upload the tiles to a web server.</p>
+<h2 id="Usage">
+	Usage
+</h2>
+<pre>
+generate-mbtiles [parameters]
+</pre><p>All parameters are optional:</p><ul>
+	<li><strong>bounds</strong>: optionally specifies the exact geometry bounds of the area to generate the tiles for. If this parameter is not specified, the current map view bounds will be used (or if geometry bounds are set, these boundaries will be used).</li>
+	<li><strong>minzoom</strong>, <strong>maxzoom</strong>: the minimum and the maximum zoom level for which tiles should be generated. If not specified, the command will decide on its own.</li>
+	<li><strong>file</strong>: specifies the file name of the SQLite MBTiles file which will contain the tiles. If not specified, the <strong>Tiles/map.mbtiles</strong> file will be produced.</li>
+	<li><strong>resolution</strong>: the rate of tile resolution (integer value >= 1; the default value 1 means standard resolution - 256x256 pixels). If you, for example, set it to 2, tiles will have 512x512 pixels, but will cover the same map area - this is useful for generating tiles for Retina displays.</li>
+	<li><strong>subpixel</strong>: a positive integer value that is used as a scaling factor when rendering. The bitmap is then downscaled back to the original width and height, but with improved subpixel accuracy. The default value is 1 (no scaling and thus no subpixel accuracy). Recommended values are 2 or 3, anything larger increases the time and resources needed to generate the bitmap. See <a href="http://braincrunch.tumblr.com/post/13459650973/maperitive-beta-subpixel-accuracy">Maperitive Beta: Subpixel Accuracy</a> article for more info.</li>
+	<li><strong>bitmap-type</strong>: specifies the type of the bitmap stored in MBTiles. Only "PNG" and "JPG" types are allowed. PNG is the default.</li>
+	<li><strong>color-depth</strong>: the color depth of the generated tiles. Can be either 8 or 32 bits. The default is 32 bits. The lower color depths require less storage, but you loose the quality and transparency. Only works for PNGs and it doesn't work when running Maperitive on Mono.</li>
+	<li><strong>exclude-partial</strong>: specifies whether to use exclude tiles which are only partially covered by the generation bounds (these tiles are included by default).</li>
+
+</ul>
+<h2 id="Performance And Storage Considerations">
+	Performance And Storage Considerations
+</h2>
+<p>Be careful when specifying zoom levels. Each zoom level needs about four times as many tiles as the previous one, so you can very quickly reach pretty large numbers of tiles which can take a very long time to generate and require a lot of disk space.</p><p>Let's say we have a map that on zoom level 10 roughly covers the whole computer screen (this would approximately be the area of London and its immediate surroundings). That means about 15 tiles for the zoom level 10. What happens if we want to generate tiles for the whole map up to the zoom level 19?</p><ul>
+	<li>zoom level 11: 60 tiles</li>
+	<li>zoom level 12: 240 tiles</li>
+	<li>zoom level 13: 960 tiles</li>
+	<li>...</li>
+	<li>zoom level 17: 245,760 tiles (cca. 80 minutes of work, cca. 10 GB of disk space)</li>
+	<li>zoom level 18: 983,040 tiles (more than 5 hours of work, cca. 40 GB of disk space)</li>
+	<li>zoom level 19: 3,932,160 tiles (almost a full day of work, cca. 160 GB of disk space)</li>
+
+</ul><p><div class="note">
+    <strong>NOTE:</strong> These numbers are a very rough estimate. When calculating the time needed, an average speed of 50 tiles per second  was used, which may vary substantially depending on the map complexity and on the computer hardware performance.
+</div></p>
+<h2 id="Web Maps">
+	Web Maps
+</h2>
+<p><a href="../Commands/GenerateMBTiles.html">generate-mbtiles Command</a> uses all the map sources currently registered in the map. This includes web maps (like OSM base map or Osmarender), so if you have one of those, <strong>be warned that tiles generation will take a very long time</strong> since the generator has to download each tile from the web before it can generate a tile itself. In order not to overload OSM servers, Maperitive limits how fast web tiles can be downloaded.</p>
+<h2 id="Tiles Transparency">
+	Tiles Transparency
+</h2>
+<p>There are various ways of achieving transparency of map tiles. The most common way is to make the background transparent, while all the other rendered content opaque. This is achieved by setting the MapBackgroundOpacity <i>(TODO)</i> in your rules to a value other than 1 (which represents a fully opaque color), usually by setting the background to be fully transparent:</p><pre>
+properties
+	...
+	map-background-opacity : 0
+	...
+</pre><p><div class="note">
+    <strong>NOTE:</strong> This works only if all of the map sources on the map support transparency. Once you have web maps, for example, map-background-opacity will not be able to keep the background transparent.
+</div></p><p>The map on the screen will be drawn using a black background (since it is completely transparent) - this is normal behavior.	</p>
+<h2 id="Examples">
+	Examples
+</h2>
+<pre>
+generate-mbtiles
+</pre><p>Generates tiles using the default behavior.</p><pre>
+generate-mbtiles minzoom=5 maxzoom=8
+</pre><p>Generates tiles from the zoom level 5 up to the zoom level 8.</p><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="../Commands/AddWebMap.html">add-web-map Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/GenerateTiles.html">generate-tiles Command</a>
+                </li>
+    </ul>
+</div></p><p>    </p>
+        </div>
+        
+    </body>
+</html>

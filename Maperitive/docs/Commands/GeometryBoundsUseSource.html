@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="../MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: geo-bounds-use-source Command</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="../default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="geo-bounds-use-source Command">
+	geo-bounds-use-source Command
+</h1>
+<p> Sets the geometry boundaries to correspond to a specific map source.</p>
+<h2 id="Usage">
+	Usage
+</h2>
+<pre>
+geo-bounds-use-source &lt;source index&gt;
+</pre><p>Parameters:</p><ul>
+	<li><strong>source index</strong>: optional parameter specifying the index of the map source. If not specified, the last used map source will be used.</li>
+
+</ul>
+<h2 id="Examples">
+	Examples
+</h2>
+<pre>
+load-source maps\greenland.osm
+geo-bounds-use-source
+</pre><p>Loads the Greenland map and uses its extents to set the geometry bounds.</p><pre>
+geo-bounds-use-source 3
+</pre><p>Uses the extents of the map source with the index of 3 to set the geometry bounds.</p><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="../Commands/ResetGeometryBounds.html">reset-geo-bounds Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/SetGeometryBounds.html">set-geo-bounds Command</a>
+                </li>
+    </ul>
+</div></p><p>  </p>
+        </div>
+        
+    </body>
+</html>

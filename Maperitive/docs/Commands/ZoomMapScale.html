@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="../MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: zoom-map-scale Command</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="../default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="zoom-map-scale Command">
+	zoom-map-scale Command
+</h1>
+<table class="toc" id="toc">
+	<tbody>
+		<tr>
+			<td><div id="toctitle">
+				<h2>
+					Contents
+				</h2>
+			</div><ul>
+				<li class="toclevel-2"><a href="#Usage">Usage</a></li><li class="toclevel-2"><a href="#Map%20Scales%20And%20Display%20Size">Map Scales And Display Size</a></li><li class="toclevel-2"><a href="#Examples">Examples</a></li>
+			</ul></td>
+		</tr>
+	</tbody>
+</table><p> Sets the map zoom level based on the map scale ratio.</p>
+<h2 id="Usage">
+	Usage
+</h2>
+<pre>
+zoom-map-scale &lt;scale&gt;
+</pre><p>Parameters:</p><ul>
+	<li><strong>scale</strong>: specifies the <a href="http://en.wikipedia.org/wiki/Scale_%28map%29">map scale ratio</a>.</li>
+
+</ul>
+<h2 id="Map Scales And Display Size">
+	Map Scales And Display Size
+</h2>
+<p>The map scale depends on the actual physical size of pixels on your display device (monitor). Maperitive uses <i>pixels-per-inch</i> (PPI) units to represent the size of pixels. You can adjust the PPI by setting the <strong>display.ppi</strong> setting to the appropriate value.</p><p>PPI calculator: <a href="http://members.ping.de/~sven/dpi.html">http://members.ping.de/~sven/dpi.html</a>.</p>
+<h2 id="Examples">
+	Examples
+</h2>
+<pre>
+ zoom-map-scale 50000
+</pre><p>Sets the zoom level equivalent to map scale 1 : 50,000</p><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="../Commands/GoHome.html">go-home Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/MovePos.html">move-pos Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/MoveScreenPos.html">move-screen-pos Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/SetHome.html">set-home Command</a>
+                </li>
+    </ul>
+</div></p><p> </p>
+        </div>
+        
+    </body>
+</html>

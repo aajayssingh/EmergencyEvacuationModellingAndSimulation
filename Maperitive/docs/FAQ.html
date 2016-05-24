@@ -1,0 +1,257 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: FAQ</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="FAQ">
+	FAQ
+</h1>
+<table class="toc" id="toc">
+	<tbody>
+		<tr>
+			<td><div id="toctitle">
+				<h2>
+					Contents
+				</h2>
+			</div><ul>
+				<li class="toclevel-2"><a href="#Contact">Contact</a></li><ul>
+					<li class="toclevel-3"><a href="#Asking%20Questions">Asking Questions</a></li><li class="toclevel-3"><a href="#Reporting%20Bugs">Reporting Bugs</a></li><li class="toclevel-3"><a href="#Suggesting%20Features">Suggesting Features</a></li><li class="toclevel-3"><a href="#Contacting%20The%20Author">Contacting The Author</a></li>
+				</ul><li class="toclevel-2"><a href="#&quot;I'm%20a%20total%20newbie&quot;%20questions">"I'm a total newbie" questions</a></li><ul>
+					<li class="toclevel-3"><a href="#My%20rules%20are%20not%20detected">My rules are not detected</a></li>
+				</ul><li class="toclevel-2"><a href="#General%20Usage">General Usage</a></li><ul>
+					<li class="toclevel-3"><a href="#Setting%20up%20internet%20access%20through%20a%20proxy">Setting up internet access through a proxy</a></li>
+				</ul><li class="toclevel-2"><a href="#Commands">Commands</a></li><ul>
+					<li class="toclevel-3"><a href="#&quot;Anonymous%20arguments%20are%20not%20allowed%20here&quot;%20error">"Anonymous arguments are not allowed here" error</a></li>
+				</ul><li class="toclevel-2"><a href="#Rendering%20Rules">Rendering Rules</a></li><ul>
+					<li class="toclevel-3"><a href="#How%20do%20I%20write%20comments?">How do I write comments?</a></li><li class="toclevel-3"><a href="#How%20do%20I%20define%20a%20relation%20rule?">How do I define a relation rule?</a></li><li class="toclevel-3"><a href="#How%20do%20I%20choose%20which%20text%20to%20display?">How do I choose which text to display?</a></li><li class="toclevel-3"><a href="#Does%20Maperitive%20support%20right-to-left%20(RTL)%20scripts?">Does Maperitive support right-to-left (RTL) scripts?</a></li><li class="toclevel-3"><a href="#Can%20I%20set%20the%20word%20wrapping%20for%20texts?">Can I set the word wrapping for texts?</a></li><li class="toclevel-3"><a href="#Can%20I%20use%20SVG%20icons%20in%20rendering%20rules?">Can I use SVG icons in rendering rules?</a></li>
+				</ul><li class="toclevel-2"><a href="#Rendering%20In%20General">Rendering In General</a></li><ul>
+					<li class="toclevel-3"><a href="#How%20do%20I%20increase%20the%20maximum%20zoom%20level?">How do I increase the maximum zoom level?</a></li><li class="toclevel-3"><a href="#How%20do%20I%20render%20a%20map%20without%20any%20text%20labels?">How do I render a map without any text labels?</a></li><li class="toclevel-3"><a href="#My%20OSM%20map%20is%20flooded%20by%20the%20sea">My OSM map is flooded by the sea</a></li><li class="toclevel-3"><a href="#Hypsometric%20layer%20together%20with%20an%20OSM%20layer">Hypsometric layer together with an OSM layer</a></li><li class="toclevel-3"><a href="#Tile%20generator%20creates%20messed%20up%20tiles">Tile generator creates messed up tiles</a></li>
+				</ul><li class="toclevel-2"><a href="#Web%20Maps">Web Maps</a></li><ul>
+					<li class="toclevel-3"><a href="#Some%20Web%20tiles%20are%20missing%20in%20exports">Some Web tiles are missing in exports</a></li>
+				</ul><li class="toclevel-2"><a href="#Exporting%20To%20SVG">Exporting To SVG</a></li><li class="toclevel-2"><a href="#Licensing%20&amp;%20Related">Licensing & Related</a></li><ul>
+					<li class="toclevel-3"><a href="#Where%20is%20the%20source%20code?">Where is the source code?</a></li><li class="toclevel-3"><a href="#Is%20it%20really%20free?">Is it really free?</a></li><li class="toclevel-3"><a href="#Non-commercial%20Use">Non-commercial Use</a></li><li class="toclevel-3"><a href="#Commercial%20use">Commercial use</a></li><ul>
+						<li class="toclevel-4"><a href="#Commercial%20Licensing%20And%20Support">Commercial Licensing And Support</a></li>
+					</ul><li class="toclevel-3"><a href="#Custom%20Work%20And%20Consulting">Custom Work And Consulting</a></li>
+				</ul><li class="toclevel-2"><a href="#Contributing">Contributing</a></li><ul>
+					<li class="toclevel-3"><a href="#Contributing%20Code">Contributing Code</a></li><li class="toclevel-3"><a href="#Contributing%20Documentation">Contributing Documentation</a></li>
+				</ul>
+			</ul></td>
+		</tr>
+	</tbody>
+</table>
+<h2 id="Contact">
+	Contact
+</h2>
+
+<h3 id="Asking Questions">
+	Asking Questions
+</h3>
+<p><strong>Q: What is the best place to ask a question on Maperitive?</strong></p><p>The best place is <a href="https://groups.google.com/forum/?fromgroups#!forum/maperitive">Maperitive's Google Group</a>. There are a lot of good people there that are happy to help and answer your questions.</p>
+<h3 id="Reporting Bugs">
+	Reporting Bugs
+</h3>
+<p><strong>Q: What is the best place to report bugs?</strong></p><p>If the bug occurred inside the application, the best way would be to use the <strong>Report Bug</strong> button, which will  open an e-mail message containing the technical information about the bug.</p><p>If you notice a strange behavior in Maperitive, you can use the <strong>Send Feedback</strong> menu or report a bug at  <a href="http://maperitive.idea.informer.com/">Maperitive's User Feedback site</a>.</p>
+<h3 id="Suggesting Features">
+	Suggesting Features
+</h3>
+<p><strong>Q: I have a feature X I want to have in Maperitive.</strong></p><p>If you have a idea for a feature, there are several ways you can go about it:</p><ul>
+	<li>For features which you think might be of interest for <strong>general public</strong>, you can add a suggestion on <a href="http://maperitive.idea.informer.com/">Maperitive's User Feedback site</a>.</li>
+	<li>For <strong>specialized features</strong> I recommend contacting me directly and we'll discuss it further. If you need a feature for commercial purposes and you need it badly, please read the <i>Commercial Licensing And Support</i> section.</li>
+
+</ul>
+<h3 id="Contacting The Author">
+	Contacting The Author
+</h3>
+<p>You can contact me directly via Maperitive's support e-mail (you can access it through the <strong>Send Feedback</strong> menu in Maperitive) or through <a href="http://igorbrejc.net">my blog</a>.</p>
+<h2 id=""I'm a total newbie" questions">
+	"I'm a total newbie" questions
+</h2>
+
+<h3 id="My rules are not detected">
+	My rules are not detected
+</h3>
+<p><strong>Q: I started Maperitive and loaded the rules (or changed the existing ones), but I cannot see any difference on the map.</strong></p><p>When you start Maperitive, it shows the OSM <strong>Web</strong> map (the Mapnik layer). The Web map is basically the same thing you see in your browser when you visit <a href="http://www.openstreetmap.org/">OSM's main map site</a> and it consists of static bitmap tiles downloaded from an OSM server. Since these tiles are already pre-generated, you cannot change their styling.</p><p>Maperitive rendering rules work on <strong>vector</strong> data, like OSM and GPX files. So you first need to load a vector file into Maperitive to see the actual rules in action. You can use <strong>File | Open Map Sources</strong> menu command to open one or more map sources.</p><pre>
+
+</pre><p>After loading, make sure you turn off the Web map layer (you can see the layers list in the  bottom right tool window).</p>
+<h2 id="General Usage">
+	General Usage
+</h2>
+
+<h3 id="Setting up internet access through a proxy">
+	Setting up internet access through a proxy
+</h3>
+<p>See <a href="Internet_Proxy.html">Internet Proxy</a> for more info.</p>
+<h2 id="Commands">
+	Commands
+</h2>
+
+<h3 id=""Anonymous arguments are not allowed here" error">
+	"Anonymous arguments are not allowed here" error
+</h3>
+<p><strong>Q: when I enter a command, for example:</strong></p><pre>
+set-setting map.decoration.copyright value=false
+</pre><p><strong>I keep getting the "anonymous arguments are not allowed here" error message. What's wrong?</strong></p><p><strong>Short answer</strong>: you need to specify the <i>name</i> of the command argument, in your case you did not specify the name  of the first argument. So the correct command would be:</p><pre>
+set-setting name=map.decoration.copyright value=false
+</pre><p><strong>Long answer</strong>: Maperitive commands fall into two basic categories:</p><ol>
+	<li>Commands with a single argument.</li>
+	<li>Commands with multiple arguments.</li>
+
+</ol><p><i>set-setting</i> command has multiple arguments, so Maperitive expects you to name the argument you specify (since some arguments could be optional).</p><p>Commands with single argument, on the other hand, are specified <i>without</i> the argument name.</p><p>I intend to improve this system in the near future since it causes headaches to a lot of users.</p>
+<h2 id="Rendering Rules">
+	Rendering Rules
+</h2>
+
+<h3 id="How do I write comments?">
+	How do I write comments?
+</h3>
+<p>By putting <strong>//</strong> at the beginning of the line, like</p><pre>
+ // this is a comment
+</pre>
+<h3 id="How do I define a relation rule?">
+	How do I define a relation rule?
+</h3>
+<p>By defining a feature which targets relations, for example:</p><pre>
+features
+	lines
+		cycling route : relation[type=route AND route=bicycle]
+...
+rules
+	target : cycling route
+...
+</pre><p>This example is for stuff you want to draw as lines. If you have a relation which is used for areas (I cannot remember any example of this), you would define the feature under the "areas" subsection.</p>
+<h3 id="How do I choose which text to display?">
+	How do I choose which text to display?
+</h3>
+<p>By setting the <strong>text</strong> property to the name of a tag, like:</p><pre>
+define
+	text : int_name
+</pre><p>By default the text property uses the <i>name</i> tag. <div class="note">
+    <strong>NOTE:</strong> In the near future this will be enhanced with tag fallback functionality and with more complex text construction.
+</div></p>
+<h3 id="Does Maperitive support right-to-left (RTL) scripts?">
+	Does Maperitive support right-to-left (RTL) scripts?
+</h3>
+<p>It does (to a certain extent). See <a href="Properties/TextDirection.html">text-direction</a>.</p>
+<h3 id="Can I set the word wrapping for texts?">
+	Can I set the word wrapping for texts?
+</h3>
+<p>Currently no, but it will be possible soon.</p>
+<h3 id="Can I use SVG icons in rendering rules?">
+	Can I use SVG icons in rendering rules?
+</h3>
+<p>Unfortunately .NET lacks any good SVG library for rendering, so the only other option would be to write one from scratch. This means a <i>lot</i> of work, so SVG icons will not be available any time soon.</p><p>An alternative option is to convert SVG icons to PNGs and save them in Maperitive Cache/Images  directory. Soon I'll add support for loading icons from local disk, too.</p><p>Inkscape offers a command-line interface for such a conversion:<a href="http://old.nabble.com/convert-pdf-to-svg-from-command-line-td17797689.html">http://old.nabble.com/convert-pdf-to-svg-from-command-line-td17797689.html</a> </p>
+<h2 id="Rendering In General">
+	Rendering In General
+</h2>
+
+<h3 id="How do I increase the maximum zoom level?">
+	How do I increase the maximum zoom level?
+</h3>
+<p>You can set the maximum zoom level for the map by setting the value to the <strong>map.max-zoom</strong> setting, example:</p><pre>
+ set-setting name=map.max-zoom value=21
+</pre><p>sets the maximum zoom level to 21. You may need to restart Maperitive in order for this setting to take the full effect. <div class="note">
+    <strong>NOTE:</strong> I do not recommend increasing the maximum zoom level to large values since this can affect the application performance (or it could even cause the application to crash).
+</div></p>
+<h3 id="How do I render a map without any text labels?">
+	How do I render a map without any text labels?
+</h3>
+<p>See <a href="Painting_Stages.html">Painting Stages</a> (under the <i>Techniques</i> section) for an easy way to achieve this.</p>
+<h3 id="My OSM map is flooded by the sea">
+	My OSM map is flooded by the sea
+</h3>
+<p>See <a href="Rendering_Coastlines_And_Sea.html">Rendering Coastlines And Sea</a> for more information about why this happens.</p>
+<h3 id="Hypsometric layer together with an OSM layer">
+	Hypsometric layer together with an OSM layer
+</h3>
+<p><strong>Q: Is it possible to have both the Hypsometric layer plus the Web Map layer on at the same time. Currently  if I turn on the Web Map layer the Hypsometric is not visible. I have to turn off the Web Map layer to see the Hypsometric one.</strong></p><p>Maperitive does not provide an option for this for a simple reason: it would look ugly. The only way  to show both layers would be to somehow blend them (since the OSM web map does not provide a transparency for the background). This would mean <i>all</i> OSM stuff would be blended, including text labels, roads etc. and it would be hard to distinguish these features.</p>
+<h3 id="Tile generator creates messed up tiles">
+	Tile generator creates messed up tiles
+</h3>
+<p>This probably happens because you turned off the <strong>Map decoration</strong> layer. This layer draws  the background color and without it Maperitive just reuses the existing drawing surface without clearing it first.</p>
+<h2 id="Web Maps">
+	Web Maps
+</h2>
+
+<h3 id="Some Web tiles are missing in exports">
+	Some Web tiles are missing in exports
+</h3>
+<p><strong>Q: Sometimes when I export a bitmap which includes a Web map source, some tiles are missing</strong></p><p>Maperitive sets a limit of how many Web tiles it holds in the memory at one time. So if you try to export a large bitmap, it then exceeds this limit and cannot show all the tiles needed.</p><p>You can increase this limit by setting the value to the <strong>webmap.max-loaded-tiles</strong> setting, example:</p><pre>
+ set-setting name=webmap.max-loaded-tiles value=1000
+</pre><p>will allow holding up to 1000 Web tiles in memory.</p>
+<h2 id="Exporting To SVG">
+	Exporting To SVG
+</h2>
+<p>For all SVG-related questions, please visit the <a href="Commands/ExportSvg.html">export-svg Command</a> page.</p>
+<h2 id="Licensing & Related">
+	Licensing & Related
+</h2>
+
+<h3 id="Where is the source code?">
+	Where is the source code?
+</h3>
+<p><strong>Q: I would like to see the source code of Maperitive.</strong></p><p>You can't. Maperitive is not an open source application.</p><p><strong>Q: But you are using open-source third party libraries!?</strong></p><p>All of the third party libraries are properly attributed (see the <i>licenses</i> subdirectory). None of the  third party libraries uses GPL (nor any other kind of viral copyleft license that would require the source code to be distributed).</p><p>If you think there are some licensing issues with third party licenses, feel free to contact me. I am a strong believer in respecting other people's hard work and I take utmost care of adhering to license terms of third party libraries and tools.</p><p><strong>Q: Why is Maperitive not open source?</strong></p><p>While I do believe in open source and I've released a number of open source projects, I've decided against it in the case of Maperitive. There are several reasons for this:</p><ul>
+	<li>The code is unstable: a lot of changes happen between releases, since Maperitive still hasn't reached its full set of functionality (it's not even close to it!). I simply do not have time to ensure any kind of backward compatibility of the code between versions. As long as I'm the only one using it, this is not a problem.</li>
+	<li>The code is not very well documented: partly due to its instability and partly due to my laziness. I don't believe in releasing undocumented open source projects.</li>
+	<li>Releasing the source would mean a lot of my time would have to be devoted to various support questions and discussions ("why did you do it this way?", "I think this can be improved", "How do I do this?" etc.). This would make further development of Maperitive very difficult because of the limited time I have to work on it.</li>
+	<li>Maperitive was born out of my vision of a powerful and easy to use mapmaking software. It is hard to keep that vision and clear direction once a project becomes a collaborative one. A collaborative project would require giving up on some things (like freedom to change the code, having strict code quality and free time to work on features) in exchange for (supposedly) getting more code done. Right now the price outweighs the benefits, as far as I am concerned.</li>
+
+</ul>
+<h3 id="Is it really free?">
+	Is it really free?
+</h3>
+<p><strong>Q: You say Maperitive is free. Is it really free and will it remain free?</strong></p><p>Yes, it's free in the sense that you don't have to pay anything for it. My long-term goal is to make  Maperitive a first-class product with two or more editions. The basic edition of Maperitive will always be free and it will contain all the functionality needed by amateur cartographers and OSM mappers. For users that require more advanced things for professional work I plan to offer a "pro" edition, which you will have to pay for. But the price should still be negligible compared to prices of similar products.</p><p><strong>Q: Why do you need money?</strong></p><p>Unfortunately, the development is not free. Good development tools cost money and without such tools  there can be no good software. Quality knowledge costs, too - so I continually buy books on cartography, geometry, algorithms, graphics. And beer is not free, either.</p><p>I really like developing software like Maperitive and that in itself is a reward for me. An even greater reward is seeing people use it to make beautiful things. However, not being able to make money out of it means I have to do other less interesting stuff to make a living. This is a shame because I have <strong>a lot</strong> of ideas on how Maperitive can be improved, but my free time is limited. That's why I have to strike a balance between offering good products and making some money out of it. We will see how that goes.</p>
+<h3 id="Non-commercial Use">
+	Non-commercial Use
+</h3>
+<p><strong>Q: I have an open source project and I want to use Maperitive to do X/Y/Z. Is it possible?</strong></p><p>It depends on lot of things: your project's license, your project goals, your willingness to do a lot of homework yourself etc. Please contact me directly and describe your project and what your plans are.</p><p><strong>Q: We are a non-profit/humanitarian organization and we need your help in mapping</strong></p><p>Feel free to contact me.</p>
+<h3 id="Commercial use">
+	Commercial use
+</h3>
+<p>Here is are some typical cases of what you <strong>are permitted</strong> to do with Maperitive:</p><ul>
+	<li>You <strong>can</strong> use Maperitive to generate web tiles for your commerical Web services.</li>
+	<li>You <strong>can</strong> run Maperitive on your Web (back-end) servers to provide a commercial service.</li>
+	<li>You <strong>can</strong> produce maps with Maperitive and use them in way you like, as long as you respect licenses of the map sources (OpenStreetMap's, for example). While Maperitive tries hard to indicate the ownership of any kind of map source it uses to generate maps, you as the user are responsible for making sure you are not violating intelectual rights.</li>
+
+</ul><p>And here are some scenarios which Maperitive's license <strong>prohibits</strong>:</p><ul>
+	<li>You <strong>are not allowed</strong> to distribute Maperitive (in any form) to third party customers for any kind of commercial use.</li>
+	<li>You <strong>are not allowed</strong> to charge money for Maperitive.</li>
+	<li>You <strong>are not allowed</strong> to disassemble or reverse-engineer Maperitive code and then use that for commercial purposes without explicit permission from the author (that's me). You should certainly not expect any kind of support or help from me in that case.</li>
+
+</ul><p>If in doubt about your usage case, please contact me.</p>
+<h4 id="Commercial Licensing And Support">
+	Commercial Licensing And Support
+</h4>
+<p><strong>Q: I want to include Maperitive as a library and use its X/Y/Z feature for commercial purposes. Is it possible?</strong></p><p>The general answer is: yes, it is possible. A lot of it depends on your exact usage case, so it is best  to contact me directly and we will discuss it further.</p><p><strong>Q: Can I expect the library documentation in that case?</strong></p><p>I see no point in releasing a library without the documentation. The extensiveness of the documentation depends on  your particular usage case.</p><p><strong>Q: I'm using Maperitive for commercial purposes and I need help / feature X.</strong></p><p>If you are using Maperitive according to the license described above, feel free to contact me and we will discuss  your needs and problems. If you need help for commercial purposes and you're in a hurry, please indicate this in your e-mail.</p>
+<h3 id="Custom Work And Consulting">
+	Custom Work And Consulting
+</h3>
+<p><strong>Q: Do you do custom cartography work (like maps, styles, etc)?</strong></p><p>Yes, I do. Please contact me for more informatiom. </p>
+<h2 id="Contributing">
+	Contributing
+</h2>
+
+<h3 id="Contributing Code">
+	Contributing Code
+</h3>
+<p><strong>Q: I want to contribute some work/code to Maperitive. Is this possible?</strong></p><p>Although I'm very grateful to anyone wishing to contribute its own time and effort to Maperitive,  I have to respectfully decline (at least at this stage of the development). See the above section about licensing and open source for reasons why.</p>
+<h3 id="Contributing Documentation">
+	Contributing Documentation
+</h3>
+<p><strong>Q: Maperitive's documentation is poor, a lot of it missing. I want to contribute by writing documentation.</strong></p><p>Maperitive's documentation is written in wiki text (not Web wiki) which is part of the source code.  It gets compiled and generated during the building phase of the project (and then FTP-ed as HTML files to the Web server). Wiki text is used just for simplicity - beats writing HTML. So the documentation is not in a form that can be freely edited by multiple people, it's just a an electronic book (of sorts) written in a simple format.</p><p>This one of the reasons why contributing directly to the Maperitive Documentation would be impractical. Also, the functionality changes so often that in this phase of the project I don't see it very practical to write a full and extensive documentation. I guess the quality (and quantity) of the docs will grow as the project grows.</p><p>You are, however, welcome to contribute, for example, by writing docs & tutorials on the  <a href="http://wiki.openstreetmap.org/wiki/Maperitive">OSM Wiki pages</a>.</p><p> </p>
+        </div>
+        
+    </body>
+</html>

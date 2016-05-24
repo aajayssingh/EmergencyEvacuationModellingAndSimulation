@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: Querying GPS Data</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="Querying GPS Data">
+	Querying GPS Data
+</h1>
+<table class="toc" id="toc">
+	<tbody>
+		<tr>
+			<td><div id="toctitle">
+				<h2>
+					Contents
+				</h2>
+			</div><ul>
+				<li class="toclevel-2"><a href="#Querying%20Tracks">Querying Tracks</a></li><li class="toclevel-2"><a href="#Querying%20Routes">Querying Routes</a></li><li class="toclevel-2"><a href="#Querying%20Waypoints">Querying Waypoints</a></li>
+			</ul></td>
+		</tr>
+	</tbody>
+</table><p>GPS data in Maperitive is treated very similarly to OSM data. You can execute queries on GPS  tracks, routes and waypoints just like you would on OSM nodes, ways and relations. For the general overview of querying, see <a href="Querying_Data.html">Querying Data</a>.</p>
+<h2 id="Querying Tracks">
+	Querying Tracks
+</h2>
+<p>GPS tracks can be queried using the <strong>gpstrack</strong> target, for example</p><pre>
+ gpstrack[]
+</pre><p>looks for all tracks in loaded map sources. You can also query points of GPS tracks, like</p><pre>
+ gpstrack[].gpspoint[]
+</pre><p>looks for all points of all GPS tracks.</p><p>GPS tracks also have the following tags which can be used in filtering search results:</p><ul>
+	<li>name</li>
+	<li>comment</li>
+	<li>description</li>
+	<li>sourceOfData</li>
+	<li>trackNumber</li>
+	<li>trackType</li>
+
+</ul><p><div class="note">
+    <strong>NOTE:</strong> These tags are currently not very useful for filtering. Future versions of Maperitive will have a more elaborate system for filtering which will include track speeds, elevations and similar.
+</div></p>
+<h2 id="Querying Routes">
+	Querying Routes
+</h2>
+<p>GPS routes can be queried using the <strong>gpsroute</strong> target, for example</p><pre>
+ gpsroute[]
+</pre><p>looks for all routes in loaded map sources. You can also query points of GPS routes, like</p><pre>
+ gpsroute[].gpspoint[]
+</pre><p>looks for all points of all GPS routes.</p><p>GPS routes have the same tags which can be used in filtering search results as GPS tracks.</p>
+<h2 id="Querying Waypoints">
+	Querying Waypoints
+</h2>
+<p>GPS waypoints (independent GPS points, not those that are part of tracks or routes) can be queried using the <strong>gpswaypoint</strong> target, for example</p><pre>
+ gpswaypoint[]
+</pre><p>looks for all waypoints in loaded map sources. </p><p>GPS waypoints also have the following tags which can be used in filtering search results:</p><ul>
+	<li>name</li>
+	<li>comment</li>
+	<li>description</li>
+	<li>sourceOfData</li>
+	<li>elevation</li>
+	<li>magneticVariation</li>
+	<li>geoidHeight</li>
+	<li>symbol</li>
+	<li>pointType</li>
+	<li>fixType</li>
+	<li>numberOfSatellites</li>
+	<li>hdop</li>
+	<li>vdop</li>
+	<li>pdop</li>
+	<li>ageOfGpsData</li>
+	<li>dgpsId</li>
+
+</ul><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="Commands/Find.html">find Command</a>
+                </li>
+        <li>
+                    <a href="Commands/FindHere.html">find-here Command</a>
+                </li>
+        <li>
+                    <a href="Querying_Data.html">Querying Data</a>
+                </li>
+    </ul>
+</div></p><p>  </p>
+        </div>
+        
+    </body>
+</html>

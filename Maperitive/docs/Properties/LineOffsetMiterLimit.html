@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="../MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: line-offset-miter-limit</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="../default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="line-offset-miter-limit">
+	line-offset-miter-limit
+</h1>
+<p></p><p>A <a href="../Zoomable_Property.html">zoomable value</a> which specifies the miter limit of an offset line. The miter is the length between the imaginary center of the line at the two line segments' join and the actual offset join. When the two line segments are nearly parallel this length can be very large, so the <a href="../Properties/LineOffsetMiterLimit.html">line-offset-miter-limit</a> is used to limit it.</p><p>The value is specified as a multiplier of the <a href="../Properties/LineOffset.html">line-offset</a> and must be a value  greater than or equal to 1. The default value is 2.</p><p>Example:</p><pre>
+define
+	line-color : red
+	line-opacity : 0.8
+	line-offset : 14:0;15:3;16:5
+	line-offset-sides : left
+	line-offset-miter-limit : 3
+draw : line
+</pre><p>draws the line offset with the miter limit of 3.</p><p>Below is an example of several different miter limits (the top one is too large to have any effect on the join, the second one uses a miter limit of 4, the third one uses the default 2 and the last one uses the minimum 1):</p><p><div class="image">
+	<img src="../images/LineOffsetMiterLimits.png" />
+</div></p><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="../Properties/LineEndCap.html">line-end-cap</a>
+                </li>
+        <li>
+                    <a href="../Properties/LineOffset.html">line-offset</a>
+                </li>
+        <li>
+                    <a href="../Properties/LineOffsetSides.html">line-offset-sides</a>
+                </li>
+        <li>
+                    <a href="../Properties/LineStartCap.html">line-start-cap</a>
+                </li>
+        <li>
+                    <a href="../Properties/LineStyle.html">line-style</a>
+                </li>
+    </ul>
+</div></p><p>  </p>
+        </div>
+        
+    </body>
+</html>

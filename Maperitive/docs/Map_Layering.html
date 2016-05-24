@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: Map Layering</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="Map Layering">
+	Map Layering
+</h1>
+<table class="toc" id="toc">
+	<tbody>
+		<tr>
+			<td><div id="toctitle">
+				<h2>
+					Contents
+				</h2>
+			</div><ul>
+				<li class="toclevel-2"><a href="#Introduction">Introduction</a></li><li class="toclevel-2"><a href="#Symbols%20And%20Layering">Symbols And Layering</a></li><li class="toclevel-2"><a href="#Have%20Your%20Say">Have Your Say</a></li><li class="toclevel-2"><a href="#OSM%20Layers">OSM Layers</a></li><li class="toclevel-2"><a href="#Examples%20And%20Tricks">Examples And Tricks</a></li>
+			</ul></td>
+		</tr>
+	</tbody>
+</table>
+<h2 id="Introduction">
+	Introduction
+</h2>
+<p>This section gives a quick introduction in how Maperitive layers map elements when drawing a map. The layering affects what elements will be drawn visible above and what elements will be hidden or partially hidden by other elements.</p><p>As the writer of rules you can influence this to a great extent. But there are also some built-in mechanisms in  Maperitive which help you avoid problems like having a village name label partially hidden by a forest polygon.</p>
+<h2 id="Symbols And Layering">
+	Symbols And Layering
+</h2>
+<p>Each of Maperitive <a href="Map_Symbols.html">map symbols</a> has an intrinsic drawing priority. There is no point in displaying a text label which is then covered by some grassy field - text labels are for humans and if they are not visible, they have no function, since no one can read them. That's why <strong>all text symbols in Maperitive are drawn above anything else</strong>. The next symbol in priority is an <strong>icon</strong> (so texts can overlap icons, but not vice versa). After the icons, we have <strong>lines</strong> and <strong>contours</strong>. Below these come <strong>fill</strong> symbols. So poor old fill symbols are constantly pushed around (or below, to be precise) by their older brothers. <div class="note">
+    <strong>NOTE:</strong> There are some other special symbol types, like the map background and sea, which are drawn below everything else.
+</div></p>
+<h2 id="Have Your Say">
+	Have Your Say
+</h2>
+<p>So I have just described the ground rules which you cannot change. Where it gets interesting is when the two symbols of the same type meet. This is the part you <i>can</i> change.</p><ul>
+	<li><strong>Rule ordering</strong>: the order in which you specify rules directly influences the order in which the elements will be layered. If a rule A is specified <strong>before</strong> the rule B, then the features covered by rule A will (in general) be drawn <strong>above</strong> features specified by the rule B.</li>
+	<li><strong>Feature ordering</strong>: the order in which you specify features influences the order in which the features will be layered <strong>within a single rule</strong>. This is important for rules which cover more than one feature. So if a feature A is specified <strong>before</strong> the feature B, then the feature A will (in general) be drawn <strong>above</strong> the feature B.</li>
+
+</ul><p><div class="note">
+    <strong>NOTE:</strong> I use the phrase "in general" because you have to take into account other mentioned factors when figuring out the layering.
+</div></p>
+<h2 id="OSM Layers">
+	OSM Layers
+</h2>
+<p>For features that come from the OSM world, another thing that influences the drawing priority is the <strong>layer</strong> tag. This tag takes precedence over the ordering of rules and features mentioned above. So a bridge with <i>layer=1</i> will be drawn above a canal OSM way if the canal has a layer value of 0 or below (or it doesn't have a layer value specified at all).</p><p>There is a way to override this behavior by setting the TopmostLayer <i>(TODO)</i> rendering property to <strong>true</strong>. With this property turned on, all the rendered features will behave as if they have the highest possible layer tag value. This is especially useful when rendering relations, since usually a relation itself does not have a layer tag and Maperitive will use layer tag values of relation's members (which can vary). If you want to make sure all the relation's members are drawn on top of everything else, set the TopmostLayer <i>(TODO)</i> to <i>true</i>.</p>
+<h2 id="Examples And Tricks">
+	Examples And Tricks
+</h2>
+<p><strong>TO BE CONTINUED</strong></p><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="Feature_Selectors.html">Feature Selectors</a>
+                </li>
+        <li>
+                    <a href="Rulesets.html">Introduction To Rulesets</a>
+                </li>
+        <li>
+                    <a href="Map_Symbols.html">Map Symbols</a>
+                </li>
+        <li>
+                    <a href="Painting_Stages.html">Painting Stages</a>
+                </li>
+        <li>
+                    <a href="Querying_Data.html">Querying Data</a>
+                </li>
+        <li>
+                    <a href="Querying_GPS_Data.html">Querying GPS Data</a>
+                </li>
+        <li>
+                    <a href="Rendering_Coastlines_And_Sea.html">Rendering Coastlines And Sea</a>
+                </li>
+        <li>
+                    <a href="Rendering_Rules_Advanced.html">Rendering Rules Advanced</a>
+                </li>
+        <li>
+                    <a href="Rendering_Rules_Introduction.html">Rendering Rules Introduction</a>
+                </li>
+    </ul>
+</div></p><p>  </p>
+        </div>
+        
+    </body>
+</html>

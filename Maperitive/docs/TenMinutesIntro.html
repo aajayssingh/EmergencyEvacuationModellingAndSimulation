@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: Ten Minutes Introduction To Maperitive</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="Ten Minutes Introduction To Maperitive">
+	Ten Minutes Introduction To Maperitive
+</h1>
+<table class="toc" id="toc">
+	<tbody>
+		<tr>
+			<td><div id="toctitle">
+				<h2>
+					Contents
+				</h2>
+			</div><ul>
+				<li class="toclevel-2"><a href="#User%20Interface%20-%20The%20Basics">User Interface - The Basics</a></li><li class="toclevel-2"><a href="#Using%20The%20Map">Using The Map</a></li><li class="toclevel-2"><a href="#Loading%20Map%20Data">Loading Map Data</a></li><li class="toclevel-2"><a href="#Editing%20Rendering%20Rules">Editing Rendering Rules</a></li><li class="toclevel-2"><a href="#Exporting%20Maps">Exporting Maps</a></li>
+			</ul></td>
+		</tr>
+	</tbody>
+</table><p> This tutorial will explain the basics about using Maperitive. We will go through the user interface, load some map data and then make a nice map image that you can then use in other software.</p><p>Note: if you haven't done it already, please read the <a href="TwoMinutesIntro.html">Two Minutes Introduction To Maperitive</a> and then return back here.</p>
+<h2 id="User Interface - The Basics">
+	User Interface - The Basics
+</h2>
+<p>When you start Maperitive, the first thing you'll notice is the map. As we explained  in the <a href="TwoMinutesIntro.html">Two Minutes Introduction To Maperitive</a>, it's actually a <strong>web</strong> map. You can see that it is a web map by looking at the <strong>Map Sources</strong> window at bottom right of the screen: <div class="image">
+	<img src="images/MapSourceWebMap.png" />
+</div></p><p>The <strong>Map Sources</strong> window shows the list of data sources that your map uses. Initially, it's just a single web map.</p><p>At the bottom left part of the screen we have a <strong>Commander</strong> window: <div class="image">
+	<img src="images/Commander.png" />
+</div></p><p>It is basically a "ship's log" of what goes on in Maperitive. Initially it says something like  "<i>Running the default script...</i>". You see, when started, Maperitive runs a default script that loads a web map as a source. You can run other scripts, too, but more about that in later tutorials.</p><p>Below the Commander window, there is a <strong>Command Prompt</strong> text box: <div class="image">
+	<img src="images/CommandPromptInactive.png" />
+</div></p><p>Right now, the text box is in gray color - this means it's not active. By pressing the Ctrl+Enter keys, you activate  it and it becomes yellow. You can use the Command Prompt to type various commands and thus control Maperitive. For example, type "zoom-in" and press Enter: <div class="image">
+	<img src="images/CommandPromptActive.png" />
+</div></p>
+<h2 id="Using The Map">
+	Using The Map
+</h2>
+<p>The map is the main feature of Maperitive. Most of what happens, happens on the map. So it's good to get to  know how to move around it:</p><ul>
+	<li>By holding the left mouse button and dragging the mouse, you move around the map.</li>
+	<li>Scrolling the mouse wheel is one way of zooming in our out of the map.</li>
+	<li>If you want to zoom to a certain map area, press the Shift button, followed by the left mouse button and then drag the mouse to draw a rectangle on the map. Once you have released the left mouse button, Maperitive will zoom into the rectangle you have drawn.</li>
+
+</ul>
+<h2 id="Loading Map Data">
+	Loading Map Data
+</h2>
+<p>Looking at the tired old OSM base map soon becomes boring, doesn't it? We want our own map style, after all that's  why you gave Maperitive a shot in the first place. To be able to draw our own maps with our own content and styling, we first need to provide Maperitive with some vector map data. For the purpose of this tutorial I recommend getting hold of some small OSM XML file. There are various ways you can obtain OSM XML files:</p><ol>
+	<li>Using the browser, go to <a href="http://www.openstreetmap.org/">OSM map</a>, choose a smallish area (let's say the size of a few city blocks) and then click on the <strong>Export</strong> tab. Select the <strong>OpenStreetMap XML Data</strong> radio button value, click on the <strong>Export</strong> button and you'll receive a file called <i>map.osm</i> from the server.</li>
+	<li>Using <a href="http://wiki.openstreetmap.org/wiki/JOSM">JOSM</a>, you can download a small area (again, the size of a few city blocks) and then save it to disk.</li>
+	<li>You can download pre-made OSM extracts from <a href="http://download.geofabrik.de/">http://download.geofabrik.de/</a> or <a href="http://downloads.cloudmade.com/">http://downloads.cloudmade.com/</a>. Make sure you choose OSM XML file, .osm.bz2 or .osm.pbf file. Again, choose some small country (or part of a country) for the purpose of this tutorial.</li>
+
+</ol><p>Once you have an OSM file on your disk, you can use <strong>File | Open Map Source...</strong> menu command to load it onto the map.  Or you can simply drag and drop the file onto the map, the effect is the same. You can now notice that you have two map sources in your map: <div class="image">
+	<img src="images/MapSourceTwoSources.png" />
+</div></p><p>To really see the vector map in action, we will now <strong>hide the web map</strong>. You can do this by clicking on the yellow star  beside the web map in the Map Sources window. The star will turn gray, which indicates it is now hidden.</p>
+<h2 id="Editing Rendering Rules">
+	Editing Rendering Rules
+</h2>
+<p>Now let's change the map style a little, just for the fun of it. Select the <strong>Map | Edit Rendering Rules</strong> menu command  and your favorite text editor should appear with rendering rules loaded. Without going into details about rendering rules (you can read more about them <a href="Rendering_Rules_Introduction.html">Rendering Rules Introduction</a>), we'll do a simple hack: change the color of residential streets from white to red. In your text editor, search for the "<strong>$regex("(.*residential)</strong>" text (without the quotes). You'll find text lines that look something like</p><pre>
+	elseif : $regex(&quot;(.*residential)|(.*unclassified)&quot;)
+		define
+			min-zoom : 13
+			line-color : white
+</pre><p>Change the "<strong>line-color : white</strong>" line to "<strong>line-color : red</strong>" and save the file. Now look back at the map.  Your residential streets should now be in red (you might have to zoom in close enough to see it).</p><p>Now undo the changes in the rules file - red streets look ugly.</p>
+<h2 id="Exporting Maps">
+	Exporting Maps
+</h2>
+<p>Now that we have explored the basics of map styling, we can visit one of the other important functions of Maperitive:  exporting maps so that they can be used in other programs, be printed or published on the web. Although you can export the map into various forms, in this tutorial we will cover only exporting into bitmaps.</p><p>Exporting the map is actually quite easy: move the map to the area of your choice and select the <strong>Tools | Export To Bitmap</strong>  menu command. What you see on the map will be directly exported into a file called <strong>output.png</strong> on your disk (the full file path will be shown in the Commander window).</p><p>This is the simplest scenario for exporting, but the <a href="Commands/ExportBitmap.html">export-bitmap Command</a> has many parameters that  allow a lot of control of how the exporting gets done. But I'll leave this for another tutorial.</p><p></p>
+        </div>
+        
+    </body>
+</html>

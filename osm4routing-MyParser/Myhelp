@@ -1,0 +1,14 @@
+i have created a dir xmlwriter to get the geo data in xml format or city gml format
+
+1. run make file 
+> make
+
+2. ./osm4routing map.osm		
+
+3. edges.csv and nodes.csv files are created.
+
+
+1. install expat by downloading expat source code.
+run ./configure
+make install 
+apt-cache search libname

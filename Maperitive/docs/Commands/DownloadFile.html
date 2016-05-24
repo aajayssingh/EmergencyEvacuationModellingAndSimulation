@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="../MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: download-file Command</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="../default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="download-file Command">
+	download-file Command
+</h1>
+<p> Downloads a file from Web and saves it on the disk.</p>
+<h2 id="Usage">
+	Usage
+</h2>
+<pre>
+ download-file
+	url=&lt;download url&gt;
+	[file=&lt;output file&gt;]
+	[timeout=&lt;download timeout&gt;]
+</pre><p>Parameters:</p><ul>
+	<li><strong>url</strong>: download URL. You need to specify the URL in the full format (including the <a href="http://">http://</a> part).</li>
+	<li><strong>file</strong>: specifies the output file name. If not specified, the command will use the file name extracted from the download URL.</li>
+	<li><strong>timeout</strong>: specifies the maximum period to wait for the download server to respond before the command returns an error. Timeout is specified in the <i>D.hh:mm:ss</i> format (<i>D</i> is optional). If not specified, one minute will be used.</li>
+
+</ul>
+<h2 id="Examples">
+	Examples
+</h2>
+<pre>
+download-file url=http://download.geofabrik.de/osm/europe/montenegro.osm.bz2
+</pre><p>Downloads <i>montenegro.osm.bz2</i> file from Geofabrik's download server and saves it to the disk.</p><pre>
+download-file url=http://download.geofabrik.de/osm/europe/montenegro.osm.bz2 file=test.osm.bz2
+</pre><p>Downloads <i>montenegro.osm.bz2</i> file from Geofabrik's download server and saves it to the disk as <i>test.osm.bz2</i>.</p><pre>
+download-file url=http://download.geofabrik.de/osm/europe/montenegro.osm.bz2 timeout=2:0:0
+</pre><p>Downloads <i>montenegro.osm.bz2</i> file from Geofabrik's download server using two hours of timeout.</p><p> </p>
+        </div>
+        
+    </body>
+</html>

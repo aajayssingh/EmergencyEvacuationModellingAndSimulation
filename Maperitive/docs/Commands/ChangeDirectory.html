@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="../MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: change-dir Command</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="../default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="change-dir Command">
+	change-dir Command
+</h1>
+<p> Changes the current directory.</p><p>All command which work with files use this current directory when determining locations for files which are  specified in a relative way. So for example</p><pre>
+change-dir c:\mydata
+export-bitmap file=images\output.png
+</pre><p>will save the <i>output.png</i> to the <i>c:\mydaya\images</i> directory.</p>
+<h2 id="Usage">
+	Usage
+</h2>
+<pre>
+change-dir &lt;directory&gt;
+</pre><p>Parameters:</p><ul>
+	<li><strong>directory</strong>: the directory that should become the new current directory. If the directory does not exist, the command will fail.</li>
+
+</ul><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="../Command_Line.html">Command Line</a>
+                </li>
+        <li>
+                    <a href="../Commands/SaveMapScript.html">save-map-script Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/UseScriptDirectory.html">use-script-dir Command</a>
+                </li>
+    </ul>
+</div></p><p> </p>
+        </div>
+        
+    </body>
+</html>

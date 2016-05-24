@@ -1,0 +1,55 @@
+INSTRUCTIONS TO RUN map.osm parser: 
+
+1. Download the folder attached
+
+2. Set the two variables
+	export http_proxy="http://usrname:passwrd@host:port"
+	export https_proxy="https://usrname:passwrd@host:port"
+
+3. Go inside the osm4routing folder and run
+	sudo -E python setup.py install
+It should give no errors provided expat and swig are installed.
+
+4. The executable is created in /usr/local/bin. Navigate to the directory and run
+	./osm4routing --help
+	
+5. If step 4 works, copy the executable to the downloaded folder and start with any .osm file.
+
+6. --help  will give all the relevant options.
+
+If it runs successfully two files will be generated
+	1. nodes.csv
+		It contains node ids and their longitude and latitude
+	2. edges.csv
+	
+	
+INSTRUCTIONS TO RUN C++ CODE
+
+	After nodes.csv and edges.csv are successfully created run following commands. 
+	Make sure to change path of edges.csv (line no.37) and nodes.csv(line no. 77) files in Routing.cpp file.
+1. Nevigate to following folder.
+	cd /boost_1_57_0/libs/graph/examples
+2. Run routing.cpp file and provide path to boost libraryusing following command
+
+	> g++ -I PathToboost_1_57_0Library routing.cpp -o routing			
+	//g++ -g -std=c++11 -I /home/ajay/CCPP/EmergencyTransportationPrj/TransportationFlow/boost_1_57_0/libs routing.cpp -o routing
+
+	// g++ -I /home/ajay/CCPP/EmergencyTransportationPrj/TransportationFlow/boost_1_57_0/libs -I /usr/include/eigen3 routing.cpp -o routing
+	> ./routing
+	
+	
+FINAL VERSION:
+root directory is EmergencyTransportationPrj
+
+to run >
+cmd> make Makefile
+
+Note : map.osm in EmergencyTransportationPrj dir is command line parameter passed .
+
+
+
+
+
+
+
+

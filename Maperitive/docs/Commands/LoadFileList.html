@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="../MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: load-file-list Command</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="../default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="load-file-list Command">
+	load-file-list Command
+</h1>
+<p> Loads a file list of from a text file. This file list can then be used for other commands which support file lists as input.</p>
+<h2 id="Usage">
+	Usage
+</h2>
+<pre>
+ load-file-list file=&lt;list file name&gt; [base-dir=&lt;base directory&gt;]
+</pre><p>Parameters:</p><ul>
+	<li><strong>file</strong>: specifies the name of the list file.</li>
+	<li><strong>base-dir</strong>: specifies the base directory to use for this file list. All file paths will be relative to this base directory. This parameter is optional.</li>
+
+</ul>
+<h2 id="Examples">
+	Examples
+</h2>
+<pre>
+ load-file-list file=list.txt
+ ftp-upload host=myftp.com user=me pwd=secret remote-dir=uploadplace
+</pre><p>Uploads all the files from a file list stored in the <i>list.txt</i> file to an FTP server.</p><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="../Commands/ExportBitmap.html">export-bitmap Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/ExportSvg.html">export-svg Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/FtpUpload.html">ftp-upload Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/GenerateMBTiles.html">generate-mbtiles Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/GenerateTiles.html">generate-tiles Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/SaveFileList.html">save-file-list Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/SaveMapScript.html">save-map-script Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/UseRuleset.html">use-ruleset Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/ZipFiles.html">zip Command</a>
+                </li>
+    </ul>
+</div></p><p> </p>
+        </div>
+        
+    </body>
+</html>

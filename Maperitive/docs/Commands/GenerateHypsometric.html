@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="../MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: generate-hypsometric Command</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="../default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="generate-hypsometric Command">
+	generate-hypsometric Command
+</h1>
+<table class="toc" id="toc">
+	<tbody>
+		<tr>
+			<td><div id="toctitle">
+				<h2>
+					Contents
+				</h2>
+			</div><ul>
+				<li class="toclevel-2"><a href="#Usage">Usage</a></li><ul>
+					<li class="toclevel-3"><a href="#Color%20Ramps">Color Ramps</a></li>
+				</ul><li class="toclevel-2"><a href="#Examples">Examples</a></li><ul>
+					<li class="toclevel-3"><a href="#Standard%20Tinting">Standard Tinting</a></li><li class="toclevel-3"><a href="#Shades%20Of%20Gray%20Tinting">Shades Of Gray Tinting</a></li><li class="toclevel-3"><a href="#Tinting%20And%20Shading">Tinting And Shading</a></li>
+				</ul>
+			</ul></td>
+		</tr>
+	</tbody>
+</table><p> Generates a hypsometric tinting image.</p>
+<h2 id="Usage">
+	Usage
+</h2>
+<pre>
+generate-hypsometric [parameters]
+</pre><p>All parameters are optional:</p><ul>
+	<li><strong>bounds</strong>: optionally specifies the exact geometry bounds of the area to generate the hypsometric tinting. If this parameter is not specified, the current map view bounds will be used (or if geometry bounds are set, these boundaries will be used).</li>
+	<li><strong>ramps</strong>: specifies color ramps to use for the tinting. If not specified, the default ramps will be used.</li>
+	<li><strong>sample-rate</strong>: a real value greater than or equal to 1 which represents the sample rate to use when fetching original DEM data. Use value larger than the default 1 if the map area is very big, this will descre</li>
+
+</ul>
+<h3 id="Color Ramps">
+	Color Ramps
+</h3>
+<p><strong>ramps</strong> parameter lets you specify your own hypsometric tinting scheme. This is done by defining key elevation points and their associated colors, for example:</p><ul>
+	<li>elevation of 0 meters should be represented by a green color</li>
+	<li>elevation of 1000 meters should be represented by a light brown color</li>
+	<li>elevation of 2000 meters should be represented by the white color.</li>
+
+</ul><p>Then you specify these in the parameter:</p><pre>
+ramps=0:green;1000:#FFCB77;2000:white
+</pre><p>As you can see, the format of the parameter is</p><pre>
+elevation1:color1;elevation:color2;...;elevationN:colorN
+</pre>
+<h2 id="Examples">
+	Examples
+</h2>
+
+<h3 id="Standard Tinting">
+	Standard Tinting
+</h3>
+<pre>
+ generate-hypsometric
+</pre><p>Generates the hypsometric tinting using the default values. <div class="image">
+	<img src="../images/hypso_standard.jpg" />
+</div></p>
+<h3 id="Shades Of Gray Tinting">
+	Shades Of Gray Tinting
+</h3>
+<pre>
+ generate-hypsometric ramps=300:white;1500:black
+</pre><p>Generates the hypsometric tinting so that everything below the elevation of 300 meters is colored in pure white,  while the elevation of 1500 meters and above is in pure black. Everything in between is a shade of gray. <div class="image">
+	<img src="../images/hypso_bw.jpg" />
+</div></p>
+<h3 id="Tinting And Shading">
+	Tinting And Shading
+</h3>
+<p>You can mix hypsometric tinting with hillshading methods like <a href="../Commands/GenerateReliefImageIgor.html">generate-relief-igor Command</a>:</p><pre>
+ generate-hypsometric
+ generate-relief-igor
+</pre><p><div class="image">
+	<img src="../images/hypso_shading.jpg" />
+</div></p><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="../Commands/GenerateReliefImageIgor.html">generate-relief-igor Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/SetDemSource.html">set-dem-source Command</a>
+                </li>
+    </ul>
+</div></p><p>  </p>
+        </div>
+        
+    </body>
+</html>

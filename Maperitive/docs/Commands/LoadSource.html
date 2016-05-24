@@ -1,0 +1,113 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="../MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: load-source Command</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="../default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="load-source Command">
+	load-source Command
+</h1>
+<table class="toc" id="toc">
+	<tbody>
+		<tr>
+			<td><div id="toctitle">
+				<h2>
+					Contents
+				</h2>
+			</div><ul>
+				<li class="toclevel-2"><a href="#Usage">Usage</a></li><li class="toclevel-2"><a href="#Map%20Source%20Types">Map Source Types</a></li><ul>
+					<li class="toclevel-3"><a href="#Loading%20Georeferenced%20Images">Loading Georeferenced Images</a></li>
+				</ul><li class="toclevel-2"><a href="#Examples">Examples</a></li>
+			</ul></td>
+		</tr>
+	</tbody>
+</table><p> Loads a map source into the current map. The newly loaded map source will be added to the end of the list of map sources (see <a href="../Commands/ListSources.html">list-sources command</a>). The currently active ruleset will be applied on the map source (see <a href="../Rulesets.html">Introduction To Rulesets</a>).</p>
+<h2 id="Usage">
+	Usage
+</h2>
+<pre>
+ load-source &lt;map source location&gt;
+</pre><p>Parameters:</p><ul>
+	<li><strong>map source location</strong>: specifies the location of the map source. Currently you can only load map sources from a local storage (disk or network share).</li>
+
+</ul><p>After executing the command, the current map source index will be set to this newly loaded source.</p><p><div class="note">
+    <strong>NOTE:</strong> You need to load a ruleset before loading any sources, otherwise the command will fail.  This is especially important if you're running your own custom scripts.
+</div></p>
+<h2 id="Map Source Types">
+	Map Source Types
+</h2>
+<p>Maperitive currently supports the following map source types:</p><ul>
+	<li><strong>OSM XML</strong> files, both uncompressed (.osm extension) or compressed (.osm.bz2 extension)</li>
+	<li><strong>OSM PBF</strong> files (.pbf extension) - these are equivalent to OSM XML files, but more compact and faster to load.</li>
+	<li><a href="http://en.wikipedia.org/wiki/GPX">GPX</a> files</li>
+	<li><strong>Contour files</strong>: these are SQLite database files generated using generate-contours <i>(TODO)</i> command and contain relief contours.</li>
+	<li><a href="../Georeferenced_Images.html">Georeferenced Images</a></li>
+
+</ul>
+<h3 id="Loading Georeferenced Images">
+	Loading Georeferenced Images
+</h3>
+<p>Georeferenced images can be drawn either in the background or in the foreground, depending on the nature of the image:</p><ul>
+	<li>Image which contains semitransparent data (like hillshading) is best drawn in the foreground, otherwise the image might be overlapped or hidden by some other map sources.</li>
+	<li>Opaque images might hide other data, so they are usually drawn in the background.</li>
+
+</ul><p><a href="../Commands/LoadSource.html">load-source Command</a> always loads images so that they are drawn <strong>in the background</strong>. If you need to control this, you should use <a href="../Commands/LoadImage.html">load-image Command</a> instead.</p>
+<h2 id="Examples">
+	Examples
+</h2>
+<pre>
+load-source maps/berlin.osm
+</pre><p>Loads the <i>berlin.osm</i> OSM XML file stored in the <i>maps</i> directory.</p><pre>
+load-source maps/berlin.osm.pbf
+</pre><p>Loads the <i>berlin.osm.pbf</i> OSM PBF file stored in the <i>maps</i> directory.</p><pre>
+load-source Switzerland.contours
+</pre><p>Loads the <i>Switzerland.contours</i> relief contours file.</p><pre>
+load-source mytracks/Current.gpx
+</pre><p>Loads the <i>Current.gpx</i> GPX file stored in the <i>mytracks</i> directory.</p><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="../Commands/AddWebMap.html">add-web-map Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/DownloadOsm.html">download-osm Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/GeometryBoundsUseSource.html">geo-bounds-use-source Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/ListSources.html">list-sources Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/LoadImage.html">load-image Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/ReloadSource.html">reload-source Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/RemoveSource.html">remove-source Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/SaveMapScript.html">save-map-script Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/SetSource.html">set-source Command</a>
+                </li>
+    </ul>
+</div></p><p>  </p>
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="../MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: set-dem-source Command</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="../default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="set-dem-source Command">
+	set-dem-source Command
+</h1>
+<table class="toc" id="toc">
+	<tbody>
+		<tr>
+			<td><div id="toctitle">
+				<h2>
+					Contents
+				</h2>
+			</div><ul>
+				<li class="toclevel-2"><a href="#Usage">Usage</a></li><li class="toclevel-2"><a href="#Using%20Built-In%20DEM%20Sources">Using Built-In DEM Sources</a></li><li class="toclevel-2"><a href="#Using%20Your%20Own%20Custom%20DEM%20Sources">Using Your Own Custom DEM Sources</a></li><li class="toclevel-2"><a href="#Links%20&amp;%20Resources">Links & Resources</a></li>
+			</ul></td>
+		</tr>
+	</tbody>
+</table><p> Specifies which DEM (digital elevation model) source Maperitive should use for various DEM-related operations. You can specify <strong>built-in sources</strong> (like SRTM1 and SRTM3) or your <strong>custom source</strong>.</p>
+<h2 id="Usage">
+	Usage
+</h2>
+<pre>
+ set-dem-provider 
+     name=&lt;DEM source name&gt;
+</pre><p>Parameters:</p><ul>
+	<li><strong>name</strong>: specifies the name of the DEM source. See the subsections below for instructions on setting built-in and custom DEM sources.</li>
+
+</ul>
+<h2 id="Using Built-In DEM Sources">
+	Using Built-In DEM Sources
+</h2>
+<p>Built-in DEM sources are easier to use because Maperitive automatically downloads the DEM data from the required web server. Currently there are three DEM sources built into Maperitive:</p><ul>
+	<li><strong>SRTM3</strong>: this is the default DEM source when you start Maperitive for the first time. It <a href="http://www.itu.int/SRTM3/Continent_def.800.gif">covers most of the world</a> from 56�S to 60�N of latitude. The resolution is three arcseconds (cca. 90 m). It contains a lot of data voids, especially in mountainous areas like Alps (see <a href="http://en.wikipedia.org/wiki/Shuttle_Radar_Topography_Mission#No-data_areas">data voids</a> for more information). This data voids cause generated relief images and contours to contain "white spots". The data is in Public Domain.</li>
+	<li><strong>SRTM1</strong>: similar to SRTM3, but with one arcsecond (30 m) resolution and covering only USA territory.</li>
+	<li><strong>SRTMV3R3</strong>: a NASA's new version (v3.0) of SRTM3, which has the data voids filled.</li>
+	<li><strong>SRTMV3R1</strong>: a NASA's new version (v3.0) of SRTM1, which has the data voids filled (covering only USA territory).</li>
+	<li><strong>VF.Alps</strong>: one arcsecond resolution DEM covering Alps without any major data voids. Source: <a href="http://www.viewfinderpanoramas.org/dem3.html#alps">http://www.viewfinderpanoramas.org/dem3.html#alps</a>.</li>
+
+</ul>
+<h2 id="Using Your Own Custom DEM Sources">
+	Using Your Own Custom DEM Sources
+</h2>
+<p>TODO</p>
+<h2 id="Links & Resources">
+	Links & Resources
+</h2>
+<ul>
+	<li><a href="http://srtm.usgs.gov/">Shuttle Radar Topography Mission</a> - NASA's official site</li>
+	<li><a href="http://en.wikipedia.org/wiki/Shuttle_Radar_Topography_Mission">Wikipedia: Shuttle Radar Topography Mission</a></li>
+	<li><a href="http://www.viewfinderpanoramas.org/dem3.html">Viewfinder Panoramas</a> - Unofficial SRTM data with voids corrected using topographic maps</li>
+	<li><a href="http://www.vterrain.org/Elevation/SRTM/">vterrain.org: SRTM: NASA Shuttle Radar Topography Mission</a></li>
+	<li><a href="http://www.webgis.com/srtm3.html">SRTM3 Coverage Map</a></li>
+	<li><a href="http://www.webgis.com/srtm1.html">SRTM1 Coverage Map</a></li>
+	<li><a href="http://igorbrejc.net/openstreetmap/viewfinders-dem-data-comparison-with-srtm">igorbrejc.net: Viewfinder DEM Data: Comparison With SRTM</a></li>
+
+</ul><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="../Commands/GenerateHypsometric.html">generate-hypsometric Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/GenerateReliefImageIgor.html">generate-relief-igor Command</a>
+                </li>
+    </ul>
+</div></p><p> </p>
+        </div>
+        
+    </body>
+</html>

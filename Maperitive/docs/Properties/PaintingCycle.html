@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="../MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: painting-cycle</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="../default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="painting-cycle">
+	painting-cycle
+</h1>
+<p> Maperitive renders symbols in a pre-defined order (called the <strong>painting cycle</strong>). For example, polygons (fill symbols) are always rendered before any line symbols, so the lines are never overlapped by polygons. This is usually the proper way to render a map, but some special situations could require symbols to be rendered in a different order.</p><p>The <a href="../Properties/PaintingCycle.html">painting-cycle</a> property allows you to redefine the painting cycle for a particular symbol in a rule. </p><p>Example:</p><pre>
+target : river
+	define
+		line-color : #B5D0D0
+		line-width : 7:1;12:2;14:5
+		painting-cycle : 399 
+	draw : line
+</pre><p>specifies that the river (as a linear element) should be rendered before (below) any polygons (fill symbols are rendered in the painting cycle 400).</p><p>Here is the list of the default painting cycles used by Maperitive:</p><ul>
+	<li>map background : 100</li>
+	<li>coastline islands : 200</li>
+	<li>bitmap (background) : 300</li>
+	<li>fill symbols : 400</li>
+	<li>bitmap (foreground) : 500</li>
+	<li>line and contour symbols : 600</li>
+	<li>icons, shapes and shields : 700</li>
+	<li>text labels : 800</li>
+	<li>web maps : 900</li>
+	<li>highlights : 950</li>
+	<li>map legend : 1000</li>
+
+</ul><p></p>
+        </div>
+        
+    </body>
+</html>

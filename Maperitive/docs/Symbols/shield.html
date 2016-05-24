@@ -1,0 +1,153 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="../MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: shield</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="../default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="shield">
+	shield
+</h1>
+<table class="toc" id="toc">
+	<tbody>
+		<tr>
+			<td><div id="toctitle">
+				<h2>
+					Contents
+				</h2>
+			</div><ul>
+				<li class="toclevel-2"><a href="#Introduction">Introduction</a></li><li class="toclevel-2"><a href="#Limitations">Limitations</a></li><li class="toclevel-2"><a href="#Properties">Properties</a></li>
+			</ul></td>
+		</tr>
+	</tbody>
+</table><p> <div class="image">
+	<img src="../images/Shield.png" />
+</div></p><p>Draws a shield on the map. A shield is effectively a combination of a <a href="../Symbols/shape.html">shape</a> and a <a href="../Symbols/text.html">text</a> symbols. The shield can resize its shape according to the size of the text.</p>
+<h2 id="Introduction">
+	Introduction
+</h2>
+<p>Shields are symbols useful for representing a combination of textual and graphical information. The common use for shields is to draw road numbers.</p><p>Here's an example rule for the OSM map-style shield for motorways:</p><pre>
+target : motorway
+	define
+		font-family : Tahoma
+		text-align-horizontal : center
+		text-align-vertical : center
+		text : ref
+		font-size : 12
+		text-color : #fcfcfb
+		text-halo-width : 0
+		shape : custom
+		shape-def : p:#809bc0;pw:5;f:#809bc0;m:-10,-10;l:10,-10;a:10,10,10,10;l:-10,10;a:10,10,-10,-10;z;p:#fcfcfb;pw:2;m:-10,-10;l:10,-10;a:10,10,10,10;l:-10,10;a:10,10,-10,-10;z
+		shield-padding-left : 5
+		shield-padding-right : 5
+		shield-padding-top : 7
+		shield-padding-bottom : 7
+		shield-resize-mode : free
+	draw : shield
+</pre>
+<h2 id="Limitations">
+	Limitations
+</h2>
+<p>Currently shields are resized <strong>proportionally</strong>. This means that if you use an oval (arc) in your custom  shield (like in the above example) and use the free style for <a href="../Properties/ShieldResizeMode.html">shield-resize-mode</a>, the arc can be distorted from a circular shape into an ellipse shape (depending on the final size of the shield).</p><p>I plan to fix this limitation in the future. In the meantime, a workaround is perhaps to use the <strong>fixed</strong>  <a href="../Properties/ShieldResizeMode.html">shield-resize-mode</a>, in the case of our motorway shield:</p><pre>
+target : motorway
+	define
+		font-family : Tahoma
+		text-align-horizontal : center
+		text-align-vertical : center
+		text : ref
+		font-size : 12
+		text-color : #fcfcfb
+		text-halo-width : 0
+		shape : custom
+		shape-def : p:#809bc0;pw:5;f:#809bc0;m:-10,-10;l:10,-10;a:10,10,10,10;l:-10,10;a:10,10,-10,-10;z;p:#fcfcfb;pw:2;m:-10,-10;l:10,-10;a:10,10,10,10;l:-10,10;a:10,10,-10,-10;z
+		shield-resize-mode : fixed
+		shape-size : 30
+	draw : shield
+</pre>
+<h2 id="Properties">
+	Properties
+</h2>
+<p><strong>Important properties:</strong></p><ul>
+	<li><a href="../Properties/Shape.html">shape</a>: the type of the shape to draw. Can be <strong>circle</strong>, <strong>square</strong>, <strong>triangle</strong>, <strong>diamond</strong> or <strong>custom</strong>. The default shape is circle.</li>
+	<li><a href="../Properties/ShapeDef.html">shape-def</a>: when the <a href="../Properties/Shape.html">shape</a> is <strong>custom</strong>, this property defines the how the custom shape will look like.</li>
+	<li><a href="../Properties/ShieldPaddingLeft.html">shield-padding-left</a>: specifies the left padding between the shield and the text. The shield will automatically resize to include this padding.</li>
+	<li><a href="../Properties/ShieldPaddingRight.html">shield-padding-right</a>: specifies the right padding between the shield and the text. The shield will automatically resize to include this padding.</li>
+	<li><a href="../Properties/ShieldPaddingTop.html">shield-padding-top</a>: specifies the top padding between the shield and the text. The shield will automatically resize to include this padding.</li>
+	<li><a href="../Properties/ShieldPaddingBottom.html">shield-padding-bottom</a>: specifies the bottom padding between the shield and the text. The shield will automatically resize to include this padding.</li>
+	<li><a href="../Properties/ShieldResizeMode.html">shield-resize-mode</a>: specifies the way the shield should resize relative to the text.</li>
+
+</ul><p><strong>Other properties:</strong>     <ul>
+        <li>
+                    <a href="../Properties/FillColor.html">fill-color</a>
+                </li>
+        <li>
+                    <a href="../Properties/FillHatch.html">fill-hatch</a>
+                </li>
+        <li>
+                    <a href="../Properties/FillHatchColor.html">fill-hatch-color</a>
+                </li>
+        <li>
+                    <a href="../Properties/FillHatchOpacity.html">fill-hatch-opacity</a>
+                </li>
+        <li>
+                    <a href="../Properties/FillOpacity.html">fill-opacity</a>
+                </li>
+        <li>
+                    <a href="../Properties/FillTexture.html">fill-texture</a>
+                </li>
+        <li>
+                    <a href="../Properties/LineEndCap.html">line-end-cap</a>
+                </li>
+        <li>
+                    <a href="../Properties/LineStartCap.html">line-start-cap</a>
+                </li>
+        <li>
+                    <a href="../Properties/LineStyle.html">line-style</a>
+                </li>
+        <li>
+                    <a href="../Properties/Shape.html">shape</a>
+                </li>
+        <li>
+                    <a href="../Properties/ShapeDef.html">shape-def</a>
+                </li>
+        <li>
+                    <a href="../Properties/ShieldPaddingBottom.html">shield-padding-bottom</a>
+                </li>
+        <li>
+                    <a href="../Properties/ShieldPaddingLeft.html">shield-padding-left</a>
+                </li>
+        <li>
+                    <a href="../Properties/ShieldPaddingRight.html">shield-padding-right</a>
+                </li>
+        <li>
+                    <a href="../Properties/ShieldPaddingTop.html">shield-padding-top</a>
+                </li>
+        <li>
+                    <a href="../Properties/ShieldResizeMode.html">shield-resize-mode</a>
+                </li>
+        <li>
+                    <a href="../Properties/TextAlignHorizontal.html">text-align-horizontal</a>
+                </li>
+        <li>
+                    <a href="../Properties/TextAlignVertical.html">text-align-vertical</a>
+                </li>
+        <li>
+                    <a href="../Properties/TextMaxWidth.html">text-max-width</a>
+                </li>
+    </ul>
+</p><p></p>
+        </div>
+        
+    </body>
+</html>

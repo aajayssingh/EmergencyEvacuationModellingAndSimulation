@@ -1,0 +1,398 @@
+﻿2015-07-06 19:05:29,934  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: Running the default script...
+2015-07-06 19:05:30,240  INFO [Threadpool worker] Maperitive.Updating.CheckForUpdatesTask - Checking for updates will be skipped.
+2015-07-06 19:05:30,343  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: > use-ruleset alias=default
+2015-07-06 19:05:30,927  WARN [Threadpool worker] Maperitive.Services.PersistedUserSettings - User setting 'map.rendering.shape-def' value read from the store was incompatible and was removed. Reason: Empty shape definition (line=1, col=1)
+2015-07-06 19:05:31,527  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: > add-web-map
+2015-07-06 19:05:31,538  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: READY
+2015-07-06 19:05:31,629  INFO [Main] Karta.DataSources.WebMaps.WebMapTilesManager - Creating 2 worker threads
+2015-07-06 19:05:31,633  INFO [Web Tiles Fetcher 6] Karta.DataSources.WebMaps.WebMapTilesManager - FetchQueuedTiles worker thread started
+2015-07-06 19:05:31,634  INFO [Web Tiles Fetcher 7] Karta.DataSources.WebMaps.WebMapTilesManager - FetchQueuedTiles worker thread started
+2015-07-06 19:11:30,757  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'run-script /home/ajay/CCPP/EmergencyTransportationPrj/maprtive.mscript'
+2015-07-06 19:11:30,758  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > run-script /home/ajay/CCPP/EmergencyTransportationPrj/maprtive.mscript
+2015-07-06 19:11:30,790  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: > clear-map
+2015-07-06 19:11:30,803  INFO [Threadpool worker] Karta.DataSources.WebMaps.WebMapTilesManager - Shutting down.
+2015-07-06 19:11:30,803  INFO [Threadpool worker] Karta.DataSources.WebMaps.WebMapTilesManager - All worker threads have now been shutdown.
+2015-07-06 19:11:30,803  INFO [Web Tiles Fetcher 6] Karta.DataSources.WebMaps.WebMapTilesManager - FetchQueuedTiles() exiting, the thread was signalled to stop
+2015-07-06 19:11:30,803  INFO [Web Tiles Fetcher 7] Karta.DataSources.WebMaps.WebMapTilesManager - FetchQueuedTiles() exiting, the thread was signalled to stop
+2015-07-06 19:11:30,804  INFO [Threadpool worker] Karta.DataSources.WebMaps.WebMapTilesManager - Shutting down.
+2015-07-06 19:11:30,807  INFO [Threadpool worker] Karta.DataSources.WebMaps.WebMapTilesManager - All worker threads have now been shutdown.
+2015-07-06 19:11:30,824  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: > add-web-map
+2015-07-06 19:11:30,837  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: > use-script-dir
+2015-07-06 19:11:30,839  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: > use-ruleset location=cycle.mrules
+2015-07-06 19:11:30,859  INFO [Main] Karta.DataSources.WebMaps.WebMapTilesManager - Creating 2 worker threads
+2015-07-06 19:11:30,861  INFO [Web Tiles Fetcher 8] Karta.DataSources.WebMaps.WebMapTilesManager - FetchQueuedTiles worker thread started
+2015-07-06 19:11:30,875  INFO [Web Tiles Fetcher 9] Karta.DataSources.WebMaps.WebMapTilesManager - FetchQueuedTiles worker thread started
+2015-07-06 19:11:30,977  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: > load-source osmrender.osm
+2015-07-06 19:11:31,001  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: Started reading OSM data
+2015-07-06 19:11:31,040  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: Read 382 nodes, 10 ways and 0 relations in total
+2015-07-06 19:11:31,121  INFO [Main] Brejc.OsmLibrary.CoastlinesProcessing.CoastlineProcessor - Starting coastline processor...
+2015-07-06 19:11:31,139  INFO [Main] Brejc.OsmLibrary.CoastlinesProcessing.CoastlineProcessor - All coastlines are closed
+2015-07-06 19:11:31,140  INFO [Main] Brejc.OsmLibrary.CoastlinesProcessing.CoastlineProcessor - Finished coastline processing.
+2015-07-06 19:11:31,595  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: SCRIPT FINISHED
+2015-07-06 19:11:46,635  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'zoom-in'
+2015-07-06 19:11:46,636  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > zoom-in
+2015-07-06 19:11:48,696  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'zoom-in'
+2015-07-06 19:11:48,697  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > zoom-in
+2015-07-06 19:11:49,461  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'zoom-in'
+2015-07-06 19:11:49,462  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > zoom-in
+2015-07-06 19:12:20,350  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'zoom-out'
+2015-07-06 19:12:20,351  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > zoom-out
+2015-07-06 19:12:21,033  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'zoom-out'
+2015-07-06 19:12:21,034  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > zoom-out
+2015-07-06 19:12:21,558  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'zoom-out'
+2015-07-06 19:12:21,558  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > zoom-out
+2015-07-06 19:12:22,039  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'zoom-out'
+2015-07-06 19:12:22,039  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > zoom-out
+2015-07-06 19:12:22,564  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'zoom-out'
+2015-07-06 19:12:22,565  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > zoom-out
+2015-07-06 19:12:23,025  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'zoom-out'
+2015-07-06 19:12:23,026  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > zoom-out
+2015-07-06 19:12:23,491  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'zoom-out'
+2015-07-06 19:12:23,492  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > zoom-out
+2015-07-06 19:12:23,911  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'zoom-out'
+2015-07-06 19:12:23,912  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > zoom-out
+2015-07-06 19:12:24,323  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'zoom-out'
+2015-07-06 19:12:24,324  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > zoom-out
+2015-07-06 19:12:24,687  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'zoom-out'
+2015-07-06 19:12:24,688  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > zoom-out
+2015-07-06 19:12:25,048  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'zoom-out'
+2015-07-06 19:12:25,049  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > zoom-out
+2015-07-06 19:12:25,422  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'zoom-out'
+2015-07-06 19:12:25,423  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > zoom-out
+2015-07-06 19:12:25,793  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'zoom-out'
+2015-07-06 19:12:25,794  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > zoom-out
+2015-07-06 19:12:26,164  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'zoom-out'
+2015-07-06 19:12:26,165  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > zoom-out
+2015-07-06 19:12:26,529  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'zoom-out'
+2015-07-06 19:12:26,530  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > zoom-out
+2015-07-06 19:12:26,899  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'zoom-out'
+2015-07-06 19:12:26,900  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > zoom-out
+2015-07-06 19:12:27,301  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'zoom-out'
+2015-07-06 19:12:27,302  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > zoom-out
+2015-07-06 19:12:27,665  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'zoom-out'
+2015-07-06 19:12:27,666  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > zoom-out
+2015-07-06 19:12:28,045  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'zoom-out'
+2015-07-06 19:12:28,046  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > zoom-out
+2015-07-06 19:12:28,408  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'zoom-out'
+2015-07-06 19:12:28,409  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > zoom-out
+2015-07-06 19:12:28,791  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'zoom-out'
+2015-07-06 19:12:28,792  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > zoom-out
+2015-07-06 19:12:29,173  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'zoom-out'
+2015-07-06 19:12:29,174  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > zoom-out
+2015-07-06 19:12:29,537  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'zoom-out'
+2015-07-06 19:12:29,540  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > zoom-out
+2015-07-06 19:12:29,928  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'zoom-out'
+2015-07-06 19:12:29,929  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > zoom-out
+2015-07-06 19:12:30,298  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'zoom-out'
+2015-07-06 19:12:30,299  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > zoom-out
+2015-07-06 19:12:30,684  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'zoom-out'
+2015-07-06 19:12:30,685  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > zoom-out
+2015-07-06 19:12:31,055  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'zoom-out'
+2015-07-06 19:12:31,056  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > zoom-out
+2015-07-06 19:12:31,519  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'zoom-out'
+2015-07-06 19:12:31,520  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > zoom-out
+2015-07-06 19:20:33,637  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'helpe-command'
+2015-07-06 19:20:33,638  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > helpe-command
+2015-07-06 19:20:33,639  INFO [Main] Maperitive.Gui.Views.CommanderView - Error: Error parsing command: Command 'helpe-command' not recognized
+2015-07-06 19:20:46,821  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'help-commands'
+2015-07-06 19:20:46,822  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > help-commands
+2015-07-06 19:20:46,834  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: add-web-map : adds a web map source to the map
+2015-07-06 19:20:46,836  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: apply-ruleset : applies the active ruleset to the map
+2015-07-06 19:20:46,836  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: change-dir : changes the current directory
+2015-07-06 19:20:46,837  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: check-updates : checks for new updates in Maperitive software
+2015-07-06 19:20:46,838  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: clear-cache : clears the application cache
+2015-07-06 19:20:46,838  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: clear-command-history : clears the command history
+2015-07-06 19:20:46,839  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: clear-map : clears the map (removes all map sources)
+2015-07-06 19:20:46,839  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: clear-print-bounds : clears the printing/exporting bounds
+2015-07-06 19:20:46,840  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: clear-results : clears the search results
+2015-07-06 19:20:46,840  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: download-file : downloads a file from Web
+2015-07-06 19:20:46,841  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: download-osm : downloads OSM data from an OSM XAPI server
+2015-07-06 19:20:46,841  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: download-osm-overpass : downloads OSM data from an Overpass API server
+2015-07-06 19:20:46,842  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: dump-geo-bounds : prints out the currently set geometry bounds to the command log
+2015-07-06 19:20:46,843  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: dump-pos : prints out the current map position to the command log
+2015-07-06 19:20:46,843  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: dump-python-log : prints out the latest contents of the Python scripting error log to the command log
+2015-07-06 19:20:46,844  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: edit-rules : opens the active ruleset in a text editor
+2015-07-06 19:20:46,844  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: exit : closes the Maperitive application
+2015-07-06 19:20:46,845  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: export-3d : generates a 3D map from the current map view and saves it to the disk
+2015-07-06 19:20:46,845  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: export-bitmap : exports the current map view to a bitmap file
+2015-07-06 19:20:46,846  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: export-command-history : exports the command history to a text file
+2015-07-06 19:20:46,847  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: export-osm : exports the current map view to an OSM file (just the OSM data)
+2015-07-06 19:20:46,847  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: export-svg : exports the current map view to a SVG file
+2015-07-06 19:20:46,848  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: export-tags : exports the OSM tag usage data into a comma-separated text file
+2015-07-06 19:20:46,848  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: find : searches for map data using a query language
+2015-07-06 19:20:46,849  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: find-here : searches for map data using a query language, but limited to a specific area
+2015-07-06 19:20:46,849  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: find-next : moves to the next item in search results
+2015-07-06 19:20:46,850  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: find-prev : moves to the previous item in search results
+2015-07-06 19:20:46,850  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: focus-map : sets the focus on the map
+2015-07-06 19:20:46,851  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: ftp-upload : FTP uploads files
+2015-07-06 19:20:46,852  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: generate-contours : generates relief contours
+2015-07-06 19:20:46,852  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: generate-hypsometric : generates hypsometric tinting image for the current map view
+2015-07-06 19:20:46,853  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: generate-mbtiles : generates map tiles that can be used by a web map server (in MBTiles format)
+2015-07-06 19:20:46,853  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: generate-relief-igor : generates hillshading image for the current map view using Igor's method
+2015-07-06 19:20:46,854  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: generate-relief-slopeshading : generates hillshading image for the current map view using slope shading
+2015-07-06 19:20:46,854  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: generate-relief-standard : generates hillshading image for the current map view using standard method
+2015-07-06 19:20:46,855  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: generate-tiles : generates map tiles that can be used by a web map server
+2015-07-06 19:20:46,855  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: geo-bounds-use-source : locks the geometry bounds to the bounds of a specific map source
+2015-07-06 19:20:46,856  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: get-info : displays detailed information about the currently focused map object
+2015-07-06 19:20:46,857  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: go-docs : navigates to Maperitive documentation pages in the browser
+2015-07-06 19:20:46,857  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: go-home : moves the map to your home location
+2015-07-06 19:20:46,858  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: go-url : navigates to a specific URL in the browser
+2015-07-06 19:20:46,858  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: help : displays basic help information
+2015-07-06 19:20:46,859  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: help-commands : displays a list of all Maperitive commands
+2015-07-06 19:20:46,859  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: help-keyboard : displays a list of all Maperitive keyboard shortcuts
+2015-07-06 19:20:46,860  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: help-properties : displays a list of all rendering rules properties in Maperitive
+2015-07-06 19:20:46,860  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: list-fonts : displays a list of all fonts installed on the computer
+2015-07-06 19:20:46,861  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: list-results : dumps search results list in the command log
+2015-07-06 19:20:46,862  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: list-rulesets : displays a list of all registered rulesets
+2015-07-06 19:20:46,862  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: list-settings : lists user settings
+2015-07-06 19:20:46,863  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: list-sources : displays a list of all map sources on the map
+2015-07-06 19:20:46,863  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: list-viewpoints 
+2015-07-06 19:20:46,864  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: load-file-list : loads the file list from a text file
+2015-07-06 19:20:46,864  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: load-image : loads a image map source from a file
+2015-07-06 19:20:46,865  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: load-source : loads a map source from a file (OSM, GPX or bitmap file)
+2015-07-06 19:20:46,865  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: move-pos : moves the map to a new position
+2015-07-06 19:20:46,866  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: move-screen-pos : moves the map to a new position using screen coordinates
+2015-07-06 19:20:46,866  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: open-script : opens a file dialog to let the user choose script to run
+2015-07-06 19:20:46,867  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: open-sources : opens a file dialog to let the user choose map source files to load
+2015-07-06 19:20:46,868  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: osm-load : loads an OSM file into the OSM buffer
+2015-07-06 19:20:46,868  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: pause : pauses execution for a period
+2015-07-06 19:20:46,869  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: prompt : sets the focus on the command prompt
+2015-07-06 19:20:46,869  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: reload-ruleset : reloads the active ruleset
+2015-07-06 19:20:46,870  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: reload-source : reloads the map source
+2015-07-06 19:20:46,870  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: remove-ruleset : removes (deregisters) a ruleset
+2015-07-06 19:20:46,871  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: remove-source : removes a specific map source from the map
+2015-07-06 19:20:46,871  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: reset-geo-bounds : resets (unlocks) the geometry bounds
+2015-07-06 19:20:46,872  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: run-script : runs a script file
+2015-07-06 19:20:46,873  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: save-file-list : saves the file list into a text file
+2015-07-06 19:20:46,873  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: save-map-script : saves the current map as a Maperitive script
+2015-07-06 19:20:46,874  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: save-source : saves a specific map source to the specified file
+2015-07-06 19:20:46,874  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: send-feedback : opens your mail client and prepares a mail message to Maperitive's author
+2015-07-06 19:20:46,875  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: set-dem-source : sets the DEM source to use
+2015-07-06 19:20:46,875  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: set-geo-bounds : sets the geometry bounds to a specific value
+2015-07-06 19:20:46,876  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: set-gfx-engine : sets the graphics engine to use for rendering maps
+2015-07-06 19:20:46,877  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: set-home : marks the current map view as your home location
+2015-07-06 19:20:46,877  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: set-paper : sets the paper to use for printing bounds
+2015-07-06 19:20:46,878  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: set-print-bounds-geo : sets the printing/exporting bounds using geometry bounds
+2015-07-06 19:20:46,878  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: set-print-bounds-paper : sets the printing/exporting bounds using a fixed paper size
+2015-07-06 19:20:46,879  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: set-print-bounds-view : uses the current map view as the printing/exporting bounds
+2015-07-06 19:20:46,879  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: set-setting : sets a user setting
+2015-07-06 19:20:46,880  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: set-source : sets properties of a specific map source
+2015-07-06 19:20:46,880  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: toggle-setting : toggles a user setting
+2015-07-06 19:20:46,881  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: use-ruleset : activates a specific ruleset
+2015-07-06 19:20:46,882  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: use-script-dir : changes the current directory to the one where the currently running script is in
+2015-07-06 19:20:46,882  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: zip : zips files
+2015-07-06 19:20:46,883  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: zoom : sets the zoom level of the map view
+2015-07-06 19:20:46,883  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: zoom-all : zooms to the extents of the map
+2015-07-06 19:20:46,884  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: zoom-bounds : zooms to the specific map bounds
+2015-07-06 19:20:46,884  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: zoom-in : zooms in
+2015-07-06 19:20:46,885  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: zoom-map-scale : sets the zoom level of the map view using the map scale value
+2015-07-06 19:20:46,885  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: zoom-out : zooms out
+2015-07-06 19:20:46,886  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: zoom-selected-object : zooms on the selected map object
+2015-07-06 19:20:46,886  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: zoom-selection : zooms to the currently focused element
+2015-07-06 19:20:46,887  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: zoom-source : zooms to extents of a specific map source
+2015-07-06 19:25:54,437  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'run-script /home/ajay/CCPP/EmergencyTransportationPrj/maprtive.mscript'
+2015-07-06 19:25:54,438  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > run-script /home/ajay/CCPP/EmergencyTransportationPrj/maprtive.mscript
+2015-07-06 19:25:54,472  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: > clear-map
+2015-07-06 19:25:54,475  INFO [Threadpool worker] Karta.DataSources.WebMaps.WebMapTilesManager - Shutting down.
+2015-07-06 19:25:54,475  INFO [Threadpool worker] Karta.DataSources.WebMaps.WebMapTilesManager - All worker threads have now been shutdown.
+2015-07-06 19:25:54,475  INFO [Web Tiles Fetcher 9] Karta.DataSources.WebMaps.WebMapTilesManager - FetchQueuedTiles() exiting, the thread was signalled to stop
+2015-07-06 19:25:54,475  INFO [Web Tiles Fetcher 8] Karta.DataSources.WebMaps.WebMapTilesManager - FetchQueuedTiles() exiting, the thread was signalled to stop
+2015-07-06 19:25:54,476  INFO [Threadpool worker] Karta.DataSources.WebMaps.WebMapTilesManager - Shutting down.
+2015-07-06 19:25:54,477  INFO [Threadpool worker] Karta.DataSources.WebMaps.WebMapTilesManager - All worker threads have now been shutdown.
+2015-07-06 19:25:54,513  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: > add-web-map
+2015-07-06 19:25:54,522  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: > use-script-dir
+2015-07-06 19:25:54,524  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: > use-ruleset location=cycle.mrules
+2015-07-06 19:25:54,540  INFO [Main] Karta.DataSources.WebMaps.WebMapTilesManager - Creating 2 worker threads
+2015-07-06 19:25:54,542  INFO [Web Tiles Fetcher 11] Karta.DataSources.WebMaps.WebMapTilesManager - FetchQueuedTiles worker thread started
+2015-07-06 19:25:54,542  INFO [Web Tiles Fetcher 12] Karta.DataSources.WebMaps.WebMapTilesManager - FetchQueuedTiles worker thread started
+2015-07-06 19:25:54,653  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: > load-source osmrender.osm
+2015-07-06 19:25:54,665  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: Started reading OSM data
+2015-07-06 19:25:54,681  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: Read 382 nodes, 10 ways and 0 relations in total
+2015-07-06 19:25:54,689  INFO [Main] Brejc.OsmLibrary.CoastlinesProcessing.CoastlineProcessor - Starting coastline processor...
+2015-07-06 19:25:54,691  INFO [Main] Brejc.OsmLibrary.CoastlinesProcessing.CoastlineProcessor - All coastlines are closed
+2015-07-06 19:25:54,692  INFO [Main] Brejc.OsmLibrary.CoastlinesProcessing.CoastlineProcessor - Finished coastline processing.
+2015-07-06 19:25:54,741  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: SCRIPT FINISHED
+2015-07-06 19:27:22,643  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:27:31,249  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'run-script /home/ajay/CCPP/EmergencyTransportationPrj/maprtive.mscript'
+2015-07-06 19:27:31,250  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > run-script /home/ajay/CCPP/EmergencyTransportationPrj/maprtive.mscript
+2015-07-06 19:27:31,287  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: > clear-map
+2015-07-06 19:27:31,289  INFO [Threadpool worker] Karta.DataSources.WebMaps.WebMapTilesManager - Shutting down.
+2015-07-06 19:27:31,293  INFO [Threadpool worker] Karta.DataSources.WebMaps.WebMapTilesManager - All worker threads have now been shutdown.
+2015-07-06 19:27:31,293  INFO [Threadpool worker] Karta.DataSources.WebMaps.WebMapTilesManager - Shutting down.
+2015-07-06 19:27:31,295  INFO [Threadpool worker] Karta.DataSources.WebMaps.WebMapTilesManager - All worker threads have now been shutdown.
+2015-07-06 19:27:31,307  INFO [Web Tiles Fetcher 11] Karta.DataSources.WebMaps.WebMapTilesManager - FetchQueuedTiles() exiting, the thread was signalled to stop
+2015-07-06 19:27:31,308  INFO [Web Tiles Fetcher 12] Karta.DataSources.WebMaps.WebMapTilesManager - FetchQueuedTiles() exiting, the thread was signalled to stop
+2015-07-06 19:27:31,330  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: > add-web-map
+2015-07-06 19:27:31,338  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: > use-script-dir
+2015-07-06 19:27:31,340  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: > use-ruleset location=cycle.mrules
+2015-07-06 19:27:31,356  INFO [Main] Karta.DataSources.WebMaps.WebMapTilesManager - Creating 2 worker threads
+2015-07-06 19:27:31,358  INFO [Web Tiles Fetcher 16] Karta.DataSources.WebMaps.WebMapTilesManager - FetchQueuedTiles worker thread started
+2015-07-06 19:27:31,360  INFO [Web Tiles Fetcher 17] Karta.DataSources.WebMaps.WebMapTilesManager - FetchQueuedTiles worker thread started
+2015-07-06 19:27:31,435  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: > load-source osmrender.osm
+2015-07-06 19:27:31,446  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: Started reading OSM data
+2015-07-06 19:27:31,463  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: Read 382 nodes, 10 ways and 0 relations in total
+2015-07-06 19:27:31,472  INFO [Main] Brejc.OsmLibrary.CoastlinesProcessing.CoastlineProcessor - Starting coastline processor...
+2015-07-06 19:27:31,473  INFO [Main] Brejc.OsmLibrary.CoastlinesProcessing.CoastlineProcessor - All coastlines are closed
+2015-07-06 19:27:31,474  INFO [Main] Brejc.OsmLibrary.CoastlinesProcessing.CoastlineProcessor - Finished coastline processing.
+2015-07-06 19:27:31,520  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: SCRIPT FINISHED
+2015-07-06 19:28:03,624  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:04,125  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:04,155  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:04,186  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:04,217  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:04,249  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:04,279  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:04,310  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:04,340  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:04,370  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:04,401  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:04,431  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:04,463  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:04,493  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:04,523  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:04,553  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:04,584  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:04,615  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:04,646  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:04,676  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:04,707  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:04,738  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:04,769  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:04,800  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:04,830  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:04,861  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:04,891  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:04,922  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:04,953  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:04,984  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,014  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,044  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,074  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,105  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,136  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,166  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,197  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,226  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,257  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,286  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,317  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,347  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,378  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,409  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,440  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,470  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,500  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,531  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,561  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,595  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,622  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,653  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,684  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,715  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,746  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,777  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,807  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,838  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,869  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,900  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,930  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,960  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:05,991  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:06,022  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:06,052  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:06,082  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:06,112  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:06,142  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:06,173  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:06,205  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:06,235  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:06,267  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:06,297  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:06,834  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:07,334  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:07,363  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:07,394  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:07,425  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:07,455  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:07,486  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:07,516  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:07,547  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:07,577  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:07,608  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:07,639  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:07,669  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:07,700  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:07,731  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:07,761  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:07,792  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:07,823  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:07,853  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:07,884  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:07,913  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:07,943  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:07,974  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:08,004  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:08,034  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:08,064  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:08,095  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:08,126  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:08,157  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:08,187  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:08,218  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:08,249  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:08,279  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:08,310  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:08,341  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:08,371  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:08,402  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:08,432  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:08,463  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:08,493  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:08,523  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:08,553  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:08,584  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:08,615  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:09,644  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=0.1'
+2015-07-06 19:28:12,336  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:13,119  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:13,621  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:13,651  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:13,681  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:13,712  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:13,743  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:13,774  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:13,805  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:13,836  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:13,867  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:13,897  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:13,927  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:13,957  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:13,989  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:14,019  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:14,050  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:14,081  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:14,112  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:14,142  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:14,173  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:14,203  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:14,232  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:14,263  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:14,293  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:14,323  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:14,353  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:14,385  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:14,416  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:14,447  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:14,477  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:14,506  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:19,682  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:20,228  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'move-screen-pos y=-0.1'
+2015-07-06 19:28:32,764  INFO [Main] Maperitive.Gui.Forms.MaperitiveMainForm - Main window is closing.
+2015-07-06 19:28:32,768  INFO [Main] Maperitive.Gui.Forms.MaperitiveMainForm - Main window has been closed.
+2015-07-06 19:28:32,779  INFO [Main]   Maperitive.Program - Application shell has finished its work.
+2015-07-06 19:28:32,785  INFO [Main] Karta.DataSources.WebMaps.WebMapTilesManager - Shutting down.
+2015-07-06 19:28:32,786  INFO [Main] Karta.DataSources.WebMaps.WebMapTilesManager - All worker threads have now been shutdown.
+2015-07-06 19:28:32,786  INFO [Web Tiles Fetcher 16] Karta.DataSources.WebMaps.WebMapTilesManager - FetchQueuedTiles() exiting, the thread was signalled to stop
+2015-07-06 19:28:32,786  INFO [Web Tiles Fetcher 17] Karta.DataSources.WebMaps.WebMapTilesManager - FetchQueuedTiles() exiting, the thread was signalled to stop
+2015-07-06 19:28:32,786  INFO [Main] Karta.DataSources.WebMaps.WebMapTilesManager - Shutting down.
+2015-07-06 19:28:32,788  INFO [Main] Karta.DataSources.WebMaps.WebMapTilesManager - All worker threads have now been shutdown.

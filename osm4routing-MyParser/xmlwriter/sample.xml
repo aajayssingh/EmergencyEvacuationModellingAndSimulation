@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<CityModel><cityObjectMember><bldg:Building gml:id="id alphanumeric attribute val"><gml:name>Example building L0D0</gml:name><bldg:measuredHeight uom="#m10"/><gml:point gml:pos="1 2"/></bldg:Building></cityObjectMember></CityModel>

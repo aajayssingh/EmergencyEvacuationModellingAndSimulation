@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="../MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: download-osm Command</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="../default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="download-osm Command">
+	download-osm Command
+</h1>
+<p> Downloads OSM data from <a href="http://wiki.openstreetmap.org/wiki/Xapi">OSM XAPI servers</a>.</p><p>Once downloaded, the map data is stored in memory, so you'll need to save it on the disk (using SaveSource <i>(TODO)</i>) if you want to use it later.</p><p><div class="note">
+    <strong>NOTE:</strong> XAPI servers can be unresponsive at certain times, so you should retry the downloading if it fails. Also try not to download too big an area as it could take a very long time to download from the server.
+</div></p>
+<h2 id="Usage">
+	Usage
+</h2>
+<pre>
+ download-osm
+	[bounds=&lt;bounds&gt;]
+	[xapi-url=&lt;download url&gt;]
+</pre><p>Parameters:</p><ul>
+	<li><strong>bounds</strong>: optionally specifies the exact geometry bounds for the area to be downloaded in the <i>minlng,minlat,maxlng,maxlat</i> format. If this parameter is not specified, the current map view bounds will be used.</li>
+	<li><strong>xapi-url</strong>: (optional) URL of the XAPI web service. You need to specify the URL in the full format (including the<a href="http://">http://</a> part). If not specified, XAPI server hosted on <strong>www.informationfreeway.org</strong> will be used.</li>
+
+</ul>
+<h2 id="Examples">
+	Examples
+</h2>
+<pre>
+download-osm bounds=20,30,50,40
+</pre><p>Downloads OSM data for the specific area.</p><pre>
+download-osm
+</pre><p>Downloads OSM data for the current map view bounds.</p><pre>
+download-osm xapi-url=&quot;http://www.informationfreeway.org/api/0.6/*&quot;
+</pre><p>Downloads OSM data for the current map view bounds using explicitly set XAPI URL.</p><p>  </p>
+        </div>
+        
+    </body>
+</html>

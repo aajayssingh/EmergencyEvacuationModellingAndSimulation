@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="../MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: move-pos Command</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="../default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="move-pos Command">
+	move-pos Command
+</h1>
+<p> Moves the map to a new position using map coordinates.</p>
+<h2 id="Usage">
+	Usage
+</h2>
+<pre>
+move-pos
+    x=&lt;x coordinate&gt;
+    y=&lt;y coordinate&gt;
+    [zoom=&lt;zoom&gt;]
+</pre><p>Parameters:</p><ul>
+	<li><strong>x</strong>: specifies the X map coordinate.</li>
+	<li><strong>y</strong>: specifies the Y map coordinate.</li>
+	<li><strong>zoom</strong>: specifies the new zoom level of the map. This parameter is optional, if omitted the zoom level will not change.</li>
+
+</ul>
+<h2 id="Examples">
+	Examples
+</h2>
+<pre>
+ move-pos x=16.5 y=45.25
+</pre><p>Moves the map to the map position (x=16.5, y=45.25).</p><pre>
+ move-pos x=-16.5 y=45.25 zoom=12.5
+</pre><p>Moves the map to the map position (x=-16.5, y=45.25) and set the zoom level 12.5 .</p><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="../Commands/GoHome.html">go-home Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/MoveScreenPos.html">move-screen-pos Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/SetHome.html">set-home Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/ZoomMapScale.html">zoom-map-scale Command</a>
+                </li>
+    </ul>
+</div></p><p> </p>
+        </div>
+        
+    </body>
+</html>

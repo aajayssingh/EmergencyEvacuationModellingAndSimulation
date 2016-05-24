@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: Internet Proxy</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="Internet Proxy">
+	Internet Proxy
+</h1>
+<p> <div class="note">
+    <strong>NOTE:</strong> These settings have not been thoroughly tested. If you have any problems, let me know.
+</div></p><p>If you access Internet through a HTTP proxy, you need to configure a few Maperitive settings:</p><ol>
+	<li>You have to set the <strong>web.proxy.host</strong> and <strong>web.proxy.port</strong> to point to your proxy host and port.</li>
+	<li>If your proxy requires user authentication, you also need to set <strong>web.proxy.username</strong> and <strong>web.proxy.password</strong> settings.</li>
+	<li>Finally, you need to turn on the proxy usage by setting the <strong>web.proxy.use-proxy</strong> to <i>true</i>.</li>
+
+</ol><p>Once configured, these settings will be saved in your user settings file and will be used every time you run Maperitive.</p><p>Here is a sample script which configures the HTTP proxy access using authentication:</p><pre>
+ set-setting name=web.proxy.host value=myproxy.com
+ set-setting name=web.proxy.port value=553
+ set-setting name=web.proxy.username value=john
+ set-setting name=web.proxy.password value=nobodyknows
+ set-setting name=web.proxy.use-proxy value=true
+</pre><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="Commands/ListSettings.html">list-settings Command</a>
+                </li>
+        <li>
+                    <a href="Rendering_Coastlines_And_Sea.html">Rendering Coastlines And Sea</a>
+                </li>
+        <li>
+                    <a href="Commands/SetSetting.html">set-setting Command</a>
+                </li>
+    </ul>
+</div></p><p> </p>
+        </div>
+        
+    </body>
+</html>

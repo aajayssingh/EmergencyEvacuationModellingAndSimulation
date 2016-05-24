@@ -1,0 +1,173 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="../MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: text</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="../default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="text">
+	text
+</h1>
+<table class="toc" id="toc">
+	<tbody>
+		<tr>
+			<td><div id="toctitle">
+				<h2>
+					Contents
+				</h2>
+			</div><ul>
+				<li class="toclevel-2"><a href="#Label%20Definitions">Label Definitions</a></li><ul>
+					<li class="toclevel-3"><a href="#Literal%20Text">Literal Text</a></li><li class="toclevel-3"><a href="#Tag%20References">Tag References</a></li><li class="toclevel-3"><a href="#Functions">Functions</a></li><ul>
+						<li class="toclevel-4"><a href="#@low()%20Function">@low() Function</a></li><li class="toclevel-4"><a href="#@up()%20Function">@up() Function</a></li><li class="toclevel-4"><a href="#@if()%20Function">@if() Function</a></li><li class="toclevel-4"><a href="#@any()%20Function">@any() Function</a></li><li class="toclevel-4"><a href="#@elevation()%20Function">@elevation() Function</a></li>
+					</ul>
+				</ul>
+			</ul></td>
+		</tr>
+	</tbody>
+</table><p> Defines how map text labels will be constructed. Text is rendered using the <a href="../Symbols/text.html">text symbol</a>.</p>
+<h2 id="Label Definitions">
+	Label Definitions
+</h2>
+<p>The <a href="../Properties/Text.html">text</a> uses a <strong>label definition</strong> syntax. A label consists of one or more <strong>label parts</strong>. A label part can be one of the following things:</p><ul>
+	<li><strong>literal text</strong></li>
+	<li><strong>tag reference</strong></li>
+	<li><strong>function call</strong>.</li>
+
+</ul><p>If you specify two or more label parts then Maperitive will merge them together into a single label.  Let's look at an example label definition:</p><pre>
+text : name &quot; (&quot; ele &quot;)&quot;
+</pre><p>specifies a label which will display object's name and elevation (in brackets), for example:</p><pre>
+Mt. Everest (8848)
+</pre>
+<h3 id="Literal Text">
+	Literal Text
+</h3>
+<p>Anything you enter in quoted text will be displayed literally in the label. In the above example, we specified opening and closing brackets as literals: " (" ")" (notice that we inserted a space character before the opening bracket to separate it from any preceding text).</p><p>If you want to break the label into several lines of text, you can use the <strong>newline symbol</strong> "\n", example:</p><pre>
+text : name &quot;\n&quot; ele
+</pre><p>will display the name and the elevation each in its own line.</p>
+<h3 id="Tag References">
+	Tag References
+</h3>
+<p>If you want your text label to display a value of some object tag, you simply specify that tag's name as part of the  label definition:</p><pre>
+text : name
+</pre><p>If the tag's name contains special characters, you need to surround it with <strong>double square brackets</strong>, like</p><pre>
+text : [[name:en]]
+</pre><p>If the object does not have the specified tag, this label part will be left empty when Maperitive generates the actual label.</p>
+<h3 id="Functions">
+	Functions
+</h3>
+<p>Maperitive provides a set of functions which can be used for more advanced labeling techniques. The functions are described in the following subsections.</p>
+<h4 id="@low() Function">
+	@low() Function
+</h4>
+<p>Converts the label text to lowercase.</p><p>Usage:</p><pre>
+@low(&lt;label definition&gt;)
+</pre><p>Examples:</p><pre>
+@low(name &quot;ele&quot;)
+</pre>
+<h4 id="@up() Function">
+	@up() Function
+</h4>
+<p>Converts the label text to uppercase.</p><p>Usage:</p><pre>
+@up(&lt;label definition&gt;)
+</pre><p>Examples:</p><pre>
+@up(name &quot;ele&quot;)
+</pre>
+<h4 id="@if() Function">
+	@if() Function
+</h4>
+<p>Performs conditional logic based on the existence (or non-existence) of a tag.</p><p>Usage:</p><pre>
+@if(&lt;tag reference&gt;, &lt;positive label definition&gt;)
+</pre><p>or</p><pre>
+@if(&lt;tag reference&gt;, &lt;positive label definition&gt;, &lt;negative label definition&gt;)
+</pre><p>Examples:</p><pre>
+@if(ele, ele &quot;m&quot;)
+</pre><p>will display the elevation and the literal "m" if the tag <i>ele</i> exists. Otherwise it will not display anything.</p><pre>
+@if(ele, ele &quot;m&quot;, &quot;-&quot;)
+</pre><p>will display the elevation and the literal "m" if the tag <i>ele</i> exists. If the tag does not exist, it will  display a minus sign.</p><pre>
+@if(name, name @if(ele, &quot;\n(&quot; ele &quot;)&quot;), ele)
+</pre><p>Displays object name and elevation. Depending on the existence of the <i>name</i> and <i>ele</i> tags, several different labels can be produced:</p><pre>
+Mt. Everest
+  (8848)
+</pre><p>or</p><pre>
+Mt. Everest
+</pre><p>or</p><pre>
+8848
+</pre>
+<h4 id="@any() Function">
+	@any() Function
+</h4>
+<p>Chooses the first available tag among the list of tags.</p><p>Usage:</p><pre>
+@any(&lt;tag reference 1&gt;, &lt;tag reference 2&gt;, &lt;tag reference 3&gt;, ... &lt;tag reference N&gt;)
+</pre><p>Examples:</p><pre>
+@any([[name:fr]], name)
+</pre><p>will tell Maperitive to use French names (<i>name:fr</i> tag) by default, but if the French name is not specified,  the rendering will "fall back" to international names (<i>name</i> tag). You can specify as many fallback tags as you like - they will be processed in the decreasing order of priority.</p>
+<h4 id="@elevation() Function">
+	@elevation() Function
+</h4>
+<p>Displays the elevation in meters or feet, depending on the <strong>user.use-metric</strong> setting.</p><p>Usage:</p><pre>
+@elevation(&lt;tag reference&gt;)
+</pre><p>The tag reference should point to a tag which contains the elevation. If this tag does not exist or cannot be interpreted as a numeric value, nothing will be displayed.</p><p>The elevation will be rounded to the nearest integer value. </p><p>If you want to force displaying of meters or feet as elevation units, you can specify the <i>user.use-metric</i> setting value inside the rules file, just like any other rendering property, for example:</p><pre>
+properties
+	user.use-metric : false
+</pre><p>Otherwise Maperitive will use the setting's value defined in user's settings. </p><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="../Properties/FontFamily.html">font-family</a>
+                </li>
+        <li>
+                    <a href="../Properties/FontSize.html">font-size</a>
+                </li>
+        <li>
+                    <a href="../Properties/FontStretch.html">font-stretch</a>
+                </li>
+        <li>
+                    <a href="../Properties/FontStyle.html">font-style</a>
+                </li>
+        <li>
+                    <a href="../Properties/FontWeight.html">font-weight</a>
+                </li>
+        <li>
+                    <a href="../Properties/TextAlignHorizontal.html">text-align-horizontal</a>
+                </li>
+        <li>
+                    <a href="../Properties/TextAlignVertical.html">text-align-vertical</a>
+                </li>
+        <li>
+                    <a href="../Properties/TextDirection.html">text-direction</a>
+                </li>
+        <li>
+                    <a href="../Properties/TextLetterSpacing.html">text-letter-spacing</a>
+                </li>
+        <li>
+                    <a href="../Properties/TextLineSpacing.html">text-line-spacing</a>
+                </li>
+        <li>
+                    <a href="../Properties/TextMaxWidth.html">text-max-width</a>
+                </li>
+        <li>
+                    <a href="../Properties/TextOffsetHorizontal.html">text-offset-horizontal</a>
+                </li>
+        <li>
+                    <a href="../Properties/TextOffsetVertical.html">text-offset-vertical</a>
+                </li>
+        <li>
+                    <a href="../Properties/TextOrientation.html">text-orientation</a>
+                </li>
+    </ul>
+</div></p><p>  </p>
+        </div>
+        
+    </body>
+</html>

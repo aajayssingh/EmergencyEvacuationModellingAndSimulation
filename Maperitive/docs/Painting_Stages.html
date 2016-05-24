@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: Painting Stages</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="Painting Stages">
+	Painting Stages
+</h1>
+
+<h2 id="Introduction">
+	Introduction
+</h2>
+<p>Maperitive draws maps in several stages. Each new stage draws <i>on top</i> of previous stages. The painting stages are (in order):</p><ol>
+	<li><strong>MapBackground</strong>: if the map does not contain sea, this stage is used to draw the land background. If the map contains sea, this stage is used to draw the sea polygons.</li>
+	<li><strong>Landmass</strong>: if the map contains sea, this stage is used to draw the land (on top of sea polygons).</li>
+	<li><strong>BitmapBackground</strong>: in this stage raster images and Web map tiles are drawn (but only if they are configured to be drawn in the background).</li>
+	<li><strong>LandUse</strong>: this stage is used to draw all fill <i>(TODO)</i> symbols.</li>
+	<li><strong>BitmapForeground</strong>: in this stage raster images are drawn (but only if they are configured to be drawn in the foreground).</li>
+	<li><strong>Infrastructure</strong>: in this stage all contour <i>(TODO)</i> and line <i>(TODO)</i> symbols are drawn.</li>
+	<li><strong>Symbols</strong>: in this stage all <a href="Symbols/icon.html">icon</a> and <a href="Symbols/shape.html">shape</a> symbols are drawn.</li>
+	<li><strong>Labels</strong>: this stage is used to draw all <a href="Symbols/text.html">text</a> symbols.</li>
+	<li><strong>BitmapOverlay</strong>: in this stage Web map tiles are drawn (but only if they are configured to be drawn in the foreground).</li>
+	<li><strong>MapLegend</strong>: this stage is used to draw map decoration elements, like the map grid and the map scale.</li>
+
+</ol>
+<h2 id="Techniques">
+	Techniques
+</h2>
+<p>You can use MapMinPaintingStage <i>(TODO)</i>, MapMaxPaintingStage <i>(TODO)</i> and MapHiddenPaintingStages <i>(TODO)</i> settings to control which stages will be painted. This can be useful if, for example, you want to render a map without any text labels - you can use the existing rendering rules without any modifications.</p><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="Map_Layering.html">Map Layering</a>
+                </li>
+    </ul>
+</div></p><p> </p>
+        </div>
+        
+    </body>
+</html>

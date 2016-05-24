@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="../MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: move-screen-pos Command</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="../default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="move-screen-pos Command">
+	move-screen-pos Command
+</h1>
+<p> Moves the map in a relative way using screen width and height as units.</p>
+<h2 id="Usage">
+	Usage
+</h2>
+<pre>
+move-screen-pos
+    [x=&lt;screen dx&gt;]
+    [y=&lt;screen dy&gt;]
+</pre><p>All parameters are optional:</p><ul>
+	<li><strong>x</strong>: specifies the amount to move the map position on the horizontal (X) axis. Positive values move the position to the right (east). Negative values move the position to the left (west). Value of 1 moves the map by the whole screen width. Value of 0.5 moves the map by a half of the screen width.</li>
+	<li><strong>y</strong>: specifies the amount to move the map position on the vertical (Y) axis. Positive values move the position downwards (south). Negative values move the position upwards (north). Value of 1 moves the map by the whole screen height. Value of 0.5 moves the map by a half of the screen height.</li>
+
+</ul>
+<h2 id="Examples">
+	Examples
+</h2>
+<pre>
+ move-screen-pos x=0.5
+</pre><p>Moves the map position to the right by half of the screen width.</p><pre>
+ move-screen-pos y=-2
+</pre><p>Moves the map position upwards by two screen heights.</p><pre>
+ move-screen-pos x=-0.5 y=-0.5
+</pre><p>Moves the map position to the left by half of the screen width and upwards by half of the screen height.</p><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="../Commands/GoHome.html">go-home Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/MovePos.html">move-pos Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/SetHome.html">set-home Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/ZoomMapScale.html">zoom-map-scale Command</a>
+                </li>
+    </ul>
+</div></p><p> </p>
+        </div>
+        
+    </body>
+</html>

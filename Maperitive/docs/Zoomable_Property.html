@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: zoomable value</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="zoomable value">
+	zoomable value
+</h1>
+<p> Zoomable values allow you to specify how the certain property will change its value according to the zoom level. Basically, you specify the property values for certain zoom levels, and the rest is calculated (interpolated) by Maperitive based on known points you specified.</p><p>Example:</p><pre>
+line-width : 5:1;9:1.5;17:6
+</pre><p>means that the line width will be 1 pixel on zoom level 5, 1.5 pixels on zoom level 9 and 6 pixels  on zoom level 17. Everything in between is interpolated, so for example on zoom level 12 the width will be 3.1875. For zoom levels below or above the specified points, the first or last specified value is used, so in our example</p><ul>
+	<li>for zoom level 3 the line width will be 1</li>
+	<li>for zoom level 20 the line width wiil be 6.</li>
+
+</ul><p>You can also specify a constant value:</p><pre>
+line-width : 5
+</pre><p>which is equivalent to</p><pre>
+line-width : 1:5
+</pre><p>or</p><pre>
+line-width : 10:5
+</pre><p> </p>
+        </div>
+        
+    </body>
+</html>

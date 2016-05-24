@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="../MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: reload-source Command</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="../default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="reload-source Command">
+	reload-source Command
+</h1>
+<p> Reloads the map source from its file.</p><p>NOTE: some map sources like the <i>Map decoration</i> and <i>Highlight</i> cannot be reloaded since they are not tied to  a particular file on the disk. Generated map sources (for example using <a href="../Commands/DownloadOsm.html">download-osm Command</a>) need to be saved on the disk before trying to reload them (well, obviously).</p>
+<h2 id="Usage">
+	Usage
+</h2>
+<pre>
+ reload-source [&lt;source index&gt;]
+</pre><p>Parameters:</p><ul>
+	<li><strong>source index</strong>: optional parameter specifying the index of the map source. If not specified, the command will apply to the last used map source.</li>
+
+</ul>
+<h2 id="Examples">
+	Examples
+</h2>
+<pre>
+reload-source 3
+</pre><p>Reloads a map source under the index 3.</p><pre>
+reload-source
+</pre><p>Reloads the last used map source.</p><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="../Commands/AddWebMap.html">add-web-map Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/DownloadOsm.html">download-osm Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/GeometryBoundsUseSource.html">geo-bounds-use-source Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/ListSources.html">list-sources Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/LoadImage.html">load-image Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/LoadSource.html">load-source Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/RemoveSource.html">remove-source Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/SaveMapScript.html">save-map-script Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/SetSource.html">set-source Command</a>
+                </li>
+    </ul>
+</div></p><p> </p>
+        </div>
+        
+    </body>
+</html>

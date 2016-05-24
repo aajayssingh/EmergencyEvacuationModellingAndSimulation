@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: Rendering Coastlines And Sea</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="Rendering Coastlines And Sea">
+	Rendering Coastlines And Sea
+</h1>
+<p>Maperitive uses OSM <strong>natural=coastline</strong> tag to render (fill) the sea outside of coastlines. It can only do this correctly if coastline polygons in the OSM source are <strong>closed</strong>. A lot of times this is a problem, since users load various OSM extract files which contain only partial coastline data.</p><p>In such cases, Maperitive will render partially flooded coastlines like on the following map: <div class="image">
+	<img src="images/FloodedCoastlines.png" />
+</div></p><p>This Schleswig-Holstein extract contains coastlines only up to the border with Denmark  (and to the rest of Germany), so the coastline cannot be closed.</p><p>The workaround is to change the behavior of Maperitive's coastline processor by changing the value of <strong>map.coastline.mode</strong> setting. The setting can have following values:</p><ul>
+	<li><strong>ignore</strong>: coastlines will be ignored and no sea will be rendered.</li>
+	<li><strong>loose</strong>: if at least one coastline polygon is closed, Maperitive will render the sea. But this also means that any coastline polygons that are still open will be rendered flooded. This is the default value for this setting.</li>
+	<li><strong>strict</strong>: Maperitive will render the sea <i>only</i> if <i>all</i> of the coastline polygons are closed.</li>
+
+</ul><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="Internet_Proxy.html">Internet Proxy</a>
+                </li>
+        <li>
+                    <a href="Commands/ListSettings.html">list-settings Command</a>
+                </li>
+        <li>
+                    <a href="Commands/SetSetting.html">set-setting Command</a>
+                </li>
+    </ul>
+</div></p><p>  </p>
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: Feature Selectors</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="Feature Selectors">
+	Feature Selectors
+</h1>
+<table class="toc" id="toc">
+	<tbody>
+		<tr>
+			<td><div id="toctitle">
+				<h2>
+					Contents
+				</h2>
+			</div><ul>
+				<li class="toclevel-2"><a href="#Based%20On%20The%20Feature%20Name">Based On The Feature Name</a></li><li class="toclevel-2"><a href="#Based%20On%20Wildcards-Matching%20Feature%20Names">Based On Wildcards-Matching Feature Names</a></li><li class="toclevel-2"><a href="#By%20Matching%20Feature%20Names%20Using%20Regular%20Expressions">By Matching Feature Names Using Regular Expressions</a></li><li class="toclevel-2"><a href="#Based%20On%20Feature%20Types">Based On Feature Types</a></li>
+			</ul></td>
+		</tr>
+	</tbody>
+</table><p>Features can be selected in a number of ways:</p>
+<h2 id="Based On The Feature Name">
+	Based On The Feature Name
+</h2>
+<p>This is used to select a single feature:</p><pre>
+target : motorway
+</pre><p>This starts a rule definition that will work on a <i>motorway</i> feature (and only that feature).</p>
+<h2 id="Based On Wildcards-Matching Feature Names">
+	Based On Wildcards-Matching Feature Names
+</h2>
+<p>This is used to select one or more features which share a similar naming. This way you can cover several related features with the same rule. The difference in rendering between these related features can then be expressed using sub-selecting commands like if, elseif, for, elsefor and else.</p><pre>
+target : *road
+</pre><p>This starts a rule definition that will work on any feature whose name ends with <i>road</i>, like <i>secondary road</i>,  <i>residential road</i> etc.</p><pre>
+if : *unpaved*
+</pre><p>Starts the rule sub-selection on any feature whose name contains the word <i>unpaved</i>, like <i>horribly unpaved road</i> (kidding), <i>unpaved dirt track</i> etc.</p>
+<h2 id="By Matching Feature Names Using Regular Expressions">
+	By Matching Feature Names Using Regular Expressions
+</h2>
+<p>This is similar to using wildcards, but more powerful, since you can use the expressiveness of regular expressions to find anything you like. One common use case is when you want to select only <i>two</i> features out of a number of them:</p><pre>
+ if : $regex(&quot;(hiking path)|track&quot;)
+</pre><p>Starts the rule sub-selection on <i>hiking path</i> and <i>track</i> features, <div class="note">
+    <strong>NOTE:</strong> It is recommended that you keep the regular expression enclosed within quotes (like in the above sample). Otherwise parsing problems might happen.
+</div></p>
+<h2 id="Based On Feature Types">
+	Based On Feature Types
+</h2>
+<p>Wireframe rules which come built into Maperitive are a good example of where this kind of feature selection can come handy. Wireframe rules draw <strong>all</strong> line features the same way, for example.</p><pre>
+target : $featuretype(line)
+</pre><p>This starts a rule definition that will cover all line features.</p><pre>
+target : $featuretype(point)
+</pre><p>This starts a rule definition that will cover all point features.</p><pre>
+target : $featuretype(area)
+</pre><p>This starts a rule definition that will cover all area features.</p><pre>
+target : $featuretype(any)
+</pre><p>This starts a rule definition that will cover <strong>all</strong> features.</p><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="Rulesets.html">Introduction To Rulesets</a>
+                </li>
+        <li>
+                    <a href="Map_Layering.html">Map Layering</a>
+                </li>
+        <li>
+                    <a href="Map_Symbols.html">Map Symbols</a>
+                </li>
+        <li>
+                    <a href="Querying_Data.html">Querying Data</a>
+                </li>
+        <li>
+                    <a href="Querying_GPS_Data.html">Querying GPS Data</a>
+                </li>
+        <li>
+                    <a href="Rendering_Coastlines_And_Sea.html">Rendering Coastlines And Sea</a>
+                </li>
+        <li>
+                    <a href="Rendering_Rules_Advanced.html">Rendering Rules Advanced</a>
+                </li>
+        <li>
+                    <a href="Rendering_Rules_Introduction.html">Rendering Rules Introduction</a>
+                </li>
+    </ul>
+</div></p><p> </p>
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="../MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: generate-relief-igor Command</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="../default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="generate-relief-igor Command">
+	generate-relief-igor Command
+</h1>
+<p> Generates hillshading relief for the current map view using Igor's hillshading method. This method renders a softer hillshade which tries to minimize effects on other map features.</p>
+<h2 id="Usage">
+	Usage
+</h2>
+<pre>
+generate-relief-igor [parameters]
+</pre><p>All parameters are optional:</p><ul>
+	<li><strong>bounds</strong>: optionally specifies the exact geometry bounds of the area to generate the hypsometric tinting. If this parameter is not specified, the current map view bounds will be used (or if geometry bounds are set, these boundaries will be used).</li>
+	<li><strong>color</strong>: specifies the color of the shading. The default color is black (#000000). The parameter accepts the color in HTML form (like <i>blue</i> or <i>#0000ff</i>).</li>
+	<li><strong>intensity</strong>: the intensity of the color <a href="http://en.wikipedia.org/wiki/Alpha_channel">alpha value</a>. The parameter is a number larger than zero: the higher the value - the higher intensity. The default value is 1.</li>
+	<li><strong>sun-altitude</strong>: <a href="http://en.wikipedia.org/wiki/Solar_elevation_angle">altitude of the Sun</a> expressed as an angle above the horizon. This affects how the shades will fall on the terrain. The parameter accepts values from 0 to 90 degrees. The default value is 25 degrees.</li>
+	<li><strong>sun-azimuth</strong>: <a href="http://en.wikipedia.org/wiki/Solar_azimuth_angle">azimuth angle of the Sun</a> expressed in the degrees to the east of north. The default value is -45 degrees so that southeastern slopes are in the shade. This follows the <a href="http://en.wikipedia.org/wiki/Hillshading#Shaded_relief">common convention</a>.</li>
+	<li><strong>sample-rate</strong>: a real value greater than or equal to 1 which represents the sample rate to use when fetching original DEM data. Use value larger than the default 1 if the map area is very big, this will descre</li>
+
+</ul>
+<h2 id="Examples">
+	Examples
+</h2>
+<pre>
+ generate-relief-igor color=blue
+</pre><p>Generates a hillshading image with a blue tint.</p><pre>
+ generate-relief-igor
+ save-source 3 relief.png
+</pre><p>Generates a hillshading image and then saves it to a <strong>relief.png</strong> file. Note that the map source index may vary in your case.</p><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="../Commands/GenerateHypsometric.html">generate-hypsometric Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/SetDemSource.html">set-dem-source Command</a>
+                </li>
+    </ul>
+</div></p><p>  </p>
+        </div>
+        
+    </body>
+</html>

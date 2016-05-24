@@ -1,0 +1,70 @@
+KEY               VALUE
+name               Mayur Vihar Extension
+railway               station
+name               Noida Sector 16
+railway               station
+wheelchair               yes
+name               Noida Sector 18
+railway               station
+wheelchair               yes
+name               New Ashok Nagar
+railway               station
+name               Noida Sector 15
+railway               station
+wheelchair               yes
+name               Noida Golf Course
+railway               station
+wheelchair               yes
+name               Noida City Centre
+operator               Delhi Metro Rail Corporation
+platforms               2
+railway               station
+wheelchair               yes
+amenity               fuel
+name               Transportation: Bharat Petroleum Fuel Station
+amenity               fuel
+brand               HP
+name               Fuel Pump
+name               Akshardham
+railway               station
+name               Mayur Vihar-I
+railway               station
+name               Botanical Garden
+railway               station
+wheelchair               yes
+highway               residential
+highway               residential
+highway               residential
+oneway               yes
+highway               residential
+oneway               yes
+is_in               Noida
+landuse               residential
+name               Sector 51
+highway               secondary
+oneway               yes
+highway               residential
+highway               residential
+highway               residential
+highway               secondary
+oneway               yes
+amenity               bus_station
+name               Sector 35 Bus Terminus
+landuse               residential
+name               Morna
+place               hamlet
+bridge               yes
+colour               1e90ff
+electrified               contact_line
+frequency               50
+gauge               1676
+layer               2
+name               Delhi Metro Blue Line
+railway               subway
+voltage               25000
+colour               blue
+ref               3
+route               subway
+type               route
+name               Delhi Transport System
+type               network

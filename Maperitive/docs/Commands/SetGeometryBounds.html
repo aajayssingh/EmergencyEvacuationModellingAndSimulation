@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="../MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: set-geo-bounds Command</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="../default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="set-geo-bounds Command">
+	set-geo-bounds Command
+</h1>
+<p> Sets the geometry boundaries to a specific area.</p>
+<h2 id="Usage">
+	Usage
+</h2>
+<pre>
+set-geo-bounds &lt;bounds&gt;
+</pre><p>Parameters:</p><ul>
+	<li><strong>bounds</strong>: optionally specifies the exact geometry bounds in the <i>minlng,minlat,maxlng,maxlat</i> format. If this parameter is not specified, the current map view bounds will be used.</li>
+
+</ul>
+<h2 id="Examples">
+	Examples
+</h2>
+<pre>
+set-geo-bounds 20,30,50,40
+</pre><p>Sets the geometry bounds to the specific area.</p><pre>
+set-geo-bounds
+</pre><p>Sets the geometry bounds to the current map view bounds.</p><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="../Commands/GeometryBoundsUseSource.html">geo-bounds-use-source Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/ResetGeometryBounds.html">reset-geo-bounds Command</a>
+                </li>
+    </ul>
+</div></p><p> </p>
+        </div>
+        
+    </body>
+</html>

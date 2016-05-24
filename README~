@@ -1,0 +1,9 @@
+The Project is a prototype for Emergency evacuation and simulations in Indian context.
+Major focus of this project is nuclear plant, chemical gas leak sort of hazards.
+This projects dynamically generates the evacuation routes during emergency situtations .
+
+CREDITS :
+osm4routing-Parser - customized it to build a graph from the osm map.
+BOOST library  - used graph library to genrates evacuation routes.
+Maperitive  - for visulazation of evacuation routes.
+

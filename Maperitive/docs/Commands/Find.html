@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="../MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: find Command</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="../default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="find Command">
+	find Command
+</h1>
+<p> Searches for map data in the whole map (as opposed to the <a href="../Commands/Find.html">find Command</a>, which limits the search to the current map view).</p>
+<h2 id="Usage">
+	Usage
+</h2>
+<pre>
+find &lt;search query&gt;
+</pre><p>For more information on how to write search queries, please read the <a href="../Querying_Data.html">Querying Data</a> page. </p>
+<h2 id="Examples">
+	Examples
+</h2>
+<pre>
+ find way[highway=residential AND NOT name]
+</pre><p>Looks for any unnamed residential roads.</p><pre>
+ find oneway=yes
+</pre><p>Looks for any map elements tagged as one-way.</p><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="../Commands/FindHere.html">find-here Command</a>
+                </li>
+        <li>
+                    <a href="../Querying_Data.html">Querying Data</a>
+                </li>
+        <li>
+                    <a href="../Querying_GPS_Data.html">Querying GPS Data</a>
+                </li>
+    </ul>
+</div></p><p> </p>
+        </div>
+        
+    </body>
+</html>

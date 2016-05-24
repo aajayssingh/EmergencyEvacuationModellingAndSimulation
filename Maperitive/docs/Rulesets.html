@@ -1,0 +1,210 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: Introduction To Rulesets</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="Introduction To Rulesets">
+	Introduction To Rulesets
+</h1>
+<table class="toc" id="toc">
+	<tbody>
+		<tr>
+			<td><div id="toctitle">
+				<h2>
+					Contents
+				</h2>
+			</div><ul>
+				<li class="toclevel-2"><a href="#Built-in%20Rulesets">Built-in Rulesets</a></li><ul>
+					<li class="toclevel-3"><a href="#Default%20Ruleset">Default Ruleset</a></li><li class="toclevel-3"><a href="#Wireframe%20Ruleset">Wireframe Ruleset</a></li><li class="toclevel-3"><a href="#Google%20Maps%20Ruleset">Google Maps Ruleset</a></li><li class="toclevel-3"><a href="#Hiking%20Ruleset">Hiking Ruleset</a></li>
+				</ul><li class="toclevel-2"><a href="#Switching%20Between%20Rulesets">Switching Between Rulesets</a></li><li class="toclevel-2"><a href="#Ruleset%20Aliases">Ruleset Aliases</a></li><li class="toclevel-2"><a href="#Creating%20Your%20Own%20Rulesets">Creating Your Own Rulesets</a></li><li class="toclevel-2"><a href="#Listing%20Registered%20Rulesets">Listing Registered Rulesets</a></li><li class="toclevel-2"><a href="#Assigning%20Aliases">Assigning Aliases</a></li><ul>
+					<li class="toclevel-3"><a href="#Why%20Aliases?">Why Aliases?</a></li>
+				</ul><li class="toclevel-2"><a href="#Changing%20Aliases">Changing Aliases</a></li><li class="toclevel-2"><a href="#Removing%20Rulesets">Removing Rulesets</a></li>
+			</ul></td>
+		</tr>
+	</tbody>
+</table><p> A <strong>ruleset</strong> is a collection of Maperitive rendering rules stored in a file. You can edit these rules to change how the map is displayed.</p>
+<h2 id="Built-in Rulesets">
+	Built-in Rulesets
+</h2>
+<p>Maperitive comes with several built-in rulesets: </p><ul>
+	<li><strong>default</strong> ruleset (stored in <i>Rules/Default.mrules</i> file, alias = 'default')</li>
+	<li><strong>wireframe</strong> ruleset (stored in <i>Rules/Wireframe.mrules</i> file, alias = 'wireframe')</li>
+	<li><strong>Google Maps</strong> ruleset (stored in <i>Rules/GoogleMaps.mrules</i> file, alias = 'googlemaps')</li>
+	<li><strong>hiking</strong> ruleset (stored in <i>Rules/Hiking.mrules</i> file, alias = 'hiking')</li>
+
+</ul>
+<h3 id="Default Ruleset">
+	Default Ruleset
+</h3>
+<p>The default ruleset draws a map similarily to <a href="http://www.openstreetmap.org/?lat=50.789&amp;lon=1.944&amp;zoom=9&amp;layers=B000FTF">Mapnik layer</a>  on OpenStreetMap web site. When you start Maperitive, this is the ruleset that is used to display the data.</p>
+<h3 id="Wireframe Ruleset">
+	Wireframe Ruleset
+</h3>
+<p>The wireframe ruleset draws <strong>all</strong> of the map data using a simple wireframe style. All line features are drawn as simple thin lines. All areas are drawn as green polygons. This ruleset is useful when you want to identify map elements which are not yet covered by some other ruleset (the default ruleset, for example, shows only a subset of the OSM features).</p>
+<h3 id="Google Maps Ruleset">
+	Google Maps Ruleset
+</h3>
+<p>The Google Maps ruleset draws a map similarily to <a href="http://maps.google.com/?ie=UTF8&amp;ll=46.548354,15.64127&amp;spn=0.094919,0.222988&amp;z=13">Google Maps</a>. </p>
+<h3 id="Hiking Ruleset">
+	Hiking Ruleset
+</h3>
+<p>This ruleset draws a hiking map. The map style resembles that of paper hiking maps produced by  <a href="http://www.pzs.si/">Alpine Association of Slovenia</a>.</p>
+<h2 id="Switching Between Rulesets">
+	Switching Between Rulesets
+</h2>
+<p>In order to use the wireframe ruleset, you have to tell Maperitive to use it:</p><pre>
+use-ruleset alias=googlemaps
+apply-ruleset
+</pre><p>The first command, <strong>use-ruleset</strong>, instructs Maperitive to activate a ruleset with an alias <i>googlemaps</i>. Activation merely tells Maperitive that all future map sources loaded should use Google Maps rules. In order to apply the Google Maps ruleset to <i>already loaded</i> map sources, you have to execute the <strong>apply-ruleset</strong> command.</p><p>Can you guess how to switch back to default rules? It's simple:</p><pre>
+use-ruleset alias=default
+apply-ruleset
+</pre>
+<h2 id="Ruleset Aliases">
+	Ruleset Aliases
+</h2>
+<p>As you can see from the examples above, rulesets can have <strong>aliases</strong>. The built-in rulesets come with already specified aliases. You can assign your own aliases to your own rulesets. <i>All very nice, but how do I write my own rulesets?</i> you may ask. Well, let's see.</p>
+<h2 id="Creating Your Own Rulesets">
+	Creating Your Own Rulesets
+</h2>
+<p>The first step is to create a new text file, let's say <strong>Rules/MyOwn.mrules</strong> (it doesn't have to be in the Rules directory, but it's a nice place to store the rules).</p><p>The second step involves the actual writing of rules in the file. For more information about this, visit  <a href="Rendering_Rules_Introduction.html">Rendering Rules Introduction</a>. We can skip this step by simply copying the contents of some other ruleset file to our own MyOwn.mrules. I'll copy the contents from the wireframe ruleset:</p><pre>
+features
+	lines
+		all lines : 
+	areas
+		all areas : 
+properties
+	map-background-color : #181818
+rules
+	target : all areas
+		define
+			fill-color : green
+			fill-opacity : 0.1
+		draw : fill
+	target : all lines
+		define
+			line-color : lightgray
+			line-width : 0.5
+		draw : line
+</pre><p>I'll change the line width to something thicker, just to see the difference:</p><pre>
+			line-width : 5
+</pre><p>Now we tell Maperitive to load our ruleset and apply them to our map:</p><pre>
+use-ruleset location=Rules/Hiking.mrules
+apply-ruleset
+</pre><p>If everything is OK, you should see a map similar to this: ##image</p><p>Congratulations, you have now registered your first own ruleset!</p>
+<h2 id="Listing Registered Rulesets">
+	Listing Registered Rulesets
+</h2>
+<p>Once registered, your ruleset(s) will be stored in your user settings so you can reuse them the next time you use Maperitive. To get a list of all registered rulesets, type the command</p><pre>
+list-rulesets
+</pre><p>Maperitive's response should be something like</p><pre>
+1: D:\Programs\Maperitive\Rules\Default.mrules (default)
+2: D:\Programs\Maperitive\Rules\Wireframe.mrules (wireframe)
+3: D:\Programs\Maperitive\Rules\GoogleMaps.mrules (googlemaps)
+4: Rules/MyOwn.mrules - ACTIVE
+Done
+</pre><p>You can get some information from this list:</p><ul>
+	<li>Each line represents one ruleset. You can see its location (the file name) and you can also see its alias (if it is defined).</li>
+	<li>Ruleset marked with "<i>ACTIVE</i>" text represents a currently active ruleset.</li>
+
+</ul>
+<h2 id="Assigning Aliases">
+	Assigning Aliases
+</h2>
+<p>As mentioned before, you can assign aliases to your own rulesets. Let's assign an alias to MyOwn.mrules:</p><pre>
+use-ruleset location=Rules/MyOwn.mrules as-alias=myrules
+</pre><p>Now our list looks like this:</p><pre>
+1: D:\Programs\Maperitive\Rules\Default.mrules (default)
+2: D:\Programs\Maperitive\Rules\Wireframe.mrules (wireframe)
+3: D:\Programs\Maperitive\Rules\GoogleMaps.mrules (googlemaps)
+4: Rules/MyOwn.mrules (myrules) - ACTIVE
+Done
+</pre><p>Notice "<i>(myrules)</i>" text - this is the alias we used.</p>
+<h3 id="Why Aliases?">
+	Why Aliases?
+</h3>
+<p>Why do I need aliases, you may ask? Well, because you can then reference your rulesets regardless of the location of the  ruleset file. For example, we can write a script like this one:</p><pre>
+load-source mymap.osm
+use-ruleset alias=myrules
+apply-ruleset
+</pre><p>And it will work even if we later moved the location of myrules ruleset to somewhere else (in future version you will even be able to store rules on the web). As long as your rules are registered using the new location, your scripts should work fine.</p>
+<h2 id="Changing Aliases">
+	Changing Aliases
+</h2>
+<p>You can change the alias of your registered ruleset at any time, example:</p><pre>
+use-ruleset index=4 as-alias=newalias
+</pre><p>This commands assigns the <i>newalias</i> alias to fourth registered ruleset. You can also reassign the alias  from one ruleset to another using the same technique.</p><p><div class="note">
+    <strong>NOTE:</strong> You cannot use or change aliases for built-in rulesets.
+</div></p>
+<h2 id="Removing Rulesets">
+	Removing Rulesets
+</h2>
+<p>remove-ruleset <i>(TODO)</i> command allows you to remove (unregister) a particular ruleset. Don't worry, the rules file will <strong>not</strong> be deleted. Example:</p><pre>
+remove-ruleset alias=sameoldstuff
+</pre><p>will remove a ruleset with the alias <i>sameoldstuff</i>.</p><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="Rendering_Rules_Introduction.html">Rendering Rules Introduction</a>
+                </li>
+        <li>
+                    <a href="Commands/ApplyRuleset.html">apply-ruleset Command</a>
+                </li>
+        <li>
+                    <a href="Commands/UseRuleset.html">use-ruleset Command</a>
+                </li>
+        <li>
+                    Commands:RemoveRuleset
+                </li>
+    </ul>
+</div></p><p><strong>TO BE CONTINUED</strong></p><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="Commands/ApplyRuleset.html">apply-ruleset Command</a>
+                </li>
+        <li>
+                    <a href="Feature_Selectors.html">Feature Selectors</a>
+                </li>
+        <li>
+                    <a href="Map_Layering.html">Map Layering</a>
+                </li>
+        <li>
+                    <a href="Map_Symbols.html">Map Symbols</a>
+                </li>
+        <li>
+                    <a href="Querying_Data.html">Querying Data</a>
+                </li>
+        <li>
+                    <a href="Querying_GPS_Data.html">Querying GPS Data</a>
+                </li>
+        <li>
+                    <a href="Rendering_Coastlines_And_Sea.html">Rendering Coastlines And Sea</a>
+                </li>
+        <li>
+                    <a href="Rendering_Rules_Advanced.html">Rendering Rules Advanced</a>
+                </li>
+        <li>
+                    <a href="Rendering_Rules_Introduction.html">Rendering Rules Introduction</a>
+                </li>
+        <li>
+                    <a href="Commands/UseRuleset.html">use-ruleset Command</a>
+                </li>
+    </ul>
+</div></p><p>  </p>
+        </div>
+        
+    </body>
+</html>

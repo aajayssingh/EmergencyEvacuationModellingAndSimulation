@@ -1,0 +1,286 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: Rendering Rules Introduction</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="Rendering Rules Introduction">
+	Rendering Rules Introduction
+</h1>
+<table class="toc" id="toc">
+	<tbody>
+		<tr>
+			<td><div id="toctitle">
+				<h2>
+					Contents
+				</h2>
+			</div><ul>
+				<li class="toclevel-2"><a href="#What%20Are%20Rendering%20Rules?">What Are Rendering Rules?</a></li><ul>
+					<li class="toclevel-3"><a href="#Why%20Separate%20Features?">Why Separate Features?</a></li>
+				</ul><li class="toclevel-2"><a href="#Defining%20Features">Defining Features</a></li><ul>
+					<li class="toclevel-3"><a href="#Types%20Of%20Features">Types Of Features</a></li><li class="toclevel-3"><a href="#Feature%20Specification">Feature Specification</a></li><ul>
+						<li class="toclevel-4"><a href="#More%20Complex%20Specifications">More Complex Specifications</a></li>
+					</ul>
+				</ul><li class="toclevel-2"><a href="#Writing%20Rules">Writing Rules</a></li><ul>
+					<li class="toclevel-3"><a href="#Rule%20Processing">Rule Processing</a></li><ul>
+						<li class="toclevel-4"><a href="#if%20Command">if Command</a></li><li class="toclevel-4"><a href="#stop%20Command">stop Command</a></li><li class="toclevel-4"><a href="#for%20Command">for Command</a></li>
+					</ul>
+				</ul><li class="toclevel-2"><a href="#Conclusion">Conclusion</a></li>
+			</ul></td>
+		</tr>
+	</tbody>
+</table>
+<h2 id="What Are Rendering Rules?">
+	What Are Rendering Rules?
+</h2>
+<p>Maperitive rendering rules specify <strong>what</strong> gets drawn on the map and <strong>how</strong> it gets drawn. You start writing rules by specifying <strong>features</strong>. A feature could be a forest, a motorway, a bench. This answers the "what?" part. After that, you specify the actual <strong>rules</strong> for these features. This answers the "how?" part.</p><p>Rules are specified in a simple text file and can be edited with a text editor.</p>
+<h3 id="Why Separate Features?">
+	Why Separate Features?
+</h3>
+<p>Some people may be wondering why introduce separate feature specification when the stuff is already specified using OSM tags. There are several reasons why:</p><ol>
+	<li>It is true that Maperitive currently works mainly on OSM data. But that will not be the case in the future. You can already use other types of geographical data in Maperitive rendering rules: relief contours. And there will be other things you will be able to render: for example GPS tracks and routes, relief maps etc.</li>
+	<li><strong>Feature naming</strong> can be used to target a particular rule on a group of several related features.</li>
+	<li>The way things are tagged in OSM. Let's face it: OSM mappers are a pretty liberal bunch. You can tag things anyway you like. And so can anyone else. So certain geographical features which are very similar get tagged differently, based on personal and even regional taste. Some people like to use <i>highway=footway</i>, while some like <i>highway=path</i>. And there are some which don't care for the difference, but want to draw a hiking map which shows hiking paths. So they create a feature called <i>hiking path</i> in their rules and they specify the hiking path is <strong>both</strong> a footway and a path.</li>
+	<li><strong>Rules importing</strong>: in future you will be able to use other rendering rules within your rendering rules. This means that you could have a definition of all of the features you're interested in in one place and then reuse these definitions for various rendering rules (hiking, driving, etc). These could even be stored on the web and shared among many people.</li>
+
+</ol>
+<h2 id="Defining Features">
+	Defining Features
+</h2>
+
+<h3 id="Types Of Features">
+	Types Of Features
+</h3>
+<p>First we define what we want to show on the map by specifying a list of features. There are three <strong>types of features</strong>:</p><ol>
+	<li><strong>Point feature</strong>: this is something that's defined by a single point in space. Mountain peak is a good example of a point feature. In OSM, a point features is defined by tagging an <strong>OSM node</strong>.</li>
+	<li><strong>Line feature</strong>: something defined by a list of connected points in space. A typical example of a line feature is a road. In OSM, line features are defined with <strong>OSM ways</strong>.</li>
+	<li><strong>Area feature</strong>: also defined by a list of connected points in space, but the points have to define a closed polygon. A forest is an example of an area feature. In OSM, area features are defined using <strong>OSM ways</strong> which define a polygon.</li>
+
+</ol>
+<h3 id="Feature Specification">
+	Feature Specification
+</h3>
+<p>Let's say we want to produce a simple hiking map which shows three different features: mountain peaks, hiking paths  and forests (I know, this isn't a very useful map, but let's keep it simple for now). I would open a new text file and write the following text in it:</p><pre>
+features
+	points
+		mountain peak : natural=peak
+	lines
+		hiking path : highway=footway
+	areas
+		forest : landuse=forest OR natural=wood
+</pre><p>What did we do here? We started by indicating we are specifying features:</p><pre>
+features
+</pre><p>Then we say we want to specify point features:</p><pre>
+	points
+</pre><p>We then specify a single point feature:</p><pre>
+		mountain peak : natural=peak
+</pre><p>After that, we go on specifying a line feature and an area feature. </p><p><div class="note">
+    <strong>NOTE:</strong> The indentation when writing rules is important.
+</div></p><p>Now let's see how each feature is defined. Let's get back to the mountain peak:</p><pre>
+		mountain peak : natural=peak
+</pre><p>The first part (before the colon (':')) defines the <strong>feature name</strong>. Obviously, feature names are used to describe to you (or other users of your rules) what the feature represents. In our case, we have a <i>mountain peak</i>. They also uniquely identify a feature within the rendering rules, so it is important that each feature name should be unique (i.e. no two features should share the same name).</p><p>The second part (after the colon) defines <strong>what the feature covers</strong>. In our case we are targeting mountain peaks in OSM data, which in OSM is usually defined as an OSM node tagged with a key called <i>natural</i> with a value <i>peak</i>. That's why we say</p><pre>
+natural=peak
+</pre><p>One thing to note here is that we didn't have to explicitly say we are only interested in OSM nodes. Maperitive knows that from the fact that this feature is a point feature. The same logic goes for other types of features: area features will (by default) target only OSM ways which enclose a polygon. Even if an OSM way is tagged the same, it will be ignored by Maperitive if it doesn't define a closed area.</p>
+<h4 id="More Complex Specifications">
+	More Complex Specifications
+</h4>
+<p>If you take a look at the specification for the <strong>forest</strong> feature</p><pre>
+		forest : landuse=forest OR natural=wood
+</pre><p>you will notice that the feature actually covers two separate OSM features: <i>landuse=forest</i> and <i>natural=wood</i>. This is an example of slightly more complex feature specification. For more information about specifying features, see <a href="Querying_Data.html">Querying Data</a> section.</p>
+<h2 id="Writing Rules">
+	Writing Rules
+</h2>
+<p>Once we have specified which features we want to show on our map, we can go and specify rules which will tell Maperitive how to render these features.</p><p>We have to mark the part of the file where the rules are by specifying the rules section (just like we did for the features section before):</p><pre>
+rules
+</pre><p>Let's write a rule for rendering hiking paths as thick red lines. We start the rule by indicating what feature (or features) it is intended for:</p><pre>
+	target : hiking path
+</pre><p><strong>target</strong> marks the start of a rule definition. After the colon we specify the name of the feature we want to draw (this is called feature selection, see <a href="Feature_Selectors.html">Feature Selectors</a> for more).</p><p>We defined hiking paths as line features, which is obvious. Maperitive will thus render lines (polylines, to be more precise) for all hiking paths it can find. In order to tell Maperitive <i>how</i> these lines should appear, we must use the <strong>define</strong> command within the rule definition:</p><pre>
+		define
+			line-color : red
+			line-width : 3
+</pre><p>The <i>define</i> command is used to set the value of one or more rendering properties (see Rendering Properties <i>(TODO)</i> for more  info about all the rendering properties Maperitive provides). In our case we set the line color to red and the line width to 3 pixels.</p><p>Now we need to tell Maperitive to draw something:			</p><pre>
+		draw : line
+</pre><p>The <strong>draw</strong> command instructs Maperitive to do the drawing. The "line" text tells it to draw lines  (what a surprise, eh?). In Maperitive's jargon this is called a <i>symbol</i>. There are other symbols supported: fill, icon, text and contour, and there will be more in the future. For more information about this topic, see <a href="Map_Symbols.html">Map Symbols</a>.</p><p>So now we have one rule specified:</p><pre>
+	target : hiking path
+		define
+			line-color : red
+			line-width : 3
+		draw : line
+</pre><p>It will draw thin red lines for every OSM way tagged <i>highway=footway</i>.</p>
+<h3 id="Rule Processing">
+	Rule Processing
+</h3>
+<p>"define" and "draw" are Rule Commands <i>(TODO)</i>. The above rule is processed in linear fashion. Firstly, the properties will be set to defined values and then the lines will be drawn using the style we defined. There are other rule commands which enable <strong>conditional flow</strong> of rule processing. Let's change the rule somewhat:</p><pre>
+	target : *hiking path
+		define
+			line-width : 3
+			
+		if : hard hiking path
+			define
+				line-color : red
+		else
+			define
+				line-color : blue		
+				
+		draw : line
+</pre><p>What's going on here? Don't worry if it looks intimidating at first, once you understand the concept, it should be easy to follow (I hope, otherwise I failed with this design ;) ).</p>
+<h4 id="if Command">
+	if Command
+</h4>
+<p>What I did here is to insert a couple of new commands in the rule: "if" and "else". I also changed the target of the rule. It now targets not only the "hiking path" feature, but any feature that has a name that ends with "hiking path". So let's for the sake of argument say we have three types of hiking paths:</p><ol>
+	<li>hard hiking path</li>
+	<li>medium hiking path</li>
+	<li>easy hiking path</li>
+
+</ol><p>What would this rule do? Let's start with the first command:</p><pre>
+		define
+			line-width : 3
+</pre><p>We learned earlier what this command will set the line width to 3 pixels. Notice the line color has  not been set? We'll see later why.</p><p>Ok, to the next command:</p><pre>
+		if : hard hiking path
+			define
+				line-color : red
+</pre><p>"<strong>if</strong>" command is a <strong>conditional command</strong>. It has a nested inner block which is executed only for feature(s) specified by the "if" argument. In our case the if command works on hard hiking paths only! The inner block I mentioned is in our case another "define" command:</p><pre>
+			define
+				line-color : red
+</pre><p>So basically, I told Maperitive to use the red line for hard hiking paths. "if" can be followed with the "<strong>else</strong>" command, which covers all other alternatives:</p><pre>
+		else
+			define
+				line-color : blue		
+</pre><p>I hope you can figure out yourself what this does. Yes, it specifies a blue line for all the other features (in our case for medium and easy hiking paths).</p><p>The last command is familiar:</p><pre>
+		draw : line
+</pre><p>It draws lines. Red lines for hard and blue ones for other kinds of hiking paths.</p><p>You handle have several alternatives using the <strong>"elseif"</strong> command:</p><pre>
+	target : *hiking path
+		define
+			line-width : 3
+			
+		if : hard hiking path
+			define
+				line-color : red
+		elseif : medium hiking path
+			define
+				line-color : green
+		else
+			define
+				line-color : blue		
+				
+		draw : line
+</pre><p>In this case the medium hiking path will have its own green color. The blue color will be reserved for easy hiking paths only.</p>
+<h4 id="stop Command">
+	stop Command
+</h4>
+<p>You can also tell Maperitive <i>not</i> to render something. Let's say we only wanted to render hard and medium hiking paths:</p><pre>
+	target : *hiking path
+		define
+			line-width : 3
+			
+		if : hard hiking path
+			define
+				line-color : red
+		elseif : medium hiking path
+			define
+				line-color : green
+		else
+			stop
+				
+		draw : line
+</pre><p>the <strong>"stop"</strong> command we used inside the "else" block forces stopping of processing of the rule.</p>
+<h4 id="for Command">
+	for Command
+</h4>
+<p>Even though we specified a feature based on some of its properties, there is still a way to separate the feature into subfeatures which can be drawn differently. This is done using the <strong>"for"</strong> command. For example:</p><pre>
+	target : *hiking path
+		
+		for : trailblazed=yes
+			define
+				line-width : 5
+		else
+			define
+				line-width : 3			
+		
+		if : hard hiking path
+			define
+				line-color : red
+		elseif : medium hiking path
+			define
+				line-color : green
+		else
+			define
+				line-color : blue		
+				
+		draw : line
+</pre><p>At the beginning of the rule we speficied this:</p><pre>
+		for : trailblazed=yes
+			define
+				line-width : 5
+		else
+			define
+				line-width : 3			
+</pre><p>Basically, we instructed Maperitive to render <i>trailblazed</i> hiking paths thicker than those which do not  have any trailblazes. "for" command accepts a <strong>spatial condition</strong> (see <a href="Querying_Data.html">Querying Data</a>) and "forks" (divides) the execution of the rule into two separate paths: one for hiking paths with OSM tag <i>trailblazed=yes</i> and one for those without this tag. Each of these paths will then continue processing the rest of the rule commands which specify the color of the line. So we end up with a combination of two line thicknesses and three line colors, which totals in <strong>six different line styles</strong>, based on how each OSM way is tagged.</p><p>"for" command can also be paired with one or more <strong>"elsefor"</strong> commands like:</p><pre>
+target : *road
+	define
+		line-color : yellow
+		border-color : black
+		border-style : solid
+		border-width : 40%
+	for : bridge=yes
+		define
+			border-width : 120%  
+	elsefor : tunnel=yes
+		define
+			border-style : dash
+	draw : line
+</pre><p>will draw yellow roads. When the road crosses a bridge, it will be drawn with thicker border. When the road goes to a tunnel, its border will be drawn with a dash.</p>
+<h2 id="Conclusion">
+	Conclusion
+</h2>
+<p>This page gives a quick overview of the main capabilities of Maperitive rendering rules. For more detail about how rules are processed and how Maperitive calculates logical paths, see <a href="Rendering_Rules_Advanced.html">Rendering Rules Advanced</a>.</p><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="Feature_Selectors.html">Feature Selectors</a>
+                </li>
+        <li>
+                    <a href="Commands/Find.html">find Command</a>
+                </li>
+        <li>
+                    <a href="Commands/FindHere.html">find-here Command</a>
+                </li>
+        <li>
+                    <a href="Rulesets.html">Introduction To Rulesets</a>
+                </li>
+        <li>
+                    <a href="Map_Layering.html">Map Layering</a>
+                </li>
+        <li>
+                    <a href="Map_Symbols.html">Map Symbols</a>
+                </li>
+        <li>
+                    <a href="Querying_Data.html">Querying Data</a>
+                </li>
+        <li>
+                    <a href="Querying_GPS_Data.html">Querying GPS Data</a>
+                </li>
+        <li>
+                    <a href="Rendering_Coastlines_And_Sea.html">Rendering Coastlines And Sea</a>
+                </li>
+        <li>
+                    <a href="Rendering_Rules_Advanced.html">Rendering Rules Advanced</a>
+                </li>
+    </ul>
+</div></p><p> </p>
+        </div>
+        
+    </body>
+</html>

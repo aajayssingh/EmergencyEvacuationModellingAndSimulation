@@ -1,0 +1,42 @@
+﻿2015-07-21 01:09:29,853  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: Running the default script...
+2015-07-21 01:09:30,178  INFO [Threadpool worker] Maperitive.Updating.CheckForUpdatesTask - Checking for updates will be skipped.
+2015-07-21 01:09:30,268  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: > use-ruleset alias=default
+2015-07-21 01:09:30,843  WARN [Threadpool worker] Maperitive.Services.PersistedUserSettings - User setting 'map.rendering.shape-def' value read from the store was incompatible and was removed. Reason: Empty shape definition (line=1, col=1)
+2015-07-21 01:09:31,382  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: > add-web-map
+2015-07-21 01:09:31,405  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: READY
+2015-07-21 01:09:31,532  INFO [Main] Karta.DataSources.WebMaps.WebMapTilesManager - Creating 2 worker threads
+2015-07-21 01:09:31,535  INFO [Web Tiles Fetcher 6] Karta.DataSources.WebMaps.WebMapTilesManager - FetchQueuedTiles worker thread started
+2015-07-21 01:09:31,539  INFO [Web Tiles Fetcher 7] Karta.DataSources.WebMaps.WebMapTilesManager - FetchQueuedTiles worker thread started
+2015-07-21 01:09:34,329  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'open-sources'
+2015-07-21 01:09:34,330  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > open-sources
+2015-07-21 01:09:45,450  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: > load-source "/home/ajay/CCPP/EmergencyTransportationPrj/osmrender.osm"
+2015-07-21 01:09:45,509  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: Started reading OSM data
+2015-07-21 01:09:45,550  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: Read 382 nodes, 10 ways and 0 relations in total
+2015-07-21 01:09:45,566  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: SCRIPT FINISHED
+2015-07-21 01:09:45,646  INFO [Main] Brejc.OsmLibrary.CoastlinesProcessing.CoastlineProcessor - Starting coastline processor...
+2015-07-21 01:09:45,666  INFO [Main] Brejc.OsmLibrary.CoastlinesProcessing.CoastlineProcessor - All coastlines are closed
+2015-07-21 01:09:45,667  INFO [Main] Brejc.OsmLibrary.CoastlinesProcessing.CoastlineProcessor - Finished coastline processing.
+2015-07-21 01:09:45,750  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: DONE
+2015-07-21 01:09:48,187  INFO [Main] Maperitive.Scripting.ScriptExecutor - Executing command 'open-script'
+2015-07-21 01:09:48,188  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: > open-script
+2015-07-21 01:09:50,445  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: > clear-map
+2015-07-21 01:09:50,489  INFO [Threadpool worker] Karta.DataSources.WebMaps.WebMapTilesManager - Shutting down.
+2015-07-21 01:09:50,490  INFO [Threadpool worker] Karta.DataSources.WebMaps.WebMapTilesManager - All worker threads have now been shutdown.
+2015-07-21 01:09:50,490  INFO [Web Tiles Fetcher 6] Karta.DataSources.WebMaps.WebMapTilesManager - FetchQueuedTiles() exiting, the thread was signalled to stop
+2015-07-21 01:09:50,490  INFO [Web Tiles Fetcher 7] Karta.DataSources.WebMaps.WebMapTilesManager - FetchQueuedTiles() exiting, the thread was signalled to stop
+2015-07-21 01:09:50,491  INFO [Threadpool worker] Karta.DataSources.WebMaps.WebMapTilesManager - Shutting down.
+2015-07-21 01:09:50,492  INFO [Threadpool worker] Karta.DataSources.WebMaps.WebMapTilesManager - All worker threads have now been shutdown.
+2015-07-21 01:09:50,535  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: > add-web-map
+2015-07-21 01:09:50,547  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: > use-script-dir
+2015-07-21 01:09:50,549  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: > use-ruleset location=cycle.mrules
+2015-07-21 01:09:50,571  INFO [Main] Karta.DataSources.WebMaps.WebMapTilesManager - Creating 2 worker threads
+2015-07-21 01:09:50,572  INFO [Web Tiles Fetcher 13] Karta.DataSources.WebMaps.WebMapTilesManager - FetchQueuedTiles worker thread started
+2015-07-21 01:09:50,580  INFO [Web Tiles Fetcher 14] Karta.DataSources.WebMaps.WebMapTilesManager - FetchQueuedTiles worker thread started
+2015-07-21 01:09:50,707  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: > load-source osmrender.osm
+2015-07-21 01:09:50,719  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: Started reading OSM data
+2015-07-21 01:09:50,731  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: Read 382 nodes, 10 ways and 0 relations in total
+2015-07-21 01:09:50,740  INFO [Threadpool worker] Maperitive.Gui.Views.CommanderView - Info: SCRIPT FINISHED
+2015-07-21 01:09:50,758  INFO [Main] Brejc.OsmLibrary.CoastlinesProcessing.CoastlineProcessor - Starting coastline processor...
+2015-07-21 01:09:50,760  INFO [Main] Brejc.OsmLibrary.CoastlinesProcessing.CoastlineProcessor - All coastlines are closed
+2015-07-21 01:09:50,761  INFO [Main] Brejc.OsmLibrary.CoastlinesProcessing.CoastlineProcessor - Finished coastline processing.
+2015-07-21 01:09:51,237  INFO [Main] Maperitive.Gui.Views.CommanderView - Info: DONE

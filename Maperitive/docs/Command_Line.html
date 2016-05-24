@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: Command Line</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="Command Line">
+	Command Line
+</h1>
+<table class="toc" id="toc">
+	<tbody>
+		<tr>
+			<td><div id="toctitle">
+				<h2>
+					Contents
+				</h2>
+			</div><ul>
+				<li class="toclevel-2"><a href="#Options">Options</a></li><ul>
+					<li class="toclevel-3"><a href="#Specifying%20custom%20scripts%20to%20run">Specifying custom scripts to run</a></li><li class="toclevel-3"><a href="#Displaying%20help%20information">Displaying help information</a></li><li class="toclevel-3"><a href="#Enabling/disabling%20the%20default%20script">Enabling/disabling the default script</a></li><li class="toclevel-3"><a href="#Automatically%20closing%20Maperitive%20after%20scripts%20have%20finished">Automatically closing Maperitive after scripts have finished</a></li><li class="toclevel-3"><a href="#Disabling%20the%20application%20update%20check">Disabling the application update check</a></li>
+				</ul>
+			</ul></td>
+		</tr>
+	</tbody>
+</table><p>Maperitive has several command-line options which mostly help in Scripting <i>(TODO)</i>. Here is the brief description of the command-line options format:</p><pre>
+Maperitive [options] [script 1 file] [script 2 file] ... [script N file]
+</pre>
+<h2 id="Options">
+	Options
+</h2>
+
+<h3 id="Specifying custom scripts to run">
+	Specifying custom scripts to run
+</h3>
+<p>You can specify one or more of scripts you want to run when Maperitive starts. The scripts will run in the order specified, so for example</p><pre>
+Maperitive script1.mscript script2.mscript script3.mscript
+</pre><p>will run <i>script1.mscript</i>, then <i>script2.mscript</i> and finally <i>script3.mscript</i>.</p>
+<h3 id="Displaying help information">
+	Displaying help information
+</h3>
+<p>OPTION: <strong>-? | -h | -help</strong></p><p>DESCRIPTION: Displays the command-line help in Maperitive.</p>
+<h3 id="Enabling/disabling the default script">
+	Enabling/disabling the default script
+</h3>
+<p>Normally Maperitive starts its work by running the <strong>default script</strong> (stored in the <i>Scripts/default.mrules</i> file). You can modify this behavior using the following option:</p><p>OPTION: <strong>-defscr | -defaultscript</strong></p><p>VALUE: <i>true</i> or <i>false</i> (if the value is omitted, <i>true</i> will be used).</p><p>DESCRIPTION: Specifies whether to run the default script or not. By default, the default script is run if no other  scripts are specified. If one or more user scripts are specified, the default script will not be run unless this option is turned on.</p><p>EXAMPLES:</p><pre>
+Maperitive -defaultscript=false
+</pre><p>Starts Maperitive but it does not run the default script.</p><pre>
+Maperitive myscript.mscript
+</pre><p>Starts Maperitive by running <i>myscript.mscript</i>. In this case the default script will not be run.</p><pre>
+Maperitive -defaultscript myscript.mscript
+</pre><p>Starts Maperitive by first running the default script and then the <i>myscript.mscript</i>.</p>
+<h3 id="Automatically closing Maperitive after scripts have finished">
+	Automatically closing Maperitive after scripts have finished
+</h3>
+<p>If you want to have a complete automation with your scripts, you probably want Maperitive to close itself after it finishes running the scripts. This is achieved using the following option:</p><p>OPTION: <strong>-exa | -exitafter</strong></p><p>VALUE: <i>true</i> or <i>false</i> (if the value is omitted, <i>true</i> will be used).</p><p>DESCRIPTION: Specifies whether Maperitive should exit upon finishing running scripts. By default Maperitive will  remain running.</p><p>EXAMPLE:</p><pre>
+Maperitive -exitafter myscript.mscript
+</pre><p>Instructs Maperitive to run the <i>myscript.mscript</i> script and then to close.</p>
+<h3 id="Disabling the application update check">
+	Disabling the application update check
+</h3>
+<p>On startup Maperitive occasionally checks if there is an updated version of the application by contacting the update server. You can disable this update check using the following option:</p><p>OPTION: <strong>-upd | -update</strong></p><p>VALUE: <i>true</i> or <i>false</i> (if the value is omitted, <i>true</i> will be used).</p><p>DESCRIPTION: Specifies whether Maperitive should check if a new version is available when it starts. By default Maperitive will  check for new versions.</p><p>EXAMPLE:</p><pre>
+Maperitive -update=false
+</pre><p>Instructs Maperitive to disable checking for new versions.</p><p>  </p>
+        </div>
+        
+    </body>
+</html>

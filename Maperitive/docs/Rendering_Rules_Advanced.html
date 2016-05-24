@@ -1,0 +1,169 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: Rendering Rules Advanced</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="Rendering Rules Advanced">
+	Rendering Rules Advanced
+</h1>
+<p>This page gives an advanced look into how Maperitive rendering rules function. Although the whole concept might seem complicated at first, it's actually pretty simple. From this simplicity you can get a number of ways of how to define the rules. Sometimes these different ways end up with the same result on the map, sometimes they can differ slightly and sometimes the differences can be substantial.</p><p>But let's start from the beginning.</p>
+<h2 id="Rules Properties And Flow">
+	Rules Properties And Flow
+</h2>
+<p>If you want to draw something, you need to know what color to use, what is the thickness of the line etc. This is controlled through Rendering Properties <i>(TODO)</i> like <i>line-color</i>, <i>border-width</i> etc.</p><p>It's important to know that <strong>all of rendering properties have default values</strong>. When Maperitive starts processing a rule, it starts by assigning these default values to properties. So, for example, you don't need to specify</p><pre>
+define
+	text : name
+</pre><p>since the value <i>"name"</i> is already a default value of the <i>text</i> property.</p><p>You can set your own default values in the <strong>properties</strong> section of the ruleset, for example</p><pre>
+properties
+	text : name:fr
+</pre><p>will tell Maperitive to use names in French by default.</p><p>Inside each of the rules you can change the value of a rendering property using the "define" command. You need to understand the scope of this change:</p><ol>
+	<li>the new value will only affect rule commands that come <strong>after</strong> your "define" command</li>
+	<li>the new value will <strong>not</strong> affect any other rules. So the scope of the new value ends with the last command of the rule.</li>
+
+</ol><p>Example is worth a hundred words, so let's illustrate this with an example (I've left out feature definitions, but  I think you can figure those out for yourself):</p><pre>
+...
+properties
+	font-family : Tahoma
+	
+target : place country
+	define
+		font-family : Times New Roman
+	draw : text
+	
+target : place city
+	draw : text
+</pre><p>The results of these rules are:</p><ul>
+	<li>country names will be displayed using the <i>Times New Roman</i> font (since we've explicitly set that font in the rule)</li>
+	<li>city names will be displayed using the <i>Tahoma</i> font (since we set that font as default one in the <i>properties</i> section and we haven't overriden it in the rule). Note that setting the font for the country rule did not affect the city rule.</li>
+
+</ul>
+<h2 id="Conditional Flow And Decision Trees">
+	Conditional Flow And Decision Trees
+</h2>
+<p>The real power of Maperitive rules lies in the ability to define a <a href="http://en.wikipedia.org/wiki/Decision_tree">decision tree</a> within a single rule. This is achieved using commands like <i>"if"</i>, <i>"elseif"</i>, <i>"for"</i>, <i>"elsefor"</i> and <i>"else"</i>.</p><p>Let's start with a simple decision tree:</p><pre>
+target : *road
+	if : major road				
+		define					(A)
+			line-width : 20
+	else
+		define					(B)
+			line-width : 10
+	draw : line					(C)
+</pre><p>I've marked the key commands with symbols so I can present the flow of the command more easily. Let's say we have three features: <i>major road</i>, <i>medium road</i> and <i>minor road</i> (specified in that order). Based on the rule match string ("*road"), Maperitive will execute the rule commands on these features in the following order:</p><ol>
+	<li>major road: A, C</li>
+	<li>medium road: B, C</li>
+	<li>minor road: B, C</li>
+
+</ol><p>I've indicated which of the commands will be executed for each of the features (I've left out the conditional commands since they can be deduced from the context).</p><p>This is not the only way to achieve the <strong>same</strong> result:</p><pre>
+target : *road
+	if : major road				
+		define					(A)
+			line-width : 20
+		draw : line				(B)
+	else
+		define					(C)
+			line-width : 10
+		draw : line				(D)
+</pre><p>Notice that we have now moved the "draw" command to the inside block of each of the conditional commands (using  tabs identation). The flow now is as follows:</p><ol>
+	<li>major road: A, B</li>
+	<li>medium road: C, D</li>
+	<li>minor road: C, D</li>
+
+</ol><p>But in our case this amounts to the same thing (setting the appropriate line width and drawing a line).</p><p>We can nest the conditional commands:</p><pre>
+target : *road
+	if : major road				
+		define						(A)
+			line-width : 20
+	else
+		if : medium road
+			define					(B)
+				line-width : 15
+		else
+			define					(C)
+				line-width : 10
+	draw : line						(D)
+</pre><p>with the flow being</p><ol>
+	<li>major road: A, D</li>
+	<li>medium road: B, D</li>
+	<li>minor road: C, D</li>
+
+</ol><p>We can even stop some of the flows:</p><pre>
+target : *road
+	if : major road				
+		define						(A)
+			line-width : 20
+	else
+		if : medium road
+			define					(B)
+				line-width : 15
+		else
+			stop					(C)
+	draw : line						(D)
+</pre><p>with the flow being</p><ol>
+	<li>major road: A, D</li>
+	<li>medium road: B, D</li>
+	<li>minor road: C (doesn't draw anything)</li>
+
+</ol><p>I gave the above two examples to illustrate the ability to nest conditional commands within other conditional commands. But a more proper way to define the rule which results with the same effect on the map would be</p><pre>
+target : *road
+	if : major road				
+		define						(A)
+			line-width : 20
+	elseif : medium road
+		define						(B)
+			line-width : 15
+	else
+		define						(C)
+			line-width : 10
+	draw : line						(D)
+</pre><p>again, the flow is exactly the same as in the example before the previous one:</p><ol>
+	<li>major road: A, D</li>
+	<li>medium road: B, D</li>
+	<li>minor road: C, D</li>
+
+</ol><p>The only difference is that the rule is more readable, since we only use one level of nesting.</p><p><strong>TO BE CONTINUED</strong></p><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="Feature_Selectors.html">Feature Selectors</a>
+                </li>
+        <li>
+                    <a href="Rulesets.html">Introduction To Rulesets</a>
+                </li>
+        <li>
+                    <a href="Map_Layering.html">Map Layering</a>
+                </li>
+        <li>
+                    <a href="Map_Symbols.html">Map Symbols</a>
+                </li>
+        <li>
+                    <a href="Querying_Data.html">Querying Data</a>
+                </li>
+        <li>
+                    <a href="Querying_GPS_Data.html">Querying GPS Data</a>
+                </li>
+        <li>
+                    <a href="Rendering_Coastlines_And_Sea.html">Rendering Coastlines And Sea</a>
+                </li>
+        <li>
+                    <a href="Rendering_Rules_Introduction.html">Rendering Rules Introduction</a>
+                </li>
+    </ul>
+</div></p><p> </p>
+        </div>
+        
+    </body>
+</html>

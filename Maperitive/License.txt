@@ -1,0 +1,16 @@
+Maperitive - License
+--------------------
+Maperitive is freeware and may be distributed in unmodified form, but you may not sell the program 
+or remove any copyright information from it.
+
+For more information about Maperitive's terms of use, please visit http://maperitive.net/docs/manual/FAQ.html 
+page.
+
+The software is provided "as it is" without warranty of any kind. You use Maperitive at your own risk, 
+and support for Maperitive is not guaranteed.
+
+The software is available for download at http://maperitive.net
+
+Maperitive uses a number of 3rd party open source libraries, licenses for which are stored in the license subfolder.
+
+Copyright © 2010-2011 by Igor Brejc

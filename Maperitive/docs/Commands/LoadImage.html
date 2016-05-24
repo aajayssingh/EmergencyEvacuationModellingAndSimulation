@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="../MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: load-image Command</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="../default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="load-image Command">
+	load-image Command
+</h1>
+<table class="toc" id="toc">
+	<tbody>
+		<tr>
+			<td><div id="toctitle">
+				<h2>
+					Contents
+				</h2>
+			</div><ul>
+				<li class="toclevel-2"><a href="#Usage">Usage</a></li><li class="toclevel-2"><a href="#Drawing%20In%20The%20Background%20Vs.%20The%20Foreground">Drawing In The Background Vs. The Foreground</a></li><li class="toclevel-2"><a href="#Examples">Examples</a></li>
+			</ul></td>
+		</tr>
+	</tbody>
+</table><p> Loads an image map source into the current map. The newly loaded image will be added to the end of the list of map sources (see <a href="../Commands/ListSources.html">list-sources command</a>).</p>
+<h2 id="Usage">
+	Usage
+</h2>
+<pre>
+ load-image 
+   file=&lt;image file&gt;
+   [background=&lt;true/false&gt;] 
+</pre><p>Parameters:</p><ul>
+	<li><strong>file</strong>: specifies the file name of the image. Image has to be georeferenced using a world file (see <a href="../Georeferenced_Images.html">Georeferenced Images</a>).</li>
+	<li><strong>background</strong>: specifies whether to draw the image in the background (value <i>true</i>) or in the foreground (value <i>false</i>). By default images are drawn in the background.</li>
+
+</ul><p>After executing the command, the current map source index will be set to this newly loaded source.</p><p><div class="note">
+    <strong>NOTE:</strong> You need to load a ruleset before loading any images, otherwise the command will fail.  This is especially important if you're running your own custom scripts.
+</div></p>
+<h2 id="Drawing In The Background Vs. The Foreground">
+	Drawing In The Background Vs. The Foreground
+</h2>
+<p>Georeferenced images can be drawn either in the background or in the foreground, depending on the nature of the image:</p><ul>
+	<li>Image which contains semitransparent data (like hillshading) is best drawn in the foreground, otherwise the image might be overlapped or hidden by other map sources.</li>
+	<li>Opaque images might hide other data, so they are usually drawn in the background.</li>
+
+</ul>
+<h2 id="Examples">
+	Examples
+</h2>
+<pre>
+load-image hypso.png
+</pre><p>Loads the <i>hypso.png</i> file (it has to have the <i>hypso.pgw</i> world file) and draws it in the background.</p><pre>
+load-image file=relief/hillshading.jpg background=false
+</pre><p>Loads the <i>hillshading.jpg</i> file from the <i>relief</i> directory and draws it in the foreground.</p><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="../Commands/AddWebMap.html">add-web-map Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/DownloadOsm.html">download-osm Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/GeometryBoundsUseSource.html">geo-bounds-use-source Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/ListSources.html">list-sources Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/LoadSource.html">load-source Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/ReloadSource.html">reload-source Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/RemoveSource.html">remove-source Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/SaveMapScript.html">save-map-script Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/SetSource.html">set-source Command</a>
+                </li>
+    </ul>
+</div></p><p>  </p>
+        </div>
+        
+    </body>
+</html>

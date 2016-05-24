@@ -1,0 +1,5 @@
+clear-map
+add-web-map
+use-script-dir
+use-ruleset location=cycle.mrules
+load-source CycleNetwork.osm

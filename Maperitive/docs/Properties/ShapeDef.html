@@ -1,0 +1,215 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="../MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: shape-def</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="../default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="shape-def">
+	shape-def
+</h1>
+<table class="toc" id="toc">
+	<tbody>
+		<tr>
+			<td><div id="toctitle">
+				<h2>
+					Contents
+				</h2>
+			</div><ul>
+				<li class="toclevel-2"><a href="#Introduction">Introduction</a></li><li class="toclevel-2"><a href="#Shape%20Size">Shape Size</a></li><ul>
+					<li class="toclevel-3"><a href="#Fixed%20Size%20Shapes">Fixed Size Shapes</a></li><li class="toclevel-3"><a href="#Shield%20Symbol">Shield Symbol</a></li>
+				</ul><li class="toclevel-2"><a href="#About%20Styling">About Styling</a></li><li class="toclevel-2"><a href="#Command%20Types">Command Types</a></li><ul>
+					<li class="toclevel-3"><a href="#Move%20To">Move To</a></li><li class="toclevel-3"><a href="#Line%20To">Line To</a></li><li class="toclevel-3"><a href="#Draw%20Arc">Draw Arc</a></li><li class="toclevel-3"><a href="#Close%20Shape">Close Shape</a></li><li class="toclevel-3"><a href="#Set%20Fill%20Color">Set Fill Color</a></li><li class="toclevel-3"><a href="#Set%20Pen%20Color">Set Pen Color</a></li><li class="toclevel-3"><a href="#Set%20Pen%20Width">Set Pen Width</a></li><li class="toclevel-3"><a href="#Set%20Pen%20Style">Set Pen Style</a></li>
+				</ul>
+			</ul></td>
+		</tr>
+	</tbody>
+</table><p></p>
+<h2 id="Introduction">
+	Introduction
+</h2>
+<p>When the <a href="../Properties/Shape.html">shape</a> is set to <i>custom</i>, the <a href="../Properties/ShapeDef.html">shape-def</a> property defines how the  custom <a href="../Symbols/shape.html">shape</a> or <a href="../Symbols/shield.html">shield</a> symbols will look like.</p><p><a href="../Properties/ShapeDef.html">shape-def</a> consists of a set of drawing commands. You can think of these commands as instructing a virtual plotter to draw something by telling it where to move its plotter head, what colors to use etc. The supported commands are:</p><ul>
+	<li>move to,</li>
+	<li>line to,</li>
+	<li>draw arc,</li>
+	<li>close shape,</li>
+	<li>set fill color,</li>
+	<li>set pen color,</li>
+	<li>set pen width,</li>
+	<li>set pen style.</li>
+
+</ul><p>Example of a shape definition which renders a blue oval rectangle:</p><pre>
+shape-def : p:blue;pw:7;f:blue;m:-10,-10;l:10,-10;a:10,10,10,10;l:-10,10;a:10,10,-10,-10;z
+</pre><p>A <strong>semicolon</strong> (';') is used to delimit commands. The first part (before the colon) of each command  specifies the <strong>command type</strong>. After the colon the <strong>command arguments</strong> are specified (delimited with <strong>commas</strong>).</p><p>In the above example we specify the following commands:</p><ol>
+	<li>set blue pen,</li>
+	<li>set pen width to 7,</li>
+	<li>set blue fill color,</li>
+	<li>move the pen to the point (-10,-10),</li>
+	<li>draw a line to the point (10,-10),</li>
+	<li>draw an arc to the point (10,10) with circle radius of 10,</li>
+	<li>draw a line to the point (-10,10),</li>
+	<li>draw an arc to the point (-10,-10) with circle radius of 10,</li>
+	<li>close the shape.</li>
+
+</ol>
+<h2 id="Shape Size">
+	Shape Size
+</h2>
+<p>The coordinates must be <i>integers</i>. The coordinates are relative to the largest absolute coordinate value. In the case of our sample shape above, the largest absolute coordinate value is 10 and all the other coordinates are then calculated as percentages of that value.</p>
+<h3 id="Fixed Size Shapes">
+	Fixed Size Shapes
+</h3>
+<p>In case of a <a href="../Symbols/shape.html">shape</a> symbol or if you use use the <strong>fixed</strong>  <a href="../Properties/ShieldResizeMode.html">shield-resize-mode</a> for shields, the coordinates are then multiplied with the ShapeSize <i>(TODO)</i> value to get the actual pixel coordinates (for the y-axis, the ShapeAspect <i>(TODO)</i> is also used).</p><p>So in the case of a shape of an arrow</p><pre>
+define
+	shape : custom
+	shape-def : -60,0;-20,-40;-20,-15;60,-15;60,15;-20,15;-20,40;Z
+	shape-size : 10
+	shape-aspect : 0.5
+draw : shape 
+</pre><p>the resulting arrow will have the nominal width of 10 pixels and height of 3 pixels (40 / 60 * 10 * 0.5).</p>
+<h3 id="Shield Symbol">
+	Shield Symbol
+</h3>
+<p>In case of a <a href="../Symbols/shield.html">shield</a> symbol (when you <strong>don't</strong> have the <strong>fixed</strong>  <a href="../Properties/ShieldResizeMode.html">shield-resize-mode</a>), the size of the shape will be determined automatically based on the size of the text and other shield-related properties.</p>
+<h2 id="About Styling">
+	About Styling
+</h2>
+<p>If no styling commands are specified in the shape definition, it will use the styling defined in the rules  for this particular shape symbol.</p><p>Using any of the styling commands (like setting the pen color) will automatically finish processing of any previous shape (so you cannot have a single polygon with two different border styles, for example).</p>
+<h2 id="Command Types">
+	Command Types
+</h2>
+
+<h3 id="Move To">
+	Move To
+</h3>
+<p>Format: <i>m : x, y</i></p><p>Moves the pen to the point <i>(x, y)</i>.</p><p>Example:</p><pre>
+m:20,-10
+</pre>
+<h3 id="Line To">
+	Line To
+</h3>
+<p>Format: <i>l : x1, y1, x2, y2, ... xN, yN</i></p><p>Draws a series of lines specified specified by the coordinates. If the pen was moved before this command, the first line starts from that initial point.</p><p>Example:</p><pre>
+l:20,-10,20,10,30,-10
+</pre>
+<h3 id="Draw Arc">
+	Draw Arc
+</h3>
+<p>Format: <i>a : rx, ry, x, y</i></p><p>Draws an elliptical arc from the current point to the point <i>(x, y)</i> using an ellipse with horizontal radius of <i>rx</i> and vertical radius of <i>ry</i>.</p><p>Example:</p><pre>
+a:30,10,-10,-10
+</pre>
+<h3 id="Close Shape">
+	Close Shape
+</h3>
+<p>Format: <i>z</i></p><p>Closes the existing shape.</p><p>Example:</p><pre>
+z
+</pre>
+<h3 id="Set Fill Color">
+	Set Fill Color
+</h3>
+<p>Format: <i>f : color, opacity</i></p><p>Sets the color for the subsequent filled polygons. The color is specified using the  <a href="http://en.wikipedia.org/wiki/Web_colors">Web colors syntax</a> (examples: <i>red</i>, <i>#ff00bb</i>). If the color is set to <i>none</i>, polygons will not be filled. <i>opacity</i> parameter is optional and specifies the opacity of the color (see <a href="../Properties/FillOpacity.html">fill-opacity</a>). The default is fully opaque color.</p><p>Examples:</p><pre>
+f:red
+f:#ff00bb,0.4
+</pre>
+<h3 id="Set Pen Color">
+	Set Pen Color
+</h3>
+<p>Format: <i>p : color, opacity</i></p><p>Sets the color of the pen. The color is specified using the  <a href="http://en.wikipedia.org/wiki/Web_colors">Web colors syntax</a> (examples: <i>red</i>, <i>#ff00bb</i>). If the color is set to <i>none</i>, polygons will not have a visible border. <i>opacity</i> parameter is optional and specifies the opacity of the color (see <a href="../Properties/FillOpacity.html">fill-opacity</a>). The default is fully opaque color.</p><p>Examples:</p><pre>
+p:red
+p:#ff00bb,0.4
+</pre>
+<h3 id="Set Pen Width">
+	Set Pen Width
+</h3>
+<p>Format: <i>pw : width</i></p><p>Sets the width of the pen. The width must be a positive real number.</p><p>Examples:</p><pre>
+pw:1
+pw:5
+</pre>
+<h3 id="Set Pen Style">
+	Set Pen Style
+</h3>
+<p>Format: <i>ps : style</i></p><p>Sets the style of the pen. See <a href="../Properties/LineStyle.html">line-style</a> for all the possible values.</p><p>Examples:</p><pre>
+ps:solid
+ps:dash
+</pre><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="../Properties/FillColor.html">fill-color</a>
+                </li>
+        <li>
+                    <a href="../Properties/FillHatch.html">fill-hatch</a>
+                </li>
+        <li>
+                    <a href="../Properties/FillHatchColor.html">fill-hatch-color</a>
+                </li>
+        <li>
+                    <a href="../Properties/FillHatchOpacity.html">fill-hatch-opacity</a>
+                </li>
+        <li>
+                    <a href="../Properties/FillOpacity.html">fill-opacity</a>
+                </li>
+        <li>
+                    <a href="../Properties/FillTexture.html">fill-texture</a>
+                </li>
+        <li>
+                    <a href="../Properties/LineEndCap.html">line-end-cap</a>
+                </li>
+        <li>
+                    <a href="../Properties/LineStartCap.html">line-start-cap</a>
+                </li>
+        <li>
+                    <a href="../Properties/LineStyle.html">line-style</a>
+                </li>
+        <li>
+                    <a href="../Properties/Shape.html">shape</a>
+                </li>
+        <li>
+                    <a href="../Properties/ShapeMode.html">shape-mode</a>
+                </li>
+        <li>
+                    <a href="../Properties/ShapeOrientation.html">shape-orientation</a>
+                </li>
+        <li>
+                    <a href="../Properties/ShapeSpacing.html">shape-spacing</a>
+                </li>
+        <li>
+                    <a href="../Properties/ShieldPaddingBottom.html">shield-padding-bottom</a>
+                </li>
+        <li>
+                    <a href="../Properties/ShieldPaddingLeft.html">shield-padding-left</a>
+                </li>
+        <li>
+                    <a href="../Properties/ShieldPaddingRight.html">shield-padding-right</a>
+                </li>
+        <li>
+                    <a href="../Properties/ShieldPaddingTop.html">shield-padding-top</a>
+                </li>
+        <li>
+                    <a href="../Properties/ShieldResizeMode.html">shield-resize-mode</a>
+                </li>
+        <li>
+                    <a href="../Properties/TextAlignHorizontal.html">text-align-horizontal</a>
+                </li>
+        <li>
+                    <a href="../Properties/TextAlignVertical.html">text-align-vertical</a>
+                </li>
+        <li>
+                    <a href="../Properties/TextMaxWidth.html">text-max-width</a>
+                </li>
+    </ul>
+</div></p><p>  </p>
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="../MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: text-max-width</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="../default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="text-max-width">
+	text-max-width
+</h1>
+<p> Specifies the maximum width of the text displayed by the <a href="../Symbols/text.html">text</a> and <a href="../Symbols/shield.html">shield</a> symbols. Max. width is specified as a ratio to the <a href="../Properties/FontSize.html">font-size</a>: a default value of 7 means that the text will be (roughly) 7 characters wide.</p>
+<h2 id="Word Wrapping">
+	Word Wrapping
+</h2>
+<p><a href="../Symbols/text.html">text symbol</a> splits the text into words and then tries to fit as many words into a single line of text. If the length (in pixels) of the text exceeds the calculated max. length of the line (specified by the text-max-width property), the whole word is moved to a new line. This algorithm is repeated until all the words of the text are placed.</p><p>Example:</p><pre>
+text-max-width : 10
+</pre><p>specifies a text-max-width ratio of 10 (which is wider than the default value).</p><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="../Properties/FontFamily.html">font-family</a>
+                </li>
+        <li>
+                    <a href="../Properties/FontSize.html">font-size</a>
+                </li>
+        <li>
+                    <a href="../Properties/FontStretch.html">font-stretch</a>
+                </li>
+        <li>
+                    <a href="../Properties/FontStyle.html">font-style</a>
+                </li>
+        <li>
+                    <a href="../Properties/FontWeight.html">font-weight</a>
+                </li>
+        <li>
+                    <a href="../Properties/Text.html">text</a>
+                </li>
+        <li>
+                    <a href="../Properties/TextAlignHorizontal.html">text-align-horizontal</a>
+                </li>
+        <li>
+                    <a href="../Properties/TextAlignVertical.html">text-align-vertical</a>
+                </li>
+        <li>
+                    <a href="../Properties/TextDirection.html">text-direction</a>
+                </li>
+        <li>
+                    <a href="../Properties/TextLetterSpacing.html">text-letter-spacing</a>
+                </li>
+        <li>
+                    <a href="../Properties/TextLineSpacing.html">text-line-spacing</a>
+                </li>
+        <li>
+                    <a href="../Properties/TextOffsetHorizontal.html">text-offset-horizontal</a>
+                </li>
+        <li>
+                    <a href="../Properties/TextOffsetVertical.html">text-offset-vertical</a>
+                </li>
+        <li>
+                    <a href="../Properties/TextOrientation.html">text-orientation</a>
+                </li>
+    </ul>
+</div></p><p>   </p>
+        </div>
+        
+    </body>
+</html>

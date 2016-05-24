@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="../MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: save-map-script Command</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="../default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="save-map-script Command">
+	save-map-script Command
+</h1>
+<p> Saves the current map as a script which can later be run to load the map back into Maperitive.</p><p>The command also moves any generated bitmaps (like the ones generated using the <a href="../Commands/GenerateHypsometric.html">generate-hypsometric Command</a>) from the temporary storage to the same directory where the script will be saved.</p><p>All of the map sources need to be saved before running this command. So, for example,  if you used <a href="../Commands/DownloadOsm.html">download-osm Command</a> you need to save the resulting OSM data to a file (using the SaveSource <i>(TODO)</i>).</p><p>The command records a list of generated files. This list can be automatically forwarded to subsequent file commands like <a href="../Commands/FtpUpload.html">ftp-upload Command</a> and <a href="../Commands/ZipFiles.html">zip Command</a>.</p>
+<h2 id="Usage">
+	Usage
+</h2>
+<pre>
+save-map-script &lt;script file name&gt;
+</pre><p>Parameters:</p><ul>
+	<li><strong>script file name</strong>: specifies the file name of the script to be generated.</li>
+
+</ul>
+<h2 id="Examples">
+	Examples
+</h2>
+<pre>
+save-map-script scripts/myscript.mscript
+</pre><p>Saves the map to the <i>myscript.mscript</i> file in the <i>scripts</i> directory.</p><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="../Commands/AddWebMap.html">add-web-map Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/ChangeDirectory.html">change-dir Command</a>
+                </li>
+        <li>
+                    <a href="../Command_Line.html">Command Line</a>
+                </li>
+        <li>
+                    <a href="../Commands/DownloadOsm.html">download-osm Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/GeometryBoundsUseSource.html">geo-bounds-use-source Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/ListSources.html">list-sources Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/LoadImage.html">load-image Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/LoadSource.html">load-source Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/ReloadSource.html">reload-source Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/RemoveSource.html">remove-source Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/SetSource.html">set-source Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/UseScriptDirectory.html">use-script-dir Command</a>
+                </li>
+    </ul>
+</div></p><p>   </p>
+        </div>
+        
+    </body>
+</html>

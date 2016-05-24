@@ -1,0 +1,133 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="../MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: export-svg Command</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="../default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="export-svg Command">
+	export-svg Command
+</h1>
+<table class="toc" id="toc">
+	<tbody>
+		<tr>
+			<td><div id="toctitle">
+				<h2>
+					Contents
+				</h2>
+			</div><ul>
+				<li class="toclevel-2"><a href="#Usage">Usage</a></li><li class="toclevel-2"><a href="#Exporting%20And%20Bounds">Exporting And Bounds</a></li><li class="toclevel-2"><a href="#Exporting%20And%20Bitmaps">Exporting And Bitmaps</a></li><li class="toclevel-2"><a href="#Making%20SVG%20Exports%20Portable">Making SVG Exports Portable</a></li><li class="toclevel-2"><a href="#Compatibility">Compatibility</a></li><li class="toclevel-2"><a href="#Precision%20Typography">Precision Typography</a></li><li class="toclevel-2"><a href="#Current%20Limitations">Current Limitations</a></li><li class="toclevel-2"><a href="#Troubleshooting">Troubleshooting</a></li><ul>
+					<li class="toclevel-3"><a href="#The%20generated%20SVG%20cannot%20be%20loaded%20into%20Inkscape/Illustrator">The generated SVG cannot be loaded into Inkscape/Illustrator</a></li><li class="toclevel-3"><a href="#The%20generated%20SVG%20is%20shown%20off-center%20in%20Illustrator">The generated SVG is shown off-center in Illustrator</a></li>
+				</ul>
+			</ul></td>
+		</tr>
+	</tbody>
+</table><p> Exports the current map to a SVG file.</p>
+<h2 id="Usage">
+	Usage
+</h2>
+<pre>
+export-svg 
+   [file=&lt;output file&gt;] 
+   [zoom=&lt;zoom&gt;]
+   [map-scale=&lt;map scale&gt;]
+   [compatibility=&lt;Inkscape/Illustrator&gt;]
+   [compressed=&lt;true/false&gt;]
+   [copy-images=&lt;true/false&gt;]
+   [scale=&lt;scale&gt;] 
+   [ai-autorescale=&lt;true/false&gt;]
+   [precision-typo=&lt;true/false&gt;]
+</pre><p>All parameters are optional:</p><ul>
+	<li><strong>file</strong>: specifies the exported SVG file name. If not set, <strong>output/output.svg</strong> will be used.</li>
+	<li><strong>zoom</strong>: specifies the zoom level to use when exporting. The default value is the current zoom used on the main map display.</li>
+	<li><strong>map-scale</strong>: specifies the map scale to use when exporting. If not set, the map-scale will be calculated automatically. See <a href="../Commands/ZoomMapScale.html">zoom-map-scale Command</a> for more information about map scales.</li>
+	<li><strong>compatibility</strong>: specifies the compatibility mode when generating the SVG file. Possible values are <strong>Inkscape</strong> (the default value) and <strong>Illustrator</strong>. See below for more info.</li>
+	<li><strong>compressed</strong>: specifies whether to compress the SVG file or not. Compressed SVGs have a .svgz extension and cannot be edited directly in a text editor, but they do save a lot of disk space.</li>
+	<li><strong>copy-images</strong>: specifies whether to copy any images used by the SVG file to the output destination directory or to just reference these images using full paths in the SVG file. The default behavior is to copy the images.</li>
+	<li><strong>scale</strong>: specifies the graphics scale to use. If not set, the normal scale of 1 is used.</li>
+	<li><strong>ai-autorescale</strong>: when in <i>Illustrator</i> compatibility mode, this setting allows automatic rescaling of the whole map to fit the maximum size of Illustrator's canvas (a.k.a. <i>artboard</i>). This setting is turned off by default, in which case the user-defined value of the <strong>scale</strong> parameter will be used to rescale the map.</li>
+	<li><strong>precision-typo</strong>: specifies whether to render text on path using precision typography. See below for more info.</li>
+
+</ul><p>The command records a list of generated files. This list can be automatically forwarded to subsequent file commands like <a href="../Commands/FtpUpload.html">ftp-upload Command</a> and <a href="../Commands/ZipFiles.html">zip Command</a>.</p>
+<h2 id="Exporting And Bounds">
+	Exporting And Bounds
+</h2>
+<p><a href="../Commands/ExportSvg.html">export-svg Command</a> does not cut the data exactly along the export boundaries. So, for example, any OSM ways that extend outside the boundaries will not be cut. However, the exported SVG file specifies the clipping rectangle for the actual area specified by the user, so the data outside of the user-defined boundary will not be visible.</p>
+<h2 id="Exporting And Bitmaps">
+	Exporting And Bitmaps
+</h2>
+<p>The exported map can contain bitmaps. <a href="../Commands/ExportSvg.html">export-svg Command</a> treats bitmaps in two ways:</p><ul>
+	<li>All <strong>icons</strong> are embedded into the SVG itself. This is due to the fact that icons are usually small and are typically drawn more than once on the map. If you copy or move the exported SVG file, icons will automatically be moved with the file.</li>
+	<li>All <strong>bitmap images</strong> (like hillshadings, hypsometric tints, web map tiles etc) are referenced as external images. The <strong>copy-images</strong> setting specifies whether an image will be referenced through the full path of the original image file saved on disk (when the setting is set to <i>false</i>) or will be copied to the same directory where the SVG file is saved and referenced only through a local file name  (without the file path) when the setting is set to <i>true</i>.</li>
+
+</ul><p>When copying images, the command makes sure the images do not overwrite each other if they have a same name (this is  especially problematic for web tiles). The command adds suffixes like .1 or .2 to duplicate file names.</p>
+<h2 id="Making SVG Exports Portable">
+	Making SVG Exports Portable
+</h2>
+<p>If you want to copy your SVG export to some other computer or send it via Internet, it is suggested that you:</p><ol>
+	<li>Set the <strong>copy-images</strong> to <i>true</i>.</li>
+	<li>Export the SVG to a separate (empty) directory.</li>
+	<li>Zip all the resulting files in the directory into a single ZIP package which can be easier to move around.</li>
+
+</ol>
+<h2 id="Compatibility">
+	Compatibility
+</h2>
+<p>Due to the pretty buggy support which Adobe Illustrator provides for loading SVG files, it is not possible to have the same  SVG optimally shown in both Illustrator <strong>and</strong> Inkscape. In other words, if you plan to use the SVG file in Illustrator, you should specify <i>compatibility=illustrator</i> parameter. Maperitive will in this case do some tweaks to the SVG file which allow it to be shown without any problems in Illustrator (tested in CS5). But do not expect this file to be usable in other SVG viewers/editors.</p><p>On the other hand, if you need a SVG file which can be shown in various Web browsers and editable in Inkscape, you  should specify <i>compatibility=inkscape</i> parameter. Again, do not expect this file to be usable in Illustrator.</p>
+<h2 id="Precision Typography">
+	Precision Typography
+</h2>
+<p>When rendering text on paths, Maperitive positions and renders each character separately to achieve the best effect. This is called <strong>precision typography</strong>.</p><p>The problem with precision typography in the context of SVG is that other software usually treats such text labels as a series of separate text elements (one element for each character). This can be a problem for big maps - see the Troubleshooting section below.</p><p>Precision typography is turned off by default, in which case SVG text elements will not be broken into individual characters. Instead, a text label will be broken into one or more parts based on the rotation angle of each part.</p><p>Not using precision typography can produce some irregularities in how the text is rendered,  usually in form of poorly spaced characters. This can be corrected manually in the SVG editor, but if you want to avoid this, try turning on the <i>precision-typo</i> parameter and pray that your map can be loaded in the SVG editor.</p>
+<h2 id="Current Limitations">
+	Current Limitations
+</h2>
+<p>Some SVG renderers (like Inkscape and Illustrator) do not have a good <a href="http://en.wikipedia.org/wiki/Image_scaling">image scaling</a> algorithm,  so certain bitmaps can appear rather grainy (see the example of hillshading below) compared to how they look in Maperitive. I will try to implement an automatic rescaling for SVG exports in the future.</p><p><div class="image">
+	<img src="../images/GrainySvgBitmaps.jpg" />
+</div></p>
+<h2 id="Troubleshooting">
+	Troubleshooting
+</h2>
+
+<h3 id="The generated SVG cannot be loaded into Inkscape/Illustrator">
+	The generated SVG cannot be loaded into Inkscape/Illustrator
+</h3>
+<p>There is a limit of what both Inkscape and Adobe Illustrator can import. Although SVGs generated by Maperitive are usually not very large (up to 10 MB of file size), the file size is not the real indicator of whether these programs can "swallow" your map or not. The principal guideline is the complexity of the map: how many graphical elements it contains.</p><p>From my experience <strong>the biggest bottleneck is the number of text elements</strong> on your map. As an example I worked  on a city map for Dublin, Ireland which contained around 25,000 individual text elements. This number can become large because street labels tend to be broken into several separate text elements due to the fact that Maperitive has to render each letter separately for very winding roads.</p><p>The sheer number of text elements proved to be a problem for me - my map would not load either in Inkscape or in  Illustrator. There are several solutions for this problem, but none of them is an ideal one:</p><ol>
+	<li><strong>Turning off precision-typo parameter.</strong> See the above section about precision typography.</li>
+	<li><strong>Reduce the number of text elements.</strong> In my case that would mean hiding certain less important street labels.</li>
+	<li><strong>Split the map into several geographical parts.</strong> Initially I wanted to have the whole Dublin and its surroundings as a single map, but in the end I had to split the map into several parts.</li>
+	<li><strong>Separate painting stages into several SVG files.</strong> Using MapMaxPaintingStage <i>(TODO)</i>, MapMinPaintingStage <i>(TODO)</i> and MapHiddenPaintingStages <i>(TODO)</i> settings, you can render <a href="../Painting_Stages.html">painting stages</a> as separate SVG files and then glue them together in the editor (that is if you manage to load them all). I tried experimenting with rendering text labels into SVG separate from the rest of the map elements.</li>
+
+</ol>
+<h3 id="The generated SVG is shown off-center in Illustrator">
+	The generated SVG is shown off-center in Illustrator
+</h3>
+<p>Adobe Illustrator has a limit of 16345 pixels for the width and height of its canvas (a.k.a. <i>artboard</i>). Maperitive by default uses 1:1 scaling when rendering SVG elements, so the actual coordinates of elements correspond to those on the screen. If your map is very large, it could exceed this limit. There are two ways to solve this:</p><ol>
+	<li>Set the <strong>scale</strong> parameter of the <a href="../Commands/ExportSvg.html">export-svg Command</a> to a value between 0 and 1. This will not have any visual effect on the map, but it will shrink all coordinates based on the scale factor you set. But unless you know exactly what the scale factor you need to shrink everything to a 16345x16345 box, use the second option, which is to...</li>
+	<li>...set the <strong>ai-autorescale</strong> parameter of the command to <i>true</i>. In this case Maperitive will calculate the needed scale factor itself and rescale the map accordingly.</li>
+
+</ol><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="../Commands/ExportBitmap.html">export-bitmap Command</a>
+                </li>
+        <li>
+                    <a href="../Georeferenced_Images.html">Georeferenced Images</a>
+                </li>
+    </ul>
+</div></p><p>    </p>
+        </div>
+        
+    </body>
+</html>

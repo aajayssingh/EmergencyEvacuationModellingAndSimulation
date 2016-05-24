@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="80">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df name="osm4routing-MyParser" root=".">
+      <df name="damnn">
+        <in>main.cpp</in>
+        <in>xmlwriter.h</in>
+      </df>
+      <df name="xmlwriter">
+        <in>main.cpp</in>
+        <in>xmlwriter.h</in>
+      </df>
+      <in>bz2reader.cc</in>
+      <in>bz2reader.h</in>
+      <in>csvwriter.cc</in>
+      <in>csvwriter.h</in>
+      <in>main.cc</in>
+      <in>main.h</in>
+      <in>osmreader.cc</in>
+      <in>osmreader.h</in>
+      <in>parameters.cc</in>
+      <in>pqwriter.cc</in>
+      <in>pqwriter.h</in>
+      <in>reader.h</in>
+      <in>stdinreader.cc</in>
+      <in>stdinreader.h</in>
+      <in>writer.h</in>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+      </toolsSet>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath>osm4routing</executablePath>
+        </makeTool>
+      </makefileType>
+    </conf>
+  </confs>
+</configurationDescriptor>

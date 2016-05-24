@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="../MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: use-ruleset Command</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="../default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="use-ruleset Command">
+	use-ruleset Command
+</h1>
+<p> Activates the specified ruleset. If ruleset has not already been loaded, the command loads and parses the rules from the ruleset file.</p><p><strong>NOTE</strong>: This command does not apply the ruleset to existing map sources on the map. The ruleset will only be applied to map sources that are loaded <i>after</i> the <a href="../Commands/UseRuleset.html">use-ruleset Command</a> has been invoked. If you want to apply the ruleset to already loaded map sources, use <a href="../Commands/ApplyRuleset.html">apply-ruleset Command</a>.</p><p>The command records the ruleset file name in a file list, which can be automatically forwarded to subsequent file commands like <a href="../Commands/FtpUpload.html">ftp-upload Command</a> and <a href="../Commands/ZipFiles.html">zip Command</a>.</p>
+<h2 id="Usage">
+	Usage
+</h2>
+<pre>
+use-ruleset location=&lt;ruleset location&gt; alias=&lt;ruleset alias&gt; index=&lt;ruleset index&gt; 
+	as-alias=&lt;alias to use&gt;
+</pre><p>One (and only one) of the following parameters needs to be specified:</p><ul>
+	<li><strong>location</strong>: specifies the physical location of the ruleset file (on the disk)</li>
+	<li><strong>alias</strong>: specifies a ruleset alias to look for</li>
+	<li><strong>index</strong>: specifies the index of the ruleset to activate</li>
+
+</ul><p>You can assign a new alias to the ruleset by specifying the <strong>as-alias</strong> parameter.</p><p><div class="note">
+    <strong>NOTE:</strong> You cannot change the alias for built-in rulesets.
+</div></p>
+<h2 id="Examples">
+	Examples
+</h2>
+<pre>
+use-ruleset alias=wireframe
+</pre><p>Activates the built-in wireframe ruleset.</p><pre>
+use-ruleset location=myrules/hiking.mrules as-alias=hiking
+</pre><p>Loads the <strong>myrules/hiking.mrules</strong> ruleset, assigns it "hiking" alias and activates it.</p><pre>
+use-ruleset alias=wireframe
+apply-ruleset
+</pre><p>Activates the built-in wireframe ruleset and applies it to all of the loaded map sources.</p><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="../Commands/AddWebMap.html">add-web-map Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/ApplyRuleset.html">apply-ruleset Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/DownloadOsm.html">download-osm Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/GeometryBoundsUseSource.html">geo-bounds-use-source Command</a>
+                </li>
+        <li>
+                    <a href="../Rulesets.html">Introduction To Rulesets</a>
+                </li>
+        <li>
+                    <a href="../Commands/ListSources.html">list-sources Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/LoadImage.html">load-image Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/LoadSource.html">load-source Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/ReloadSource.html">reload-source Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/RemoveSource.html">remove-source Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/SaveMapScript.html">save-map-script Command</a>
+                </li>
+        <li>
+                    <a href="../Commands/SetSource.html">set-source Command</a>
+                </li>
+    </ul>
+</div></p><p>  </p>
+        </div>
+        
+    </body>
+</html>

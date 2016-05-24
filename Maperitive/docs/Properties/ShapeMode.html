@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="../MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: shape-mode</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="../default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="shape-mode">
+	shape-mode
+</h1>
+<p> This property specifies how the <a href="../Symbols/shape.html">shapes</a> or <a href="../Symbols/icon.html">icons</a> will be rendered in relation to the map feature they are representing.</p><p>Possible values are:</p><ul>
+	<li><strong>center</strong>: only one shape/icon will be drawn at the center of the point, line or the area.</li>
+	<li><strong>linear</strong>: several shapes/icons will be drawn along the line or along the border of the area. For point features, the shape/icon will be rendered at the center of the point.</li>
+	<li><strong>points-only</strong>: a shape/icon will be rendered at the center of the point. Shapes/icons will not be rendered for line or area features.</li>
+	<li><strong>default</strong>: acts as <strong>center</strong> mode for point and area features and <strong>linear</strong> mode for line features.</li>
+
+</ul><p>Example:</p><pre>
+define
+	shape-mode: linear
+</pre><p>specifies that the linear shape mode will be used.</p><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="../Properties/AlignHorizontal.html">align-horizontal</a>
+                </li>
+        <li>
+                    <a href="../Properties/AlignVertical.html">align-vertical</a>
+                </li>
+        <li>
+                    <a href="../Properties/FillColor.html">fill-color</a>
+                </li>
+        <li>
+                    <a href="../Properties/FillHatch.html">fill-hatch</a>
+                </li>
+        <li>
+                    <a href="../Properties/FillHatchColor.html">fill-hatch-color</a>
+                </li>
+        <li>
+                    <a href="../Properties/FillHatchOpacity.html">fill-hatch-opacity</a>
+                </li>
+        <li>
+                    <a href="../Properties/FillOpacity.html">fill-opacity</a>
+                </li>
+        <li>
+                    <a href="../Properties/FillTexture.html">fill-texture</a>
+                </li>
+        <li>
+                    <a href="../Properties/IconImage.html">icon-image</a>
+                </li>
+        <li>
+                    <a href="../Properties/IconWidth.html">icon-width</a>
+                </li>
+        <li>
+                    <a href="../Properties/LineEndCap.html">line-end-cap</a>
+                </li>
+        <li>
+                    <a href="../Properties/LineStartCap.html">line-start-cap</a>
+                </li>
+        <li>
+                    <a href="../Properties/LineStyle.html">line-style</a>
+                </li>
+        <li>
+                    <a href="../Properties/Shape.html">shape</a>
+                </li>
+        <li>
+                    <a href="../Properties/ShapeDef.html">shape-def</a>
+                </li>
+        <li>
+                    <a href="../Properties/ShapeOrientation.html">shape-orientation</a>
+                </li>
+        <li>
+                    <a href="../Properties/ShapeSpacing.html">shape-spacing</a>
+                </li>
+    </ul>
+</div></p><p>  </p>
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,29 @@
+import-script:cycle.py
+
+features
+	lines
+		cycle route : osmnetwork[type=route]
+	
+properties
+	map-background-color	: #eee9f0
+	map-background-opacity	: 1
+	map-sea-color : #d6edfb
+	font-weight : bold
+	font-family : Arial
+	text-max-width : 7
+	text-halo-width : 4
+	text-func : cycleLabel(e)
+	map.rendering.lflp.min-buffer-space : 0
+	map.rendering.lflp.max-allowed-corner-angle : 20
+	map.rendering.lflp.max-compression : 0.75
+	
+rules
+	target : cycle route
+		define
+			line-width : 3
+			line-color : red
+			line-opacity : 1
+			curved : true
+			font-size : 15
+		draw : line
+		draw : text

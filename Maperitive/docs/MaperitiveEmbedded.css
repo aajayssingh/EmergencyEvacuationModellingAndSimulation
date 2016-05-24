@@ -1,0 +1,171 @@
+body
+{
+    color : #303030;
+	font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
+	font-size: 15px;
+}
+
+pre
+{
+	font-family: 'Lucida Console', sans-serif;
+	background-color: #F7DBB3;
+	border: 1px dotted #2F6FAB;
+	line-height: 1.1em;
+	padding: 0.5em;
+	margin-left: 20px;
+	margin-right: 20px;
+	font-size : smaller;
+}
+
+h1
+{
+    color: #336699;
+    font-size: x-large;
+    font-variant: small-caps;
+    border-bottom-style: solid;
+    border-bottom-width: thick;
+    border-bottom-color: #6699cc;
+}
+
+h2 {
+    color: #336699;
+    padding-top: 10px;
+	font-size: 130%;
+	border-bottom-style: solid;
+	border-bottom-width: thin;
+}
+
+h3 {
+    color: #336699;
+    padding-top: 10px;
+	font-size: 110%;
+	border-bottom-style: solid;
+	border-bottom-width: thin;
+}
+
+h4 {
+    color: #336699;
+}
+
+#header
+{
+	color : yellow;
+	background-color : #336699;
+	padding : 5px;
+	font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
+}
+
+#header a:link 
+{ 
+	color: yellow;
+	text-decoration: none;	
+}
+
+#header a:visited 
+{ 
+	color: yellow;
+	text-decoration: none;
+}
+
+#header a:hover 
+{ 
+	color: white;
+	text-decoration:underline;
+}
+
+#header a:active
+{ 
+	color: yellow;
+}
+
+
+#upperbar
+{
+	padding-top : 10px;
+	margin: 0 auto;
+	text-align:left;
+	background-color : #F7DBB3;
+}
+
+#home
+{
+	padding : 5px;
+	float : left;
+	width : auto;
+}
+
+#search
+{
+	padding : 5px;
+	width : auto;
+	text-align : right;
+}
+
+#docbody
+{
+	padding:0 0 20px;
+	margin: 0 auto;
+	text-align:left;
+}
+
+#footer
+{
+	margin: 0 auto;
+	border-radius: 4px;
+	background-color: rgba(255,255,255,0.2);	
+	text-align: right;
+	padding: 7px 10px;
+	font-size: 70%;
+}
+
+#footerlist
+{
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+#toc
+{
+	background-color:rgba(255,255,255,0.2);
+	border:1px solid #AAAAAA;
+	font-size:95%;
+	padding-left:20px;
+	padding-right:40px;
+}
+
+#toc ul
+{
+	list-style-image:none;
+	list-style-type:none;
+	margin-left:0;
+	text-align:left;
+	padding-left:20px;
+}
+
+
+.seealso
+{
+	padding: 5px;
+	background-color: rgba(255,255,255,0.2);
+}
+
+.note
+{
+	margin: 20px;
+	padding: 10px;
+	border-style: solid;
+	border-width: 2;
+	border-color : #336699;
+	font-size : small;
+	font-style : italic;
+	background-color : #DCE2E7;
+}
+
+.todo
+{
+	padding: 5px;
+	background-color: yellow;
+	border-style: solid;
+	border-width: thin;
+}

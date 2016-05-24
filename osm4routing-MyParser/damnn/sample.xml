@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<sample-tag><some-tag int-attribute="123" double-attribute="456.789">This is the text</some-tag><empty-self-closed-tag/><computed-name-tag text-attr="a bit of text"/><deep-tag><sub-tag-2><sub-tag-3/></sub-tag-2></deep-tag></sample-tag>

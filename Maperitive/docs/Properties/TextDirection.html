@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="../MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: text-direction</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="../default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="text-direction">
+	text-direction
+</h1>
+<p> Specifies the text direction for the <a href="../Symbols/text.html">text</a>.</p><p>Possible values are:</p><ul>
+	<li><strong>auto</strong> : the text direction will be determined automatically (actually this currently means that the text direction will always be left-to-right (LTR)).</li>
+	<li><strong>rtl</strong> : the text direction will be right-to-left.</li>
+
+</ul>
+<h2 id="Details">
+	Details
+</h2>
+<p>This property is a temporary workaround enabling support for right-to-left (RTL) scripts  for linear texts (texts along the line). Maperitive needs to split linear texts into individual glyphs to be able to draw the text along a line so it cannot rely on the underlying graphics engine to determine the text direction.</p><p>The property does <strong>not</strong> have any effect on point and area texts since these are directed automatically by the underlying graphics engine.</p>
+<h2 id="Limitations">
+	Limitations
+</h2>
+<p>This workaround does not allow mixing RTL and LTR scripts in the same text value. Such texts will be rendered either fully LTR or fully RTL and thus incorrectly.</p><p>Full RTL support is planned in the near future.</p><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="../Properties/FontFamily.html">font-family</a>
+                </li>
+        <li>
+                    <a href="../Properties/FontSize.html">font-size</a>
+                </li>
+        <li>
+                    <a href="../Properties/FontStretch.html">font-stretch</a>
+                </li>
+        <li>
+                    <a href="../Properties/FontStyle.html">font-style</a>
+                </li>
+        <li>
+                    <a href="../Properties/FontWeight.html">font-weight</a>
+                </li>
+        <li>
+                    <a href="../Properties/Text.html">text</a>
+                </li>
+        <li>
+                    <a href="../Properties/TextAlignHorizontal.html">text-align-horizontal</a>
+                </li>
+        <li>
+                    <a href="../Properties/TextAlignVertical.html">text-align-vertical</a>
+                </li>
+        <li>
+                    <a href="../Properties/TextLetterSpacing.html">text-letter-spacing</a>
+                </li>
+        <li>
+                    <a href="../Properties/TextLineSpacing.html">text-line-spacing</a>
+                </li>
+        <li>
+                    <a href="../Properties/TextMaxWidth.html">text-max-width</a>
+                </li>
+        <li>
+                    <a href="../Properties/TextOffsetHorizontal.html">text-offset-horizontal</a>
+                </li>
+        <li>
+                    <a href="../Properties/TextOffsetVertical.html">text-offset-vertical</a>
+                </li>
+        <li>
+                    <a href="../Properties/TextOrientation.html">text-orientation</a>
+                </li>
+    </ul>
+</div></p><p>  </p>
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,245 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <link href="MaperitiveEmbedded.css" rel="stylesheet" type="text/css" />
+        <title>Maperitive: Querying Data</title>
+    </head>
+    <body>
+        <div id="header">
+            <a href="default.html">Maperitive 2.3.33 documentation</a>
+        </div>
+               
+        <div id="docbody">
+<!--            <div class="note">
+                NOTE: These pages are under construction. They probably contain a lot of mistakes. If you spot any
+                don't hesistate to <a href="http://maperitive.net/">write to the author</a>.
+            </div>
+            
+-->            
+<h1 id="Querying Data">
+	Querying Data
+</h1>
+<table class="toc" id="toc">
+	<tbody>
+		<tr>
+			<td><div id="toctitle">
+				<h2>
+					Contents
+				</h2>
+			</div><ul>
+				<li class="toclevel-2"><a href="#Introduction">Introduction</a></li><li class="toclevel-2"><a href="#Targets">Targets</a></li><ul>
+					<li class="toclevel-3"><a href="#Are%20Targets%20Necessary?">Are Targets Necessary?</a></li>
+				</ul><li class="toclevel-2"><a href="#Spatial%20Conditions">Spatial Conditions</a></li><ul>
+					<li class="toclevel-3"><a href="#Key/Value%20Condition">Key/Value Condition</a></li><ul>
+						<li class="toclevel-4"><a href="#Testing%20The%20Tag%20Against%20Multiple%20Values">Testing The Tag Against Multiple Values</a></li>
+					</ul><li class="toclevel-3"><a href="#Checking%20The%20Existence%20Of%20A%20Tag">Checking The Existence Of A Tag</a></li><li class="toclevel-3"><a href="#Numeric%20Tag%20Value%20Comparisons">Numeric Tag Value Comparisons</a></li><li class="toclevel-3"><a href="#Spatial%20Condition%20Functions">Spatial Condition Functions</a></li><ul>
+						<li class="toclevel-4"><a href="#@isTrue%20Function">@isTrue Function</a></li><li class="toclevel-4"><a href="#@isFalse%20Function">@isFalse Function</a></li><li class="toclevel-4"><a href="#@isOneOf%20Function">@isOneOf Function</a></li><li class="toclevel-4"><a href="#@isMatch%20Function">@isMatch Function</a></li><li class="toclevel-4"><a href="#@isMulti%20Function">@isMulti Function</a></li>
+					</ul>
+				</ul><li class="toclevel-2"><a href="#Nested%20Queries">Nested Queries</a></li><li class="toclevel-2"><a href="#Find%20Commands">Find Commands</a></li><li class="toclevel-2"><a href="#Query%20Examples">Query Examples</a></li>
+			</ul></td>
+		</tr>
+	</tbody>
+</table>
+<h2 id="Introduction">
+	Introduction
+</h2>
+<p>As we explained in the <a href="Rendering_Rules_Introduction.html">introduction to rendering rules</a>, Maperitive rules  work on <strong>features</strong>. Maperitive provides a simple query language which is used to to specify what a feature represents. Let's look at one simple example of a feature:</p><pre>
+street : way [highway=residential]
+</pre><p>Here we defined a feature called <i>street</i> which covers OSM ways tagged as <i>highway=residential</i>. The text after the colon (':') is called a <strong>spatial specification</strong>:</p><pre>
+way [highway=residential]
+</pre><p>The above spatial specification in consists of two parts:</p><ul>
+	<li>A <strong>target</strong>: the target tells Maperitive <strong>what kind of elements</strong> to look at. In our case the target is a (OSM) way.</li>
+	<li>A <strong>spatial condition</strong>: it tells Maperitive to only use the elements which satisfy the condition. In our case the condition is a simple tag/value match (the tag is <i>highway</i> and the value is <i>residential</i>).</li>
+
+</ul>
+<h2 id="Targets">
+	Targets
+</h2>
+<p>Maperitive currently supports these targets:</p><ul>
+	<li><strong>node</strong> : represents an OSM node</li>
+	<li><strong>way</strong> : represents an OSM way</li>
+	<li><strong>relation</strong> : represents an OSM relation</li>
+	<li><strong>contour</strong> : represents an elevation (height) contour</li>
+	<li><strong>gpstrack</strong>: represents a GPS track</li>
+	<li><strong>gpsroute</strong>: represents a GPS route</li>
+	<li><strong>gpswaypoint</strong>: represents a GPS waypoint</li>
+	<li><strong>gpspoint</strong>: represents a point of GPS track or route. Can only be used as a second level in nested queries.</li>
+
+</ul>
+<h3 id="Are Targets Necessary?">
+	Are Targets Necessary?
+</h3>
+<p>Good question. They are, and they are not - depending on the situation. You don't <i>need</i> to specify the target - in certain situations Maperitive can figure out by itself what you're actually targeting. An example:</p><pre>
+features
+	...
+	areas
+		parking : amenity=parking
+	...
+</pre><p>is perfectly valid and it should work OK within the rules. This is because you specified the <i>parking</i> feature under the <i>areas</i> subsection, so Maperitive knows that it has to look for <strong>closed</strong> OSM ways. If, on the other hand, you specified it like this:</p><pre>
+features
+	...
+	parking : amenity=parking
+	...
+</pre><p>it means that the <i>parking</i> feature can be targeted to any feature type (point, line and area). In this case the feature will cover <strong>both</strong> OSM parking nodes and OSM parking areas. But it will also target any non-closed OSM way that has mistakenly been specified as <i>amenity=parking</i>. To avoid this, you can also specify it like this:</p><pre>
+features
+	...
+	parking : node[amenity=parking] area[amenity=parking]
+	...
+</pre><p>As you can see, you can use <strong>several spatial specifications</strong> for a feature. This way you're telling Maperitive to look <strong>both</strong> at nodes <strong>and</strong> areas and the end feature will contain the combination of them.</p>
+<h2 id="Spatial Conditions">
+	Spatial Conditions
+</h2>
+<p>As their name says, spatial conditions specify what qualities the map elements must satisfy in order to be selected. Typically these qualities are expressed through element tags and their values, for example:</p><pre>
+amenity=parking
+</pre><p>specifies that we are looking for elements which have a tag called <i>amenity</i> and the value of this tag must be <i>parking</i> in order for the element to be selected.</p><p>There are several distinct ways a condition can be specified:</p><ul>
+	<li>Typical <strong>key=value</strong> condition (as was just described).</li>
+	<li>Checking the existence of a tag.</li>
+	<li>Comparing the tag value with some numerical value.</li>
+	<li>Calling a <strong>function</strong>.</li>
+	<li>Negating (or inverting) the condition.</li>
+	<li>Combining several conditions using logical operators.</li>
+
+</ul><p>Each of these will now be described.</p>
+<h3 id="Key/Value Condition">
+	Key/Value Condition
+</h3>
+<p>This is a most common scenario: we want to find elements which have a certain tag and value combination. Examples:</p><pre>
+highway=motorway
+name=&quot;New York&quot;
+name:de=Muenchen
+&quot;strange key&quot;=&quot;strange value&quot;
+</pre><p>As you can see from examples, you can enclose both the tag name and the tag value within quotes. This is necessary if the tag name or value contains spaces or some special characters which are otherwise reserved for Maperitive's query language.</p>
+<h4 id="Testing The Tag Against Multiple Values">
+	Testing The Tag Against Multiple Values
+</h4>
+<p>Let's say you're looking for a restaurant, even if fast-food. Instead of writing a condition like</p><pre>
+amenity=restaurant OR amenity=fast_food
+</pre><p>you can use the <strong>isOneOf</strong> function to test the tag against multiple values:</p><pre>
+@isOneOf(amenity, restaurant, fast_food)
+</pre>
+<h3 id="Checking The Existence Of A Tag">
+	Checking The Existence Of A Tag
+</h3>
+<p>If you are only interested in whether a certain tag exists (regardless of its value), you simply specify the tag name, for example:</p><pre>
+highway
+</pre><p>will match any kind of road in the OSM data.</p>
+<h3 id="Numeric Tag Value Comparisons">
+	Numeric Tag Value Comparisons
+</h3>
+<p>If a tag value represents a numeric value, you can compare against it using the standard comparison operators: >, >=, < and <=. For example</p><pre>
+population &gt;= 100000
+</pre><p>will match all elements which have a <i>population</i> larger than 100,000. You can of course specify decimal values too:</p><pre>
+width &gt; 2.5
+</pre><p><div class="note">
+    <strong>NOTE:</strong> If an element's tag value cannot be interpreted as a numeric value, the condition will not be satisfied and the element will not match the condition.
+</div></p>
+<h3 id="Spatial Condition Functions">
+	Spatial Condition Functions
+</h3>
+<p>Maperitive supports several functions which can be used inside conditions. These functions accept a series of arguments and return result indicating whether the condition was satisfied or not.</p>
+<h4 id="@isTrue Function">
+	@isTrue Function
+</h4>
+<p><strong>USAGE:</strong> @isTrue (<i>tag name</i>)</p><p>This function checks whether the specified tag contains a Boolean <i>true</i> value. Following conventions in the OSM world, the method will return a successful response if the tag has one of the following values:</p><ul>
+	<li><i>true</i></li>
+	<li><i>yes</i></li>
+	<li><i>1</i></li>
+
+</ul><p>If the tag does not exist or the value of the tag is not one of the above, the method returns a negative response.</p><p>@isFalse function is the exact opposite to the @isTrue function.</p><p><strong>EXAMPLES:</strong></p><pre>
+@isTrue(oneway)
+@istrue(trailblazed)
+</pre>
+<h4 id="@isFalse Function">
+	@isFalse Function
+</h4>
+<p><strong>USAGE:</strong> @isFalse (<i>tag name</i>)</p><p>This function checks whether the specified tag contains a Boolean <i>false</i> value. Following conventions in the OSM world, the method will return a successful response if the tag has one of the following values:</p><ul>
+	<li><i>false</i></li>
+	<li><i>no</i></li>
+	<li><i>0</i></li>
+	<li>if the tag does not exist.</li>
+
+</ul><p>@isTrue function is the exact opposite to the @isFalse function.</p><p><strong>EXAMPLES:</strong></p><pre>
+@isFalse(oneway)
+@isfalse(trailblazed)
+</pre>
+<h4 id="@isOneOf Function">
+	@isOneOf Function
+</h4>
+<p><strong>USAGE:</strong> @isOneOf (<i>tag name</i>, <i>tag value 1</i>, <i>tag value 2</i>, ..., <i>tag value N</i>)</p><p>Tests the value of the specified tag against multiple values (specified in function arguments). The function returns a successful response if one of the values is matched. If none of the values matches the tag value, the function returns a negative response.</p><p><strong>EXAMPLES:</strong></p><pre>
+@isOneOf(highway, motorway, trunk, primary)
+</pre>
+<h4 id="@isMatch Function">
+	@isMatch Function
+</h4>
+<p><strong>USAGE:</strong> @isMatch (<i>tag name</i>, <i>regular expression</i>)</p><p>Tests the value of the specified tag against the specified regular expression. The function returns a successful response if the value matches the regular expression. Otherwise the function returns a negative response.</p><p><strong>EXAMPLES:</strong></p><pre>
+@isMatch(name, &quot;.*wald$&quot;)
+</pre><p>matches any element whose name ends with "wald".</p>
+<h4 id="@isMulti Function">
+	@isMulti Function
+</h4>
+<p><strong>USAGE:</strong> @isMulti (<i>tag name</i>, <i>multiplier numeric value</i>)</p><p>Tests whether the specified tag's numeric value is a multiplier of the second argument value. If an element's tag value cannot be interpreted as a numeric value, the function will return a negative response.</p><p><strong>EXAMPLES:</strong></p><pre>
+@isMulti(elevation, 100)
+</pre><p>matches any element whose elevation is a multiplier of 100 (100, 200, 300 etc).</p>
+<h2 id="Nested Queries">
+	Nested Queries
+</h2>
+<p>Maperitive also supports <strong>nested queries</strong> like</p><pre>
+ node[barrier=gate].way[highway=footpath]
+</pre><p>This query is made out of two spatial specifications:</p><pre>
+ node[barrier=gate]
+</pre><p>looks for OSM nodes which represent gate barriers, and</p><pre>
+ .way[highway=footpath]
+</pre><p>then acts on the results of the first query, so for each of the gate barriers it looks for OSM ways it belongs to and selects only those ways which are tagged as footpaths.</p><p>You can do further nesting using the '.' syntax.</p><p><div class="note">
+    <strong>NOTE:</strong> Nested queries are still work in progress, so expect bugs and things that are not yet implemented.
+</div></p>
+<h2 id="Find Commands">
+	Find Commands
+</h2>
+<p>In addition to specifying features in rules, you can also use the query language  to look for things interactively. This is what the <a href="Commands/Find.html">find command</a> and <a href="Commands/FindHere.html">find-here command</a> are for. For example, if you type the following command in the command box:</p><pre>
+find way[highway=residential AND NOT name]
+</pre><p>...Maperitive will look for unnamed residential streets in any OSM file you've loaded into your current map. If it  finds any, it will highlight them on the map. You can then go through the results using the find-next <i>(TODO)</i> and find-prev <i>(TODO)</i> commands.</p>
+<h2 id="Query Examples">
+	Query Examples
+</h2>
+<p>To illustrate the usage and syntax of the querying language, this section lists some examples of queries.</p><pre>
+ way[]
+</pre><p>Finds <i>all</i> ways.</p><pre>
+ node[]
+</pre><p>Finds <i>all</i> nodes (be careful with this one on a large OSM area, since there can be a <i>lot</i> of nodes).</p><pre>
+area [landuse=forest OR natural=wood]
+</pre><p>Finds areas designated as forests.</p><pre>
+relation[type=route and route=bicycle and network=icn]
+</pre><p>Finds international cycle routes defined as OSM relations.</p><pre>
+node[amenity=parking] area[amenity=parking]
+</pre><p>Finds parking areas, both those designated by OSM nodes and those  designated by OSM areas (closed ways).</p><pre>
+contour[elevation_multiplier=50]
+</pre><p>Finds contours with the elevation which is a multiplier of 50 (50 m, 100 m, 1000 m etc.).</p><pre>
+highway
+</pre><p>Finds all OSM ways which have the <i>highway</i> tag (regardless of its value).</p><pre>
+NOT highway
+</pre><p>Opposite case: finds all OSM ways which do not have the <i>highway</i> tag.</p><pre>
+way[highway and not name]
+</pre><p>Finds all OSM ways which have the <i>highway</i> tag and do not have the <i>name</i> tag. </p><pre>
+ way[highway=footpath].node[barrier=gate]
+</pre><p>Finds all OSM nodes which represent a gate barrier and are on the footpaths.</p><pre>
+ node[barrier=gate].way[highway=footpath]
+</pre><p>Finds all OSM ways which represent footpaths and which have at least one gate barrier on them.</p><pre>
+ gpstrack[].gpspoint[]
+</pre><p>Finds all points of all GPS tracks.</p><p><div class="seealso">
+    See also:
+    <ul>
+        <li>
+                    <a href="Commands/Find.html">find Command</a>
+                </li>
+        <li>
+                    <a href="Commands/FindHere.html">find-here Command</a>
+                </li>
+        <li>
+                    <a href="Querying_GPS_Data.html">Querying GPS Data</a>
+                </li>
+    </ul>
+</div></p><p>  </p>
+        </div>
+        
+    </body>
+</html>
